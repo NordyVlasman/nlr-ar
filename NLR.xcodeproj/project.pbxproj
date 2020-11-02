@@ -17,6 +17,7 @@
 		88011F1B254AFCE00097EA48 /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88011F1A254AFCE00097EA48 /* ARManager.swift */; };
 		88011F25254AFD7F0097EA48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88011F24254AFD7F0097EA48 /* ARViewController.swift */; };
 		88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88011F2A254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift */; };
+		8809B2A42550659F001E6817 /* ARViewController+ViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8809B2A32550659F001E6817 /* ARViewController+ViewSetup.swift */; };
 		88388247254B3F3C001EF10C /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388246254B3F3C001EF10C /* FocusSquareSegment.swift */; };
 		8838824F254B3F44001EF10C /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838824E254B3F44001EF10C /* FocusSquare.swift */; };
 		88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388253254B3FAB001EF10C /* ARSCNView+Extensions.swift */; };
@@ -65,6 +66,7 @@
 		88011F1A254AFCE00097EA48 /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
 		88011F24254AFD7F0097EA48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		88011F2A254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARCoachingOverlay.swift"; sourceTree = "<group>"; };
+		8809B2A32550659F001E6817 /* ARViewController+ViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ViewSetup.swift"; sourceTree = "<group>"; };
 		88388246254B3F3C001EF10C /* FocusSquareSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
 		8838824E254B3F44001EF10C /* FocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		88388253254B3FAB001EF10C /* ARSCNView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Extensions.swift"; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				885B702F2550403F008643BD /* ARViewController+Functions.swift */,
+				8809B2A32550659F001E6817 /* ARViewController+ViewSetup.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				88388264254B41D4001EF10C /* ARManagerDelegate.swift in Sources */,
 				88388272254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift in Sources */,
 				8838826A254B4218001EF10C /* ARViewController+ARManager.swift in Sources */,
+				8809B2A42550659F001E6817 /* ARViewController+ViewSetup.swift in Sources */,
 				8838825E254B40F9001EF10C /* CGPoint+Extensions.swift in Sources */,
 				8838827D254B4411001EF10C /* ARViewController+ARSessionDelegate.swift in Sources */,
 				885B702625503F29008643BD /* VirtualObject.swift in Sources */,
