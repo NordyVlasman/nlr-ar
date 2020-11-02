@@ -14,6 +14,10 @@ struct ApplicationView: View {
         ARKitView()
             .environmentObject(arManager)
             .edgesIgnoringSafeArea(.all)
+            .onAppear(perform: {
+                arManager.start()
+                arManager.download()
+            })
     }
 }
 

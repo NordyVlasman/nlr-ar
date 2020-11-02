@@ -13,15 +13,21 @@ import ARKit
 class ARViewController: UIViewController {
     let sceneView: ARSCNView = ARSCNView()
     let coachingOverlayView = ARCoachingOverlayView()
+    let placeVirtualObjectButton: UIButton = UIButton(type: .custom)
     
     // TODO: - Replace this with the right identifier.
-    let updateQueue = DispatchQueue(label: "io.nvlas.nlr")
+    let updateQueue = DispatchQueue(label: "io.nlr.nlrar")
 
+    private var lastObjectAvailabilityUpdateTimestamp: TimeInterval?
     private var isRestartAvailable = true
     private var isRunning = false
     
     var manager: ARManager
     var focusSquare = FocusSquare()
+    
+//    var objectToPlace: VirtualObject!
+    var placedObject: SCNNode?
+    
     var session: ARSession {
         sceneView.session
     }
@@ -29,6 +35,8 @@ class ARViewController: UIViewController {
     init(arManager: ARManager) {
         self.manager = arManager
         super.init(nibName: nil, bundle: nil)
+        
+        manager.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -39,7 +47,7 @@ class ARViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        restartExperience()
+        
     }
 }
 
@@ -47,6 +55,7 @@ class ARViewController: UIViewController {
 extension ARViewController {
     func setupView() {
         setupSceneView()
+        setupPlaceVirtualObjectButton()
     }
     
     func setupSceneView() {
@@ -61,6 +70,23 @@ extension ARViewController {
         ])
     }
     
+    func setupPlaceVirtualObjectButton() {
+        sceneView.addSubview(placeVirtualObjectButton)
+        
+        placeVirtualObjectButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            placeVirtualObjectButton.centerXAnchor.constraint(equalTo: sceneView.centerXAnchor),
+            placeVirtualObjectButton.bottomAnchor.constraint(equalTo: sceneView.bottomAnchor, constant: -30),
+            placeVirtualObjectButton.heightAnchor.constraint(equalToConstant: 55),
+            placeVirtualObjectButton.widthAnchor.constraint(equalTo: placeVirtualObjectButton.heightAnchor)
+        ])
+        
+        placeVirtualObjectButton.setBackgroundImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        placeVirtualObjectButton.addTarget(self, action: #selector(placeVirtualObject(sender:)), for: .touchUpInside)
+        
+        placeVirtualObjectButton.tintColor = .white
+    }
+    
     func resetTracking() {
         let configuration = ARWorldTrackingConfiguration()
         
@@ -69,13 +95,14 @@ extension ARViewController {
         configuration.environmentTexturing = .automatic
         configuration.planeDetection = [.horizontal]
         configuration.wantsHDREnvironmentTextures = true
-        
+
         sceneView.delegate = self
         sceneView.session.delegate = self
         sceneView.debugOptions = [.showFeaturePoints, .showConstraints]
         
         sceneView.session.run(configuration)
         setupCoachingOverlay()
+        isRunning = true
     }
     
     func restartExperience() {
@@ -90,5 +117,47 @@ extension ARViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: { [weak self] in
             self?.isRestartAvailable = true
         })
+    }
+    
+    func updateObjectAvailability() {
+        if let lastUpdateTimestamp = lastObjectAvailabilityUpdateTimestamp, let timestamp = sceneView.session.currentFrame?.timestamp, timestamp - lastUpdateTimestamp < 0.5 {
+            return
+        } else {
+            lastObjectAvailabilityUpdateTimestamp = sceneView.session.currentFrame?.timestamp
+        }
+        
+        if let query = sceneView.getRaycastQuery(for: .horizontal), let result = sceneView.castRay(for: query).first {
+            manager.objectToPlace?.mostRecentInitialPlacementResult = result
+            manager.objectToPlace?.raycastQuery = query
+        } else {
+            manager.objectToPlace?.mostRecentInitialPlacementResult = nil
+            manager.objectToPlace?.raycastQuery = nil
+        }
+    }
+    
+    @objc func placeVirtualObject(sender: Any) {
+        guard isRunning, let objectToPlace = manager.objectToPlace else {
+            return
+        }
+        
+        guard !objectToPlace.isPlaced else {
+            return
+        }
+        
+        guard focusSquare.state != .initializing, let query = objectToPlace.raycastQuery else {
+            return
+        }
+        
+        let trackedRaycast = createTrackedRaycastAndSet3DPosition(
+            of: objectToPlace,
+            from: query,
+            withInitialResult: objectToPlace.mostRecentInitialPlacementResult)
+        
+        objectToPlace.raycast = trackedRaycast
+        objectToPlace.isHidden = false
+        objectToPlace.isPlaced = true
+        
+        manager.shouldShowFocusSquare = false
+        
     }
 }

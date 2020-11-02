@@ -26,6 +26,9 @@
 		8838826A254B4218001EF10C /* ARViewController+ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388269254B4218001EF10C /* ARViewController+ARManager.swift */; };
 		88388272254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388271254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift */; };
 		8838827D254B4411001EF10C /* ARViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838827C254B4411001EF10C /* ARViewController+ARSessionDelegate.swift */; };
+		88420187255037FF00A72BAD /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88420186255037FF00A72BAD /* Art.scnassets */; };
+		885B702625503F29008643BD /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702525503F29008643BD /* VirtualObject.swift */; };
+		885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702F2550403F008643BD /* ARViewController+Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		88388269254B4218001EF10C /* ARViewController+ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARManager.swift"; sourceTree = "<group>"; };
 		88388271254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		8838827C254B4411001EF10C /* ARViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
+		88420186255037FF00A72BAD /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
+		885B702525503F29008643BD /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
+		885B702F2550403F008643BD /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,7 @@
 			children = (
 				88011ED7254AF5F60097EA48 /* Assets.xcassets */,
 				88011ED9254AF5F60097EA48 /* Preview Content */,
+				88420186255037FF00A72BAD /* Art.scnassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 		88011F23254AFD6D0097EA48 /* ARViewController */ = {
 			isa = PBXGroup;
 			children = (
+				885B702E25504034008643BD /* Extensions */,
 				88388270254B43D5001EF10C /* Delegates */,
 				88011F24254AFD7F0097EA48 /* ARViewController.swift */,
 			);
@@ -280,6 +288,7 @@
 		88011F33254B27340097EA48 /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				885B702425503F16008643BD /* Virtual Object */,
 				88388245254B2772001EF10C /* Focus Square */,
 			);
 			path = AR;
@@ -335,6 +344,22 @@
 				88011F29254AFF520097EA48 /* ARCoachingOverlay */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		885B702425503F16008643BD /* Virtual Object */ = {
+			isa = PBXGroup;
+			children = (
+				885B702525503F29008643BD /* VirtualObject.swift */,
+			);
+			path = "Virtual Object";
+			sourceTree = "<group>";
+		};
+		885B702E25504034008643BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				885B702F2550403F008643BD /* ARViewController+Functions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +467,7 @@
 			files = (
 				88011EDB254AF5F60097EA48 /* Preview Assets.xcassets in Resources */,
 				88011ED8254AF5F60097EA48 /* Assets.xcassets in Resources */,
+				88420187255037FF00A72BAD /* Art.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,9 +504,11 @@
 				8838826A254B4218001EF10C /* ARViewController+ARManager.swift in Sources */,
 				8838825E254B40F9001EF10C /* CGPoint+Extensions.swift in Sources */,
 				8838827D254B4411001EF10C /* ARViewController+ARSessionDelegate.swift in Sources */,
+				885B702625503F29008643BD /* VirtualObject.swift in Sources */,
 				88388259254B40E1001EF10C /* Float4x4+Extensions.swift in Sources */,
 				88388247254B3F3C001EF10C /* FocusSquareSegment.swift in Sources */,
 				88011F25254AFD7F0097EA48 /* ARViewController.swift in Sources */,
+				885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.nvlas.NLR;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nlr.nlrar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -669,7 +697,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.nvlas.NLR;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nlr.nlrar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

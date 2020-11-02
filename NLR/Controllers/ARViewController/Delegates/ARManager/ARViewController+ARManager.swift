@@ -7,6 +7,7 @@
 
 extension ARViewController: ARManagerDelegate {
     func arExperienceShouldStart() {
+        placeVirtualObjectButton.isEnabled = false
         self.restartExperience()
     }
     

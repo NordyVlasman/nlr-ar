@@ -69,6 +69,10 @@ extension ARViewController: ARCoachingOverlayViewDelegate {
                 self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
                 self.focusSquare.state = .detecting(raycastResult: result, camera: camera)
             }
+            
+            DispatchQueue.main.async {
+                self.placeVirtualObjectButton.isEnabled = true
+            }
         } else {
             updateQueue.async { [weak self] in
                 guard let self = self else {
@@ -77,6 +81,10 @@ extension ARViewController: ARCoachingOverlayViewDelegate {
                 
                 self.focusSquare.state = .initializing
                 self.sceneView.pointOfView?.addChildNode(self.focusSquare)
+            }
+            
+            DispatchQueue.main.async {
+                self.placeVirtualObjectButton.isEnabled = false
             }
         }
     }
