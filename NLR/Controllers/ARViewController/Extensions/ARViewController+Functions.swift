@@ -12,7 +12,7 @@ import ARKit
 extension ARViewController {
     func setTransform(of virtualObject: VirtualObject, with result: ARRaycastResult) {
         virtualObject.simdWorldTransform = result.worldTransform
-        virtualObject.scale = .init(x: 0.01, y: 0.01, z: 0.01)
+        virtualObject.scale = .init(x: 0.1, y: 0.1, z: 0.1)
     }
     
     func createTrackedRaycastAndSet3DPosition(of virtualObject: VirtualObject, from query: ARRaycastQuery,
@@ -120,8 +120,38 @@ extension ARViewController {
         objectToPlace.raycast = trackedRaycast
         objectToPlace.isHidden = false
         objectToPlace.isPlaced = true
-        
+        placedObject = objectToPlace
         manager.shouldShowFocusSquare = false
         
+        prepareObject()
+    }
+    
+    func prepareObject() {
+        guard let damageNodeArray = manager.currentAircraft?.damageNodeArray else { return }
+        for damageNode in damageNodeArray {
+            print("\(damageNode.coordinates!.x) for node \(damageNode.node!)")
+            arShouldAddDamageNode(with: damageNode)
+        }
+    }
+    
+    @objc func addTapReportAction(sender: Any) {
+        isAddingIssues = true
+    }
+    
+    @objc func tapped(sender: UITapGestureRecognizer) {
+        ///TODO: - Check if the user tapped Add Report button before doing stuff
+        let sceneViewTappedOn = sender.view as! SCNView
+        let touchCoordinates = sender.location(in: sceneViewTappedOn)
+        
+        let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
+        if !hitTest.isEmpty {
+            let results = hitTest.first!
+            let tnode = results.node
+            placedObject?.enumerateChildNodes { (node, _) in
+                if tnode == node {
+                    manager.addDamageNode(location: hitTest.first!.localCoordinates, node: node.name!)
+                }
+            }
+        }
     }
 }

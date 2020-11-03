@@ -12,6 +12,12 @@ import Combine
 class ARManager: ObservableObject {
     @Published var objectToPlace: VirtualObject?
     @Published var shouldShowARView = false
+    @Published var shouldShowDamageModal: Bool = true
+    
+    @Published var currentCoordinates: SCNVector3?
+    @Published var currentAircraft: Aircraft?
+    @Published var currentNodeName: String?
+
     var shouldShowFocusSquare = false
     
     weak var delegate: ARManagerDelegate?
@@ -38,6 +44,18 @@ class ARManager: ObservableObject {
     
     func pauseAR() {
         delegate?.arExperienceShouldPause()
+    }
+    
+    func submitAddingDamageNode(with damageNode: DamageNode) {
+        //TODO: Reset state of some data
+        delegate?.arShouldAddDamageNode(with: damageNode)
+        shouldShowDamageModal = true
+    }
+    
+    func addDamageNode(location: SCNVector3, node: String) {
+        currentCoordinates = location
+        currentNodeName = node
+        shouldShowDamageModal = false
     }
 }
 

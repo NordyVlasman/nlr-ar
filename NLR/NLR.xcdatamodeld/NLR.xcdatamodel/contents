@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="20B5012d" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Aircraft" representedClassName="Aircraft" syncable="YES" codeGenerationType="class">
+    <entity name="Aircraft" representedClassName="Aircraft" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="damageNodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DamageNode" inverseName="aircraft" inverseEntity="DamageNode"/>
     </entity>
@@ -13,6 +13,7 @@
     <entity name="DamageNode" representedClassName="DamageNode" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="fixNow" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="node" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="aircraft" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Aircraft" inverseName="damageNodes" inverseEntity="Aircraft"/>
         <relationship name="coordinates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coordinates" inverseName="node" inverseEntity="Coordinates"/>
@@ -20,6 +21,6 @@
     <elements>
         <element name="Aircraft" positionX="-63" positionY="-18" width="128" height="59"/>
         <element name="Coordinates" positionX="-54" positionY="-9" width="128" height="89"/>
-        <element name="DamageNode" positionX="-36" positionY="9" width="128" height="104"/>
+        <element name="DamageNode" positionX="-36" positionY="9" width="128" height="119"/>
     </elements>
 </model>

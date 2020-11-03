@@ -18,6 +18,17 @@ struct ApplicationView: View {
                 ARKitView()
                     .environmentObject(arManager)
                     .edgesIgnoringSafeArea(.all)
+                    .sheet(
+                        isPresented: Binding {
+                            !arManager.shouldShowDamageModal
+                        } set: {
+                            self.arManager.shouldShowDamageModal = !$0
+                        }
+                    ) {
+                        AddDamageView()
+                            .environment(\.managedObjectContext, context)
+                            .environmentObject(arManager)
+                    }
                     .onAppear(perform: {
                         arManager.start()
                         arManager.download()

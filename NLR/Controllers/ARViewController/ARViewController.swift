@@ -14,6 +14,8 @@ class ARViewController: UIViewController {
     let sceneView: ARSCNView = ARSCNView()
     let coachingOverlayView = ARCoachingOverlayView()
     let placeVirtualObjectButton: UIButton = UIButton(type: .custom)
+    let addIssueButton: UIButton = UIButton(type: .custom)
+    let persistenceController = PersistenceController.shared
     
     // TODO: - Replace this with the right identifier.
     let updateQueue = DispatchQueue(label: "io.nlr.nlrar")
@@ -21,6 +23,7 @@ class ARViewController: UIViewController {
     var lastObjectAvailabilityUpdateTimestamp: TimeInterval?
     var isRestartAvailable = true
     var isRunning = false
+    var isAddingIssues = false
     
     var manager: ARManager
     var focusSquare = FocusSquare()

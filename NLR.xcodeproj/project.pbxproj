@@ -31,6 +31,10 @@
 		885B702625503F29008643BD /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702525503F29008643BD /* VirtualObject.swift */; };
 		885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702F2550403F008643BD /* ARViewController+Functions.swift */; };
 		88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92BC2551645300BA59BE /* AircraftsView.swift */; };
+		88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92C2255184EC00BA59BE /* AddDamageView.swift */; };
+		88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */; };
+		88AB92D42551996400BA59BE /* Aircraft+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92D32551996400BA59BE /* Aircraft+CoreDataProperties.swift */; };
+		88AB92DF255199E400BA59BE /* Aircraft+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92DE255199E400BA59BE /* Aircraft+CoreDataClass.swift */; };
 		88CA791925515E7700B817DE /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA791825515E7700B817DE /* PersistenceController.swift */; };
 		88F99B2A255154FD00C75CB6 /* NLR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88F99B28255154FD00C75CB6 /* NLR.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -83,6 +87,10 @@
 		885B702525503F29008643BD /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		885B702F2550403F008643BD /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
 		88AB92BC2551645300BA59BE /* AircraftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsView.swift; sourceTree = "<group>"; };
+		88AB92C2255184EC00BA59BE /* AddDamageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDamageView.swift; sourceTree = "<group>"; };
+		88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsDetailsView.swift; sourceTree = "<group>"; };
+		88AB92D32551996400BA59BE /* Aircraft+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Aircraft+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		88AB92DE255199E400BA59BE /* Aircraft+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Aircraft+CoreDataClass.swift"; sourceTree = "<group>"; };
 		88CA791825515E7700B817DE /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		88F99B29255154FD00C75CB6 /* NLR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NLR.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +218,7 @@
 		88011F05254AF6AA0097EA48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88AB92C1255184E200BA59BE /* Damage */,
 				88AB92BB2551644600BA59BE /* Aircraft View */,
 				88011F10254AF6F90097EA48 /* AR View */,
 				88011ED5254AF5F40097EA48 /* ApplicationView.swift */,
@@ -240,6 +249,7 @@
 		88011F08254AF6BA0097EA48 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				88AB92D22551995300BA59BE /* Aircraft */,
 				88011F33254B27340097EA48 /* AR */,
 			);
 			path = Models;
@@ -378,8 +388,26 @@
 			isa = PBXGroup;
 			children = (
 				88AB92BC2551645300BA59BE /* AircraftsView.swift */,
+				88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */,
 			);
 			path = "Aircraft View";
+			sourceTree = "<group>";
+		};
+		88AB92C1255184E200BA59BE /* Damage */ = {
+			isa = PBXGroup;
+			children = (
+				88AB92C2255184EC00BA59BE /* AddDamageView.swift */,
+			);
+			path = Damage;
+			sourceTree = "<group>";
+		};
+		88AB92D22551995300BA59BE /* Aircraft */ = {
+			isa = PBXGroup;
+			children = (
+				88AB92D32551996400BA59BE /* Aircraft+CoreDataProperties.swift */,
+				88AB92DE255199E400BA59BE /* Aircraft+CoreDataClass.swift */,
+			);
+			path = Aircraft;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,14 +549,18 @@
 				8838824F254B3F44001EF10C /* FocusSquare.swift in Sources */,
 				88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */,
 				88388264254B41D4001EF10C /* ARManagerDelegate.swift in Sources */,
+				88AB92DF255199E400BA59BE /* Aircraft+CoreDataClass.swift in Sources */,
+				88AB92D42551996400BA59BE /* Aircraft+CoreDataProperties.swift in Sources */,
 				88388272254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift in Sources */,
 				8838826A254B4218001EF10C /* ARViewController+ARManager.swift in Sources */,
+				88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */,
 				8809B2A42550659F001E6817 /* ARViewController+ViewSetup.swift in Sources */,
 				8838825E254B40F9001EF10C /* CGPoint+Extensions.swift in Sources */,
 				8838827D254B4411001EF10C /* ARViewController+ARSessionDelegate.swift in Sources */,
 				885B702625503F29008643BD /* VirtualObject.swift in Sources */,
 				88388259254B40E1001EF10C /* Float4x4+Extensions.swift in Sources */,
 				88388247254B3F3C001EF10C /* FocusSquareSegment.swift in Sources */,
+				88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */,
 				88011F25254AFD7F0097EA48 /* ARViewController.swift in Sources */,
 				885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */,
 				88CA791925515E7700B817DE /* PersistenceController.swift in Sources */,
@@ -779,6 +811,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8BUR3H37HV;
 				INFOPLIST_FILE = NLRUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -799,6 +832,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8BUR3H37HV;
 				INFOPLIST_FILE = NLRUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

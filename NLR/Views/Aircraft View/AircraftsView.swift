@@ -19,15 +19,24 @@ struct AircraftsView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(aircrafts) { aircraft in
-                    Button(action: {
-                        manager.shouldShowARView = true
-                    }, label: {
-                        Text(aircraft.name!)
-                    })
+                ForEach(aircrafts, id: \.self) { aircraft in
+//                    Button(action: {
+//                        manager.currentAircraft = aircraft
+//                        manager.shouldShowARView = true
+//                    }, label: {
+//                        HStack {
+//                            Text(aircraft.name!)
+//                        }
+//                    })
+                    NavigationLink(
+                        destination: AircraftsDetailsView(aircraft: aircraft).environmentObject(manager),
+                        label: {
+                            Text(aircraft.name!)
+                        })
                 }
                 .onDelete(perform: deleteItems)
             }
+            .listStyle(InsetGroupedListStyle())
             .navigationBarTitle("Overzicht")
         }
     }

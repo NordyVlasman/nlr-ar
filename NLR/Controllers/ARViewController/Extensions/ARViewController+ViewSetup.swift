@@ -12,6 +12,10 @@ extension ARViewController {
     func setupView() {
         setupSceneView()
         setupPlaceVirtualObjectButton()
+        setupAddIssueButton()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        sceneView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func setupSceneView() {
@@ -24,6 +28,20 @@ extension ARViewController {
             sceneView.topAnchor.constraint(equalTo: view.topAnchor),
             sceneView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    func setupAddIssueButton() {
+        sceneView.addSubview(addIssueButton)
+        
+        addIssueButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            addIssueButton.topAnchor.constraint(equalTo: sceneView.topAnchor, constant: +25),
+            addIssueButton.trailingAnchor.constraint(equalTo: sceneView.trailingAnchor, constant: -20),
+            addIssueButton.heightAnchor.constraint(equalToConstant: 55)
+        ])
+        
+        addIssueButton.addTarget(self, action: #selector(addTapReportAction(sender:)), for: .touchUpInside)
+        addIssueButton.setTitle("Issues toevoegen", for: .normal)
     }
     
     func setupPlaceVirtualObjectButton() {

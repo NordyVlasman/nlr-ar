@@ -34,7 +34,6 @@ class VirtualObject: SCNNode {
         guard let node = scene.rootNode.childNodes.first else {
             return nil
         }
-        
         self.addChildNode(node)
         name = node.name
     }
