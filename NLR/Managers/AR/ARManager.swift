@@ -11,7 +11,7 @@ import Combine
 
 class ARManager: ObservableObject {
     @Published var objectToPlace: VirtualObject?
-    
+    @Published var shouldShowARView = false
     var shouldShowFocusSquare = false
     
     weak var delegate: ARManagerDelegate?

@@ -30,6 +30,9 @@
 		88420187255037FF00A72BAD /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88420186255037FF00A72BAD /* Art.scnassets */; };
 		885B702625503F29008643BD /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702525503F29008643BD /* VirtualObject.swift */; };
 		885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702F2550403F008643BD /* ARViewController+Functions.swift */; };
+		88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92BC2551645300BA59BE /* AircraftsView.swift */; };
+		88CA791925515E7700B817DE /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA791825515E7700B817DE /* PersistenceController.swift */; };
+		88F99B2A255154FD00C75CB6 /* NLR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88F99B28255154FD00C75CB6 /* NLR.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		88420186255037FF00A72BAD /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
 		885B702525503F29008643BD /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		885B702F2550403F008643BD /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
+		88AB92BC2551645300BA59BE /* AircraftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsView.swift; sourceTree = "<group>"; };
+		88CA791825515E7700B817DE /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		88F99B29255154FD00C75CB6 /* NLR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NLR.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 				88011F02254AF6190097EA48 /* Helpers */,
 				88011F01254AF6140097EA48 /* API */,
 				88011EDC254AF5F60097EA48 /* Info.plist */,
+				88F99B28255154FD00C75CB6 /* NLR.xcdatamodeld */,
 			);
 			path = NLR;
 			sourceTree = "<group>";
@@ -203,6 +210,7 @@
 		88011F05254AF6AA0097EA48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88AB92BB2551644600BA59BE /* Aircraft View */,
 				88011F10254AF6F90097EA48 /* AR View */,
 				88011ED5254AF5F40097EA48 /* ApplicationView.swift */,
 			);
@@ -265,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				88011F23254AFD6D0097EA48 /* ARViewController */,
+				88CA791825515E7700B817DE /* PersistenceController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,6 +372,14 @@
 				8809B2A32550659F001E6817 /* ARViewController+ViewSetup.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		88AB92BB2551644600BA59BE /* Aircraft View */ = {
+			isa = PBXGroup;
+			children = (
+				88AB92BC2551645300BA59BE /* AircraftsView.swift */,
+			);
+			path = "Aircraft View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +516,7 @@
 				88011ED6254AF5F40097EA48 /* ApplicationView.swift in Sources */,
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
 				88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */,
+				88F99B2A255154FD00C75CB6 /* NLR.xcdatamodeld in Sources */,
 				88011F15254AFC4F0097EA48 /* ARKitView.swift in Sources */,
 				8838824F254B3F44001EF10C /* FocusSquare.swift in Sources */,
 				88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */,
@@ -513,6 +531,8 @@
 				88388247254B3F3C001EF10C /* FocusSquareSegment.swift in Sources */,
 				88011F25254AFD7F0097EA48 /* ARViewController.swift in Sources */,
 				885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */,
+				88CA791925515E7700B817DE /* PersistenceController.swift in Sources */,
+				88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,6 +852,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		88F99B28255154FD00C75CB6 /* NLR.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				88F99B29255154FD00C75CB6 /* NLR.xcdatamodel */,
+			);
+			currentVersion = 88F99B29255154FD00C75CB6 /* NLR.xcdatamodel */;
+			path = NLR.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 88011EC8254AF5F40097EA48 /* Project object */;
 }

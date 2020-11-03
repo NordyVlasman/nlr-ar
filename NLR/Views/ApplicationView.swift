@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct ApplicationView: View {
+    @Environment(\.managedObjectContext) private var context
+    
     @StateObject var arManager = ARManager()
 
     var body: some View {
-        ARKitView()
-            .environmentObject(arManager)
-            .edgesIgnoringSafeArea(.all)
-            .onAppear(perform: {
-                arManager.start()
-                arManager.download()
-            })
+        Group {
+            if arManager.shouldShowARView {
+                ARKitView()
+                    .environmentObject(arManager)
+                    .edgesIgnoringSafeArea(.all)
+                    .onAppear(perform: {
+                        arManager.start()
+                        arManager.download()
+                    })
+            } else {
+                AircraftsView()
+                    .environment(\.managedObjectContext, context)
+                    .environmentObject(arManager)
+            }
+        }
     }
 }
 
