@@ -7,13 +7,9 @@
 
 import Foundation
 import UIKit
-//@objc public enum DamageState: Int32, CaseIterable {
-//    case Damage = 0
-//    case Fixed  = 1
-//}
 
 public enum DamageState: Int32, CaseIterable {
-    case Damage, Fixed
+    case Damage, Fixed, Checked, Problem
 }
 
 extension DamageState: CustomStringConvertible {
@@ -21,8 +17,12 @@ extension DamageState: CustomStringConvertible {
         switch self {
         case .Damage:
             return "Damage"
+        case .Checked:
+            return "Checked"
         case .Fixed:
             return "Fixed"
+        case .Problem:
+            return "Problem"
         }
     }
     
@@ -32,6 +32,10 @@ extension DamageState: CustomStringConvertible {
             return UIColor(named: "Damage")!
         case .Fixed:
             return UIColor(named: "Fixed")!
+        case .Checked:
+            return UIColor(named: "Checked")!
+        case .Problem:
+            return UIColor(named: "Problem")!
         }
     }
 }
