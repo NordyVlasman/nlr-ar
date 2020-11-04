@@ -12,12 +12,20 @@ struct AddDamageView: View {
     @EnvironmentObject var manager: ARManager
     
     @State var name: String = ""
+    @State var selectedItem: DamageState = .Damage
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
                     TextField("Issue", text: $name)
+                    Picker(selection: $selectedItem, label: Text("Status"), content: {
+                        ForEach(DamageState.allCases, id: \.self) { value in
+                            Text(value.description)
+                                .tag(value)
+                        }
+                    })
+                    
                 }
                 Section(header: Text("Verstuur"), content: {
                     Button(action: {
@@ -52,6 +60,7 @@ struct AddDamageView: View {
         damageNode.createdAt = Date()
         damageNode.id = UUID()
         damageNode.title = name
+        damageNode.damageStatus = selectedItem
         damageNode.node = manager.currentNodeName
         damageNode.addToAircraft(aircraft)
         

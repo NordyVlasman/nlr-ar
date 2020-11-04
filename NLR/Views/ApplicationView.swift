@@ -11,6 +11,16 @@ struct ApplicationView: View {
     @Environment(\.managedObjectContext) private var context
     
     @StateObject var arManager = ARManager()
+    
+    var sheetToShow: some View {
+        VStack {
+            if arManager.showDamageDetails {
+                DamageDetailView()
+            } else if arManager.showAddDamage {
+                AddDamageView()
+            }
+        }
+    }
 
     var body: some View {
         Group {
@@ -25,7 +35,7 @@ struct ApplicationView: View {
                             self.arManager.shouldShowDamageModal = !$0
                         }
                     ) {
-                        AddDamageView()
+                        sheetToShow
                             .environment(\.managedObjectContext, context)
                             .environmentObject(arManager)
                     }

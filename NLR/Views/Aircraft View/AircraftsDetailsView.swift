@@ -25,7 +25,11 @@ struct AircraftsDetailsView: View {
                         EditButton()
                     }, content: {
                         ForEach(aircraft.damageNodeArray, id: \.self) { damageNode in
-                            Text(damageNode.title!)
+                            HStack {
+                                Text(damageNode.title!)
+                                Spacer()
+                                Text(damageNode.damageStatus.description)
+                            }
                         }
                         .onDelete(perform: deleteItems)
                     })

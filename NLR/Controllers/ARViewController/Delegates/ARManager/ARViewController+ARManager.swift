@@ -22,9 +22,9 @@ extension ARViewController: ARManagerDelegate {
         let sphereNode = SCNNode(geometry: sphere)
         
         sphereNode.position = SCNVector3(position.x, position.y, position.z)
-        sphereNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        sphereNode.geometry?.firstMaterial?.diffuse.contents = node.damageStatus.color
         sphereNode.accessibilityLabel = "damage"
-        sphereNode.name = node.id?.description
+        sphereNode.name = node.objectID.uriRepresentation().absoluteString
         placedObject?.childNode(withName: node.node!, recursively: true)?.addChildNode(sphereNode)
     }
 }

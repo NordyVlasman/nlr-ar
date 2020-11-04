@@ -16,6 +16,7 @@ class ARViewController: UIViewController {
     let placeVirtualObjectButton: UIButton = UIButton(type: .custom)
     let addIssueButton: UIButton = UIButton(type: .custom)
     let persistenceController = PersistenceController.shared
+    let feedback = UINotificationFeedbackGenerator()
     
     // TODO: - Replace this with the right identifier.
     let updateQueue = DispatchQueue(label: "io.nlr.nlrar")

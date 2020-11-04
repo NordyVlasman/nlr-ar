@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SceneKit
+import Foundation
 import Combine
 
 class ARManager: ObservableObject {
@@ -17,10 +18,18 @@ class ARManager: ObservableObject {
     @Published var currentCoordinates: SCNVector3?
     @Published var currentAircraft: Aircraft?
     @Published var currentNodeName: String?
+    @Published var currentDamageNode: DamageNode?
+    
+    //MARK: - Modal states
+    @Published var showDamageDetails: Bool = false
+    @Published var showAddDamage: Bool = false
 
     var shouldShowFocusSquare = false
     
     weak var delegate: ARManagerDelegate?
+    
+    let persistenceController = PersistenceController.shared
+    let feedback = UINotificationFeedbackGenerator()
     
     private func downloadVirtualObject(completionHandler: (() -> Void)? = nil) {
         guard let scene = SCNScene(named: "Art.scnassets/fullsize/fullsize.scn") else { return }
@@ -50,12 +59,28 @@ class ARManager: ObservableObject {
         //TODO: Reset state of some data
         delegate?.arShouldAddDamageNode(with: damageNode)
         shouldShowDamageModal = true
+        feedback.notificationOccurred(.success)
     }
     
     func addDamageNode(location: SCNVector3, node: String) {
         currentCoordinates = location
         currentNodeName = node
+        showAddDamage = true
         shouldShowDamageModal = false
+    }
+    
+    func showDamageDetails(id: String) {
+        if let objectIDUrl = URL(string: id) {
+           let id =  persistenceController.container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: objectIDUrl)
+            currentDamageNode = persistenceController.container.viewContext.object(with: id!) as? DamageNode
+        }
+        showDamageDetails = true
+        shouldShowDamageModal = false
+    }
+    
+    func hideDamageDetails() {
+        shouldShowDamageModal = true
+        showDamageDetails = false
     }
 }
 
