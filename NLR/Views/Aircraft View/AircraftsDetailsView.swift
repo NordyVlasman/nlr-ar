@@ -14,17 +14,24 @@ struct AircraftsDetailsView: View {
     
     @State var aircraft: Aircraft
     
-    
     var body: some View {
         VStack {
-            List {
-//                    if aircraft.damageNodeArray != nil {
-                ForEach(aircraft.damageNodeArray, id: \.self) { damageNode in
-                    Text(damageNode.title!)
+            AircraftPreview()
+            if !aircraft.damageNodeArray.isEmpty {
+                List {
+                    Section(header: HStack {
+                        Text("Issues")
+                        Spacer()
+                        EditButton()
+                    }, content: {
+                        ForEach(aircraft.damageNodeArray, id: \.self) { damageNode in
+                            Text(damageNode.title!)
+                        }
+                        .onDelete(perform: deleteItems)
+                    })
                 }
-//                    }
+                .listStyle(InsetGroupedListStyle())
             }
-            .listStyle(InsetGroupedListStyle())
             Button(action: {
                 manager.currentAircraft = aircraft
                 manager.shouldShowARView = true
@@ -33,7 +40,19 @@ struct AircraftsDetailsView: View {
             })
         }
         .navigationBarTitle(aircraft.name!)
-        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { aircraft.damageNodeArray[$0] }.forEach(context.delete)
+            
+            do {
+                try context.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
 

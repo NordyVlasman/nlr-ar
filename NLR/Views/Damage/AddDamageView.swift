@@ -50,6 +50,7 @@ struct AddDamageView: View {
 
         damageNode.coordinates = coordinates
         damageNode.createdAt = Date()
+        damageNode.id = UUID()
         damageNode.title = name
         damageNode.node = manager.currentNodeName
         damageNode.addToAircraft(aircraft)

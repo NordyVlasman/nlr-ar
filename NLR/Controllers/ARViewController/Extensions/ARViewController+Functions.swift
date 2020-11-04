@@ -147,6 +147,10 @@ extension ARViewController {
         if !hitTest.isEmpty {
             let results = hitTest.first!
             let tnode = results.node
+            if tnode.accessibilityLabel == "damage" {
+                print("Tapped on \(tnode.name)")
+                return
+            }
             placedObject?.enumerateChildNodes { (node, _) in
                 if tnode == node {
                     manager.addDamageNode(location: hitTest.first!.localCoordinates, node: node.name!)
