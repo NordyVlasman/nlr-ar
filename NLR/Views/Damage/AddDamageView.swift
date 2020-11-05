@@ -35,6 +35,7 @@ struct AddDamageView: View {
                     })
                 })
             }
+            .background(Color.white)
             .navigationBarTitle("Issue toevoegen")
         }
     }

@@ -33,8 +33,17 @@
 		8838827D254B4411001EF10C /* ARViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838827C254B4411001EF10C /* ARViewController+ARSessionDelegate.swift */; };
 		8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839A6522551D4D100DD3EA4 /* AircraftPreview.swift */; };
 		88420187255037FF00A72BAD /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88420186255037FF00A72BAD /* Art.scnassets */; };
+		88436EB82553F81900E50AD3 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EB72553F81900E50AD3 /* Onboarding.swift */; };
+		88436EBD2553F8C800E50AD3 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EBC2553F8C800E50AD3 /* OnboardingView.swift */; };
+		88436EC32553FA6B00E50AD3 /* OnboardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EC22553FA6B00E50AD3 /* OnboardingContainer.swift */; };
+		88436ED52553FE4E00E50AD3 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436ED42553FE4E00E50AD3 /* PageViewController.swift */; };
+		88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EDF2554012400E50AD3 /* PageIndicator.swift */; };
 		885B702625503F29008643BD /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702525503F29008643BD /* VirtualObject.swift */; };
 		885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702F2550403F008643BD /* ARViewController+Functions.swift */; };
+		886A9DC42552F9540055CC67 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DC32552F9540055CC67 /* RoundedCorner.swift */; };
+		886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DC82552F9CE0055CC67 /* View+Extensions.swift */; };
+		886A9DCE2552FA820055CC67 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DCD2552FA820055CC67 /* BottomSheet.swift */; };
+		886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DD2255303B40055CC67 /* Color+Extensions.swift */; };
 		88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92BC2551645300BA59BE /* AircraftsView.swift */; };
 		88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92C2255184EC00BA59BE /* AddDamageView.swift */; };
 		88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */; };
@@ -94,8 +103,17 @@
 		8838827C254B4411001EF10C /* ARViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
 		8839A6522551D4D100DD3EA4 /* AircraftPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftPreview.swift; sourceTree = "<group>"; };
 		88420186255037FF00A72BAD /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
+		88436EB72553F81900E50AD3 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		88436EBC2553F8C800E50AD3 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		88436EC22553FA6B00E50AD3 /* OnboardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainer.swift; sourceTree = "<group>"; };
+		88436ED42553FE4E00E50AD3 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		88436EDF2554012400E50AD3 /* PageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		885B702525503F29008643BD /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		885B702F2550403F008643BD /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
+		886A9DC32552F9540055CC67 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		886A9DC82552F9CE0055CC67 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		886A9DCD2552FA820055CC67 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		886A9DD2255303B40055CC67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		88AB92BC2551645300BA59BE /* AircraftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsView.swift; sourceTree = "<group>"; };
 		88AB92C2255184EC00BA59BE /* AddDamageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDamageView.swift; sourceTree = "<group>"; };
 		88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsDetailsView.swift; sourceTree = "<group>"; };
@@ -206,6 +224,7 @@
 		88011F02254AF6190097EA48 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				886A9DC32552F9540055CC67 /* RoundedCorner.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -221,6 +240,8 @@
 		88011F04254AF6A30097EA48 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				88436EC12553FA5E00E50AD3 /* Onboarding */,
+				886A9DCD2552FA820055CC67 /* BottomSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -252,6 +273,8 @@
 				88388253254B3FAB001EF10C /* ARSCNView+Extensions.swift */,
 				88388258254B40E1001EF10C /* Float4x4+Extensions.swift */,
 				8838825D254B40F9001EF10C /* CGPoint+Extensions.swift */,
+				886A9DC82552F9CE0055CC67 /* View+Extensions.swift */,
+				886A9DD2255303B40055CC67 /* Color+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +282,7 @@
 		88011F08254AF6BA0097EA48 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				88436EB62553F80E00E50AD3 /* Onboarding */,
 				881B1EE62552BC1F0005477E /* Damage */,
 				88AB92D22551995300BA59BE /* Aircraft */,
 				88011F33254B27340097EA48 /* AR */,
@@ -293,6 +317,7 @@
 		88011F22254AFD640097EA48 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				88436ED32553FE4400E50AD3 /* PageViewController */,
 				88011F23254AFD6D0097EA48 /* ARViewController */,
 				88CA791825515E7700B817DE /* PersistenceController.swift */,
 			);
@@ -394,6 +419,32 @@
 				8839A6522551D4D100DD3EA4 /* AircraftPreview.swift */,
 			);
 			path = AircraftPreview;
+			sourceTree = "<group>";
+		};
+		88436EB62553F80E00E50AD3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				88436EB72553F81900E50AD3 /* Onboarding.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		88436EC12553FA5E00E50AD3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				88436EDF2554012400E50AD3 /* PageIndicator.swift */,
+				88436EBC2553F8C800E50AD3 /* OnboardingView.swift */,
+				88436EC22553FA6B00E50AD3 /* OnboardingContainer.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		88436ED32553FE4400E50AD3 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				88436ED42553FE4E00E50AD3 /* PageViewController.swift */,
+			);
+			path = PageViewController;
 			sourceTree = "<group>";
 		};
 		885B702425503F16008643BD /* Virtual Object */ = {
@@ -575,19 +626,26 @@
 				88011ED6254AF5F40097EA48 /* ApplicationView.swift in Sources */,
 				8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */,
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
+				88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */,
 				88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */,
 				881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */,
+				886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */,
 				88F99B2A255154FD00C75CB6 /* NLR.xcdatamodeld in Sources */,
 				88011F15254AFC4F0097EA48 /* ARKitView.swift in Sources */,
 				8838824F254B3F44001EF10C /* FocusSquare.swift in Sources */,
 				88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */,
 				88388264254B41D4001EF10C /* ARManagerDelegate.swift in Sources */,
 				88AB92DF255199E400BA59BE /* Aircraft+CoreDataClass.swift in Sources */,
+				886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */,
+				88436EC32553FA6B00E50AD3 /* OnboardingContainer.swift in Sources */,
+				886A9DCE2552FA820055CC67 /* BottomSheet.swift in Sources */,
 				88AB92D42551996400BA59BE /* Aircraft+CoreDataProperties.swift in Sources */,
 				88388272254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift in Sources */,
+				88436EB82553F81900E50AD3 /* Onboarding.swift in Sources */,
 				881B1EF82552BCA00005477E /* DamageNode+CoreDataClass.swift in Sources */,
 				8838826A254B4218001EF10C /* ARViewController+ARManager.swift in Sources */,
 				88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */,
+				88436EBD2553F8C800E50AD3 /* OnboardingView.swift in Sources */,
 				8809B2A42550659F001E6817 /* ARViewController+ViewSetup.swift in Sources */,
 				881B1EF32552BC960005477E /* DamageNode+CoreDataProperties.swift in Sources */,
 				8838825E254B40F9001EF10C /* CGPoint+Extensions.swift in Sources */,
@@ -597,6 +655,8 @@
 				88388259254B40E1001EF10C /* Float4x4+Extensions.swift in Sources */,
 				88388247254B3F3C001EF10C /* FocusSquareSegment.swift in Sources */,
 				88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */,
+				886A9DC42552F9540055CC67 /* RoundedCorner.swift in Sources */,
+				88436ED52553FE4E00E50AD3 /* PageViewController.swift in Sources */,
 				88011F25254AFD7F0097EA48 /* ARViewController.swift in Sources */,
 				885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */,
 				88CA791925515E7700B817DE /* PersistenceController.swift in Sources */,

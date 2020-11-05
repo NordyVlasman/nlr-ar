@@ -12,6 +12,8 @@ struct ApplicationView: View {
     
     @StateObject var arManager = ARManager()
     
+    var backgroundColor = Color.formBackground
+    
     var sheetToShow: some View {
         VStack {
             if arManager.showDamageDetails {
@@ -28,12 +30,15 @@ struct ApplicationView: View {
                 ARKitView()
                     .environmentObject(arManager)
                     .edgesIgnoringSafeArea(.all)
-                    .sheet(
+                    .bottomSheet(
                         isPresented: Binding {
                             !arManager.shouldShowDamageModal
                         } set: {
                             self.arManager.shouldShowDamageModal = !$0
-                        }
+                        },
+                        height: 600,
+                        topBarBackgroundColor: backgroundColor,
+                        showTopIndicator: true
                     ) {
                         sheetToShow
                             .environment(\.managedObjectContext, context)

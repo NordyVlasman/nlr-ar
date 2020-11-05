@@ -31,6 +31,8 @@ struct AircraftsView: View {
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitle("Overzicht")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+
     }
     
     private func deleteItems(offsets: IndexSet) {
