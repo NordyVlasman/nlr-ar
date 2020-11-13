@@ -13,15 +13,24 @@ import ARKit
 class ARViewController: UIViewController {
     let sceneView: ARSCNView = ARSCNView()
     let coachingOverlayView = ARCoachingOverlayView()
+    let placeVirtualObjectButton: UIButton = UIButton(type: .custom)
+    let addIssueButton: UIButton = UIButton(type: .custom)
+    let persistenceController = PersistenceController.shared
+    let feedback = UINotificationFeedbackGenerator()
     
     // TODO: - Replace this with the right identifier.
-    let updateQueue = DispatchQueue(label: "io.nvlas.nlr")
+    let updateQueue = DispatchQueue(label: "io.nlr.nlrar")
 
-    private var isRestartAvailable = true
-    private var isRunning = false
+    var lastObjectAvailabilityUpdateTimestamp: TimeInterval?
+    var isRestartAvailable = true
+    var isRunning = false
+    var isAddingIssues = false
     
     var manager: ARManager
     var focusSquare = FocusSquare()
+    
+    var placedObject: SCNNode?
+    
     var session: ARSession {
         sceneView.session
     }
@@ -29,6 +38,8 @@ class ARViewController: UIViewController {
     init(arManager: ARManager) {
         self.manager = arManager
         super.init(nibName: nil, bundle: nil)
+        
+        manager.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -39,56 +50,6 @@ class ARViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        restartExperience()
-    }
-}
-
-// MARK: - AR Setup
-extension ARViewController {
-    func setupView() {
-        setupSceneView()
-    }
-    
-    func setupSceneView() {
-        view.addSubview(sceneView)
-        sceneView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            sceneView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            sceneView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            sceneView.topAnchor.constraint(equalTo: view.topAnchor),
-            sceneView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
-    
-    func resetTracking() {
-        let configuration = ARWorldTrackingConfiguration()
-        
-        configuration.isAutoFocusEnabled = true
-        configuration.isLightEstimationEnabled = true
-        configuration.environmentTexturing = .automatic
-        configuration.planeDetection = [.horizontal]
-        configuration.wantsHDREnvironmentTextures = true
-        
-        sceneView.delegate = self
-        sceneView.session.delegate = self
-        sceneView.debugOptions = [.showFeaturePoints, .showConstraints]
-        
-        sceneView.session.run(configuration)
-        setupCoachingOverlay()
-    }
-    
-    func restartExperience() {
-        guard isRestartAvailable else { return }
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.isRestartAvailable = false
-        }
-        
-        resetTracking()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: { [weak self] in
-            self?.isRestartAvailable = true
-        })
     }
 }

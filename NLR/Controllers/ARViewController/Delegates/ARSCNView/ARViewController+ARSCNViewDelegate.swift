@@ -12,6 +12,7 @@ extension ARViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async { [weak self] in
             self?.updateFocusSquare()
+            self?.updateObjectAvailability()
         }
     }
 }
