@@ -44,6 +44,7 @@
 		886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DC82552F9CE0055CC67 /* View+Extensions.swift */; };
 		886A9DCE2552FA820055CC67 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DCD2552FA820055CC67 /* BottomSheet.swift */; };
 		886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DD2255303B40055CC67 /* Color+Extensions.swift */; };
+		888F840B255ED03D00E1CD83 /* thumbclas.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 888F840A255ED03D00E1CD83 /* thumbclas.mlmodel */; };
 		88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92BC2551645300BA59BE /* AircraftsView.swift */; };
 		88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92C2255184EC00BA59BE /* AddDamageView.swift */; };
 		88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */; };
@@ -114,6 +115,7 @@
 		886A9DC82552F9CE0055CC67 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		886A9DCD2552FA820055CC67 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		886A9DD2255303B40055CC67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		888F840A255ED03D00E1CD83 /* thumbclas.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = thumbclas.mlmodel; sourceTree = "<group>"; };
 		88AB92BC2551645300BA59BE /* AircraftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsView.swift; sourceTree = "<group>"; };
 		88AB92C2255184EC00BA59BE /* AddDamageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDamageView.swift; sourceTree = "<group>"; };
 		88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsDetailsView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		88011F06254AF6AE0097EA48 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				888F840A255ED03D00E1CD83 /* thumbclas.mlmodel */,
 				88011ED7254AF5F60097EA48 /* Assets.xcassets */,
 				88011ED9254AF5F60097EA48 /* Preview Content */,
 				88420186255037FF00A72BAD /* Art.scnassets */,
@@ -626,6 +629,7 @@
 				88011ED6254AF5F40097EA48 /* ApplicationView.swift in Sources */,
 				8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */,
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
+				888F840B255ED03D00E1CD83 /* thumbclas.mlmodel in Sources */,
 				88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */,
 				88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */,
 				881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */,

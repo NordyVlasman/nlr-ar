@@ -20,7 +20,7 @@ struct NLRApp: App {
             return true
         } else {
             //TODO: Reset this to false in the base app!
-            return true
+            return false
         }
     }
     

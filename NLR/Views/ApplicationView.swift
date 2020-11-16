@@ -20,6 +20,8 @@ struct ApplicationView: View {
                 DamageDetailView()
             } else if arManager.showAddDamage {
                 AddDamageView()
+            } else if arManager.hasThumbUp {
+                Text("Hello world")
             }
         }
     }
@@ -30,15 +32,26 @@ struct ApplicationView: View {
                 ARKitView()
                     .environmentObject(arManager)
                     .edgesIgnoringSafeArea(.all)
-                    .bottomSheet(
+                    .overlay(
+                        VStack {
+                            if arManager.hasThumbUp {
+                                VStack(alignment: .leading) {
+                                    Text("👍")
+                                }
+                            } else {
+                                VStack(alignment: .leading) {
+                                    Text("👎")
+                                }
+                            }
+                            Spacer()
+                        }
+                    )
+                    .sheet(
                         isPresented: Binding {
                             !arManager.shouldShowDamageModal
                         } set: {
                             self.arManager.shouldShowDamageModal = !$0
-                        },
-                        height: 600,
-                        topBarBackgroundColor: backgroundColor,
-                        showTopIndicator: true
+                        }
                     ) {
                         sheetToShow
                             .environment(\.managedObjectContext, context)

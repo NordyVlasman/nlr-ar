@@ -20,11 +20,17 @@ struct AircraftsView: View {
         NavigationView {
             List {
                 ForEach(aircrafts, id: \.self) { aircraft in
-                    NavigationLink(
-                        destination: AircraftsDetailsView(aircraft: aircraft).environmentObject(manager),
-                        label: {
-                            Text(aircraft.name!)
-                        })
+//                    NavigationLink(
+//                        destination: AircraftsDetailsView(aircraft: aircraft).environmentObject(manager),
+//                        label: {
+//                            Text(aircraft.name!)
+//                        })
+                    Button(action: {
+                        manager.currentAircraft = aircraft
+                        manager.shouldShowARView = true
+                    }, label: {
+                        Text(aircraft.name!)
+                    })
                 }
                 .onDelete(perform: deleteItems)
             }

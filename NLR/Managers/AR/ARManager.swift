@@ -24,6 +24,8 @@ class ARManager: ObservableObject {
     @Published var showDamageDetails: Bool = false
     @Published var showAddDamage: Bool = false
 
+    @Published var hasThumbUp: Bool = false
+    
     var shouldShowFocusSquare = false
     
     weak var delegate: ARManagerDelegate?
@@ -81,6 +83,18 @@ class ARManager: ObservableObject {
     func hideDamageDetails() {
         shouldShowDamageModal = true
         showDamageDetails = false
+    }
+    
+    func thumbUp() {
+        hasThumbUp = true
+        shouldShowDamageModal = false
+
+    }
+    
+    func thumbDown() {
+        if shouldShowDamageModal == true {
+            hasThumbUp = false
+        }
     }
 }
 
