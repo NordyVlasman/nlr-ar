@@ -22,6 +22,7 @@
 		881B1EE82552BC2B0005477E /* DamageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B1EE72552BC2B0005477E /* DamageState.swift */; };
 		881B1EF32552BC960005477E /* DamageNode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B1EF22552BC960005477E /* DamageNode+CoreDataProperties.swift */; };
 		881B1EF82552BCA00005477E /* DamageNode+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B1EF72552BCA00005477E /* DamageNode+CoreDataClass.swift */; };
+		88305706256685D000F17034 /* ThumbClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 88305705256685D000F17034 /* ThumbClassifier.mlmodel */; };
 		88388247254B3F3C001EF10C /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388246254B3F3C001EF10C /* FocusSquareSegment.swift */; };
 		8838824F254B3F44001EF10C /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838824E254B3F44001EF10C /* FocusSquare.swift */; };
 		88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388253254B3FAB001EF10C /* ARSCNView+Extensions.swift */; };
@@ -44,7 +45,9 @@
 		886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DC82552F9CE0055CC67 /* View+Extensions.swift */; };
 		886A9DCE2552FA820055CC67 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DCD2552FA820055CC67 /* BottomSheet.swift */; };
 		886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DD2255303B40055CC67 /* Color+Extensions.swift */; };
-		888F840B255ED03D00E1CD83 /* thumbclas.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 888F840A255ED03D00E1CD83 /* thumbclas.mlmodel */; };
+		8897156A25669601004285B1 /* HandDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897156925669601004285B1 /* HandDetector.swift */; };
+		8897156F25669658004285B1 /* HandModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8897156E25669658004285B1 /* HandModel.mlmodel */; };
+		88971574256698A9004285B1 /* CVPixelBuffer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88971573256698A9004285B1 /* CVPixelBuffer+Extensions.swift */; };
 		88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92BC2551645300BA59BE /* AircraftsView.swift */; };
 		88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92C2255184EC00BA59BE /* AddDamageView.swift */; };
 		88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */; };
@@ -93,6 +96,7 @@
 		881B1EE72552BC2B0005477E /* DamageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageState.swift; sourceTree = "<group>"; };
 		881B1EF22552BC960005477E /* DamageNode+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DamageNode+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		881B1EF72552BCA00005477E /* DamageNode+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DamageNode+CoreDataClass.swift"; sourceTree = "<group>"; };
+		88305705256685D000F17034 /* ThumbClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ThumbClassifier.mlmodel; sourceTree = "<group>"; };
 		88388246254B3F3C001EF10C /* FocusSquareSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
 		8838824E254B3F44001EF10C /* FocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		88388253254B3FAB001EF10C /* ARSCNView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Extensions.swift"; sourceTree = "<group>"; };
@@ -115,7 +119,9 @@
 		886A9DC82552F9CE0055CC67 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		886A9DCD2552FA820055CC67 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		886A9DD2255303B40055CC67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
-		888F840A255ED03D00E1CD83 /* thumbclas.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = thumbclas.mlmodel; sourceTree = "<group>"; };
+		8897156925669601004285B1 /* HandDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandDetector.swift; sourceTree = "<group>"; };
+		8897156E25669658004285B1 /* HandModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HandModel.mlmodel; sourceTree = "<group>"; };
+		88971573256698A9004285B1 /* CVPixelBuffer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Extensions.swift"; sourceTree = "<group>"; };
 		88AB92BC2551645300BA59BE /* AircraftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsView.swift; sourceTree = "<group>"; };
 		88AB92C2255184EC00BA59BE /* AddDamageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDamageView.swift; sourceTree = "<group>"; };
 		88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsDetailsView.swift; sourceTree = "<group>"; };
@@ -262,7 +268,8 @@
 		88011F06254AF6AE0097EA48 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				888F840A255ED03D00E1CD83 /* thumbclas.mlmodel */,
+				8897156E25669658004285B1 /* HandModel.mlmodel */,
+				88305705256685D000F17034 /* ThumbClassifier.mlmodel */,
 				88011ED7254AF5F60097EA48 /* Assets.xcassets */,
 				88011ED9254AF5F60097EA48 /* Preview Content */,
 				88420186255037FF00A72BAD /* Art.scnassets */,
@@ -278,6 +285,7 @@
 				8838825D254B40F9001EF10C /* CGPoint+Extensions.swift */,
 				886A9DC82552F9CE0055CC67 /* View+Extensions.swift */,
 				886A9DD2255303B40055CC67 /* Color+Extensions.swift */,
+				88971573256698A9004285B1 /* CVPixelBuffer+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 		88011F08254AF6BA0097EA48 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				88971568256695F3004285B1 /* Detectors */,
 				88436EB62553F80E00E50AD3 /* Onboarding */,
 				881B1EE62552BC1F0005477E /* Damage */,
 				88AB92D22551995300BA59BE /* Aircraft */,
@@ -467,6 +476,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		88971568256695F3004285B1 /* Detectors */ = {
+			isa = PBXGroup;
+			children = (
+				8897156925669601004285B1 /* HandDetector.swift */,
+			);
+			path = Detectors;
+			sourceTree = "<group>";
+		};
 		88AB92BB2551644600BA59BE /* Aircraft View */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,7 +646,6 @@
 				88011ED6254AF5F40097EA48 /* ApplicationView.swift in Sources */,
 				8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */,
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
-				888F840B255ED03D00E1CD83 /* thumbclas.mlmodel in Sources */,
 				88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */,
 				88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */,
 				881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */,
@@ -637,7 +653,9 @@
 				88F99B2A255154FD00C75CB6 /* NLR.xcdatamodeld in Sources */,
 				88011F15254AFC4F0097EA48 /* ARKitView.swift in Sources */,
 				8838824F254B3F44001EF10C /* FocusSquare.swift in Sources */,
+				88971574256698A9004285B1 /* CVPixelBuffer+Extensions.swift in Sources */,
 				88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */,
+				88305706256685D000F17034 /* ThumbClassifier.mlmodel in Sources */,
 				88388264254B41D4001EF10C /* ARManagerDelegate.swift in Sources */,
 				88AB92DF255199E400BA59BE /* Aircraft+CoreDataClass.swift in Sources */,
 				886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */,
@@ -654,6 +672,7 @@
 				881B1EF32552BC960005477E /* DamageNode+CoreDataProperties.swift in Sources */,
 				8838825E254B40F9001EF10C /* CGPoint+Extensions.swift in Sources */,
 				8838827D254B4411001EF10C /* ARViewController+ARSessionDelegate.swift in Sources */,
+				8897156A25669601004285B1 /* HandDetector.swift in Sources */,
 				881B1EE82552BC2B0005477E /* DamageState.swift in Sources */,
 				885B702625503F29008643BD /* VirtualObject.swift in Sources */,
 				88388259254B40E1001EF10C /* Float4x4+Extensions.swift in Sources */,
@@ -663,6 +682,7 @@
 				88436ED52553FE4E00E50AD3 /* PageViewController.swift in Sources */,
 				88011F25254AFD7F0097EA48 /* ARViewController.swift in Sources */,
 				885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */,
+				8897156F25669658004285B1 /* HandModel.mlmodel in Sources */,
 				88CA791925515E7700B817DE /* PersistenceController.swift in Sources */,
 				88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */,
 			);

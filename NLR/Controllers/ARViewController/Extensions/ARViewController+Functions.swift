@@ -57,10 +57,12 @@ extension ARViewController {
         configuration.environmentTexturing = .automatic
         configuration.planeDetection = [.horizontal]
         configuration.wantsHDREnvironmentTextures = true
-
+        
+//        configuration.frameSemantics.insert(.personSegmentationWithDepth)
+        
         sceneView.delegate = self
         sceneView.session.delegate = self
-        sceneView.debugOptions = [.showFeaturePoints, .showConstraints]
+//        sceneView.debugOptions = [.showFeaturePoints, .showConstraints]
         
         sceneView.session.run(configuration)
         setupCoachingOverlay()
@@ -129,7 +131,6 @@ extension ARViewController {
     func prepareObject() {
         guard let damageNodeArray = manager.currentAircraft?.damageNodeArray else { return }
         for damageNode in damageNodeArray {
-            print("\(damageNode.coordinates!.x) for node \(damageNode.node!)")
             arShouldAddDamageNode(with: damageNode)
         }
     }

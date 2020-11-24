@@ -41,6 +41,11 @@ class ARViewController: UIViewController {
     var dispatchQueueML = DispatchQueue(label: "io.nlr.nlrarml")
     var latestPrediction = ""
     
+    var handPoseRequest = VNDetectHumanHandPoseRequest()
+    var currentBuffer: CVPixelBuffer?
+    
+    let handDetector = HandDetector()
+    
     init(arManager: ARManager) {
         self.manager = arManager
         super.init(nibName: nil, bundle: nil)
@@ -56,13 +61,13 @@ class ARViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        setupML()
+//        setupML()
     }
     
     func setupML() {
         let config = MLModelConfiguration()
         
-        guard let selectedModel = try? VNCoreMLModel(for: thumbclas(configuration: config).model) else {
+        guard let selectedModel = try? VNCoreMLModel(for: ThumbClassifier(configuration: config).model) else {
             fatalError("Cant find the right ML Class")
         }
         
@@ -92,7 +97,7 @@ class ARViewController: UIViewController {
 
             let score: Float? = Float(topPrediction.components(separatedBy: ":")[1].trimmingCharacters(in: .whitespaces))
             if (score != nil && score! > 0.9) {
-                if (topPredictionName == "Thumb up images") {
+                if (topPredictionName == "👍") {
                     self.manager.thumbUp()
                 } else {
                     self.manager.thumbDown()
@@ -116,7 +121,7 @@ class ARViewController: UIViewController {
             try handler.perform(visionRequest)
         } catch {
             print("Error \(error)")
-        }
+        } 
     }
     
     func loopCoreMLUpdate() {
