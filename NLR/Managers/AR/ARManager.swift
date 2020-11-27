@@ -13,6 +13,7 @@ import Combine
 class ARManager: ObservableObject {
     @Published var objectToPlace: VirtualObject?
     @Published var shouldShowARView = false
+    @Published var shouldShowARCheckView = false
     @Published var shouldShowDamageModal: Bool = true
     
     @Published var currentCoordinates: SCNVector3?
@@ -57,6 +58,10 @@ class ARManager: ObservableObject {
         delegate?.arExperienceShouldPause()
     }
     
+    func didPressAdd() {
+        delegate?.arShouldPlaceObject()
+    }
+    
     func submitAddingDamageNode(with damageNode: DamageNode) {
         //TODO: Reset state of some data
         hasAddedDamage = true
@@ -88,6 +93,16 @@ class ARManager: ObservableObject {
     
     func addedModel() {
         shouldShowFocusSquare = false
+    }
+    
+    func finishARScreen() {
+        shouldShowARCheckView = true
+        shouldShowARView = false
+    }
+    
+    func finish() {
+        shouldShowARView = false
+        shouldShowARCheckView = false
     }
 }
 

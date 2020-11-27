@@ -38,6 +38,7 @@
 		88436EC32553FA6B00E50AD3 /* OnboardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EC22553FA6B00E50AD3 /* OnboardingContainer.swift */; };
 		88436ED52553FE4E00E50AD3 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436ED42553FE4E00E50AD3 /* PageViewController.swift */; };
 		88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EDF2554012400E50AD3 /* PageIndicator.swift */; };
+		885B4719257104FD00504BB7 /* CheckDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B4718257104FD00504BB7 /* CheckDamageView.swift */; };
 		885B702625503F29008643BD /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702525503F29008643BD /* VirtualObject.swift */; };
 		885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702F2550403F008643BD /* ARViewController+Functions.swift */; };
 		886A50BC256E9280005B360A /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50BB256E9280005B360A /* AuthenticationView.swift */; };
@@ -114,6 +115,7 @@
 		88436EC22553FA6B00E50AD3 /* OnboardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainer.swift; sourceTree = "<group>"; };
 		88436ED42553FE4E00E50AD3 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		88436EDF2554012400E50AD3 /* PageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
+		885B4718257104FD00504BB7 /* CheckDamageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDamageView.swift; sourceTree = "<group>"; };
 		885B702525503F29008643BD /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		885B702F2550403F008643BD /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
 		886A50BB256E9280005B360A /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		88011F05254AF6AA0097EA48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				885B4717257104F300504BB7 /* Check */,
 				886A50BA256E9271005B360A /* Flow */,
 				88AB92BB2551644600BA59BE /* Aircraft View */,
 				886CAD96256E59A400AF88AE /* Authentication */,
@@ -462,6 +465,14 @@
 			path = PageViewController;
 			sourceTree = "<group>";
 		};
+		885B4717257104F300504BB7 /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				885B4718257104FD00504BB7 /* CheckDamageView.swift */,
+			);
+			path = Check;
+			sourceTree = "<group>";
+		};
 		885B702425503F16008643BD /* Virtual Object */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +671,7 @@
 				88011ED6254AF5F40097EA48 /* ApplicationView.swift in Sources */,
 				8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */,
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
+				885B4719257104FD00504BB7 /* CheckDamageView.swift in Sources */,
 				88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */,
 				88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */,
 				886A50CB256E9C01005B360A /* AppManager.swift in Sources */,

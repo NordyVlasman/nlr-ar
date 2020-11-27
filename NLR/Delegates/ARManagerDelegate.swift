@@ -12,4 +12,7 @@ protocol ARManagerDelegate: class {
     func setupCoachingOverlay()
     func arExperienceShouldPause()
     func arShouldAddDamageNode(with node: DamageNode)
+    
+    func arShouldPlaceObject()
+    func undoDamageNode()
 }

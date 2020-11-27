@@ -9,18 +9,15 @@ import SwiftUI
 
 struct StartView: View {
     @EnvironmentObject var manager: AppManager
-    @State var showTitle: Bool = false
     
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
-                if showTitle {
                     Text("Hello")
                         .font(.system(size: 48, weight: .semibold))
                         .padding()
                         .transition(.opacity)
-                }
                 Spacer()
                 
                 NavigationLink(
@@ -33,16 +30,8 @@ struct StartView: View {
             .padding()
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear{
-            showTitlea()
-        }
     }
     
-    func showTitlea() {
-        withAnimation(.easeInOut(duration: 2), {
-            self.showTitle.toggle()
-        })
-    }
 }
 extension AnyTransition {
     static func moveOrFade(edge: Edge) -> AnyTransition {

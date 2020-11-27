@@ -27,4 +27,12 @@ extension ARViewController: ARManagerDelegate {
         sphereNode.name = node.objectID.uriRepresentation().absoluteString
         placedObject?.childNode(withName: node.node!, recursively: true)?.addChildNode(sphereNode)
     }
+    
+    func arShouldPlaceObject() {
+        self.placeVirtualObject(sender: self)
+    }
+    
+    func undoDamageNode() {
+        
+    }
 }

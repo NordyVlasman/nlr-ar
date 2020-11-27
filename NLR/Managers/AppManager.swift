@@ -10,5 +10,4 @@ import Foundation
 class AppManager: ObservableObject {
     
     @Published var flowFinished: Bool = false
-    
 }
