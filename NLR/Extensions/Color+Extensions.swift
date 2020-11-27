@@ -9,4 +9,5 @@ import SwiftUI
 
 extension Color {
     static let formBackground = Color(UIColor(named: "BG")!)
+    static let backgroundColor = Color(UIColor(named: "Background")!)
 }

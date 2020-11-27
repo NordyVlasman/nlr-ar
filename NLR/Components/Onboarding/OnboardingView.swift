@@ -12,8 +12,15 @@ struct OnboardingView: View {
     
     var body: some View {
         VStack {
+            Image(page.image)
+                .resizable()
+                .frame(width: 300, height: 250, alignment: .center)
             Text(page.title)
-                .font(.title)
+                .bold()
+                .font(.largeTitle)
+            
+            Text(page.description)
+                .padding()
         }
     }
 }

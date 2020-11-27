@@ -13,8 +13,11 @@ import ARKit
 class ARViewController: UIViewController {
     let sceneView: ARSCNView = ARSCNView()
     let coachingOverlayView = ARCoachingOverlayView()
+    
     let placeVirtualObjectButton: UIButton = UIButton(type: .custom)
     let addIssueButton: UIButton = UIButton(type: .custom)
+    let finishARButton: UIButton = UIButton(type: .custom)
+    
     let persistenceController = PersistenceController.shared
     let feedback = UINotificationFeedbackGenerator()
     
@@ -35,6 +38,12 @@ class ARViewController: UIViewController {
         sceneView.session
     }
     
+    //MARK: - New UI
+    let addVirtualObjectButton: UIButton = UIButton(type: .custom)
+    let saveSessionButton: UIButton = UIButton(type: .custom)
+    let undoButton: UIButton = UIButton(type: .custom)
+    let finishSessionButton: UIButton = UIButton(type: .custom)
+    
     init(arManager: ARManager) {
         self.manager = arManager
         super.init(nibName: nil, bundle: nil)
@@ -50,6 +59,14 @@ class ARViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        sceneView.session.pause()
+        session.pause()
         
     }
 }

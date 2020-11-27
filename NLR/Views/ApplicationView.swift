@@ -12,6 +12,8 @@ struct ApplicationView: View {
     
     @StateObject var arManager = ARManager()
     
+    @State var isNumberSelection: Bool = true
+    
     var backgroundColor = Color.formBackground
     
     var sheetToShow: some View {
@@ -30,15 +32,86 @@ struct ApplicationView: View {
                 ARKitView()
                     .environmentObject(arManager)
                     .edgesIgnoringSafeArea(.all)
-                    .bottomSheet(
+                    .overlay(
+                        VStack {
+                            HStack {
+                                Text("\(arManager.currentAircraft?.name ?? "")")
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    .bold()
+                                Spacer()
+                            }
+                            Spacer()
+                            HStack {
+                                VStack {
+                                    Spacer()
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        VStack {
+                                            Image(systemName: "checkmark")
+                                                .font(.headline)
+                                                .foregroundColor(arManager.hasAddedDamage ? Color.white : Color.white.opacity(0.8))
+                                        }
+                                        .padding()
+                                        .background(arManager.hasAddedDamage ? Color.green : Color.gray.opacity(0.8))
+                                        .mask(Circle())
+                                    })
+                                    .padding(.bottom, 5)
+                                    
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        VStack {
+                                            Image(systemName: "archivebox")
+                                                .font(.headline)
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .background(Color.gray.opacity(0.8))
+                                        .mask(Circle())
+                                    })
+                                    .padding(.bottom, 5)
+                                    
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        VStack {
+                                            Image(systemName: "arrow.turn.down.left")
+                                                .font(.headline)
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .background(Color.gray.opacity(0.8))
+                                        .mask(Circle())
+                                    })
+                                }
+                                Spacer()
+                                VStack {
+                                    Spacer()
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        VStack {
+                                            Image(systemName: "plus")
+                                                .font(.title)
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .background(Color.blue)
+                                        .mask(Circle())
+                                    })
+                                }
+                            }
+                        }
+                        .padding()
+                    )
+                    .sheet(
                         isPresented: Binding {
                             !arManager.shouldShowDamageModal
                         } set: {
                             self.arManager.shouldShowDamageModal = !$0
-                        },
-                        height: 600,
-                        topBarBackgroundColor: backgroundColor,
-                        showTopIndicator: true
+                        }
                     ) {
                         sheetToShow
                             .environment(\.managedObjectContext, context)
@@ -49,16 +122,15 @@ struct ApplicationView: View {
                         arManager.download()
                     })
             } else {
-                AircraftsView()
-                    .environment(\.managedObjectContext, context)
-                    .environmentObject(arManager)
+//                if isNumberSelection {
+//                    AircraftSelectionView(showNumberStyle: $isNumberSelection)
+//                        .environmentObject(arManager)
+//                } else {
+                    AircraftsView(showNumberStyle: $isNumberSelection)
+                        .environment(\.managedObjectContext, context)
+                        .environmentObject(arManager)
+//                }
             }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ApplicationView()
     }
 }

@@ -11,9 +11,10 @@ import CoreData
 struct AircraftsView: View {
     @Environment(\.managedObjectContext) private var context
     @EnvironmentObject var manager: ARManager
-    
+    @Binding var showNumberStyle: Bool
+
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Aircraft.name, ascending: true)], animation: .default)
-    
+        
     private var aircrafts: FetchedResults<Aircraft>
     
     var body: some View {
@@ -29,6 +30,11 @@ struct AircraftsView: View {
                 .onDelete(perform: deleteItems)
             }
             .listStyle(InsetGroupedListStyle())
+            .navigationBarItems(trailing: Button(action: {
+                showNumberStyle.toggle()
+            }, label: {
+                Text("Selecteer nummer")
+            }))
             .navigationBarTitle("Overzicht")
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -46,12 +52,5 @@ struct AircraftsView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
-    }
-}
-
-struct AircraftsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AircraftsView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

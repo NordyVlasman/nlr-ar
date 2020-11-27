@@ -15,34 +15,38 @@ struct AircraftsDetailsView: View {
     @State var aircraft: Aircraft
     
     var body: some View {
-        VStack {
-            AircraftPreview()
-            if !aircraft.damageNodeArray.isEmpty {
-                List {
-                    Section(header: HStack {
-                        Text("Issues")
-                        Spacer()
-                        EditButton()
-                    }, content: {
-                        ForEach(aircraft.damageNodeArray, id: \.self) { damageNode in
-                            HStack {
-                                Text(damageNode.title!)
-                                Spacer()
-                                Text(damageNode.damageStatus.description)
+        NavigationView {
+            VStack {
+                AircraftPreview()
+                if !aircraft.damageNodeArray.isEmpty {
+                    List {
+                        Section(header: HStack {
+                            Text("Issues")
+                            Spacer()
+                            EditButton()
+                        }, content: {
+                            ForEach(aircraft.damageNodeArray, id: \.self) { damageNode in
+                                HStack {
+                                    Text(damageNode.title!)
+                                    Spacer()
+                                    Text(damageNode.damageStatus.description)
+                                }
                             }
-                        }
-                        .onDelete(perform: deleteItems)
-                    })
+                            .onDelete(perform: deleteItems)
+                        })
+                    }
+                    .listStyle(InsetGroupedListStyle())
                 }
-                .listStyle(InsetGroupedListStyle())
+                Button(action: {
+                    manager.currentAircraft = aircraft
+                    manager.shouldShowARView = true
+                }, label: {
+                    Text("Show in AR")
+                })
+                Spacer()
             }
-            Button(action: {
-                manager.currentAircraft = aircraft
-                manager.shouldShowARView = true
-            }, label: {
-                Text("Show in AR")
-            })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarTitle(aircraft.name!)
     }
     
@@ -57,12 +61,5 @@ struct AircraftsDetailsView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
-    }
-}
-
-struct AircraftsDetailsView_Previews: PreviewProvider {
-    @State static var aircraft = Aircraft()
-    static var previews: some View {
-        AircraftsDetailsView(aircraft: aircraft)
     }
 }

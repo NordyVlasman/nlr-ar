@@ -31,17 +31,10 @@ struct OnboardingItemView<Page: View>: View {
                 }, label: {
                     Text(currentPage == viewControllers.count - 1 ? "Start" : "Volgende")
                         .bold()
+                        .font(.title2)
                 })
             }
+            .padding()
         }
-    }
-}
-
-struct OnboardingItemView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        OnboardingItemView(viewControllers: Onboarding.data.map({
-            UIHostingController(rootView: OnboardingView(page: $0))
-        }))
     }
 }

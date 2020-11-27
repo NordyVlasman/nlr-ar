@@ -121,6 +121,7 @@ extension ARViewController {
         objectToPlace.isHidden = false
         objectToPlace.isPlaced = true
         placedObject = objectToPlace
+        manager.addedModel()
         manager.shouldShowFocusSquare = false
         
         prepareObject()
@@ -139,6 +140,10 @@ extension ARViewController {
     }
     
     @objc func tapped(sender: UITapGestureRecognizer) {
+        if (placedObject == nil) {
+            placeVirtualObject(sender: self)
+            return
+        }
         ///TODO: - Check if the user tapped Add Report button before doing stuff
         let sceneViewTappedOn = sender.view as! SCNView
         let touchCoordinates = sender.location(in: sceneViewTappedOn)
@@ -159,5 +164,9 @@ extension ARViewController {
                 }
             }
         }
+    }
+    
+    @objc func finishARView(sender: UITapGestureRecognizer) {
+        manager.shouldShowARView = false
     }
 }

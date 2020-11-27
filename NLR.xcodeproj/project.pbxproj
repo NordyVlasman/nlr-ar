@@ -40,10 +40,16 @@
 		88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EDF2554012400E50AD3 /* PageIndicator.swift */; };
 		885B702625503F29008643BD /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702525503F29008643BD /* VirtualObject.swift */; };
 		885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702F2550403F008643BD /* ARViewController+Functions.swift */; };
+		886A50BC256E9280005B360A /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50BB256E9280005B360A /* AuthenticationView.swift */; };
+		886A50C1256E9294005B360A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50C0256E9294005B360A /* StartView.swift */; };
+		886A50C6256E9460005B360A /* SelectAirplaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50C5256E9460005B360A /* SelectAirplaneView.swift */; };
+		886A50CB256E9C01005B360A /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50CA256E9C01005B360A /* AppManager.swift */; };
 		886A9DC42552F9540055CC67 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DC32552F9540055CC67 /* RoundedCorner.swift */; };
 		886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DC82552F9CE0055CC67 /* View+Extensions.swift */; };
 		886A9DCE2552FA820055CC67 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DCD2552FA820055CC67 /* BottomSheet.swift */; };
 		886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DD2255303B40055CC67 /* Color+Extensions.swift */; };
+		886CAD98256E59BE00AF88AE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CAD97256E59BE00AF88AE /* LoginView.swift */; };
+		886CADA0256E60A300AF88AE /* AircraftSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CAD9F256E60A300AF88AE /* AircraftSelectionView.swift */; };
 		88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92BC2551645300BA59BE /* AircraftsView.swift */; };
 		88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92C2255184EC00BA59BE /* AddDamageView.swift */; };
 		88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */; };
@@ -110,10 +116,16 @@
 		88436EDF2554012400E50AD3 /* PageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		885B702525503F29008643BD /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		885B702F2550403F008643BD /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
+		886A50BB256E9280005B360A /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		886A50C0256E9294005B360A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		886A50C5256E9460005B360A /* SelectAirplaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAirplaneView.swift; sourceTree = "<group>"; };
+		886A50CA256E9C01005B360A /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		886A9DC32552F9540055CC67 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		886A9DC82552F9CE0055CC67 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		886A9DCD2552FA820055CC67 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		886A9DD2255303B40055CC67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		886CAD97256E59BE00AF88AE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		886CAD9F256E60A300AF88AE /* AircraftSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftSelectionView.swift; sourceTree = "<group>"; };
 		88AB92BC2551645300BA59BE /* AircraftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsView.swift; sourceTree = "<group>"; };
 		88AB92C2255184EC00BA59BE /* AddDamageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDamageView.swift; sourceTree = "<group>"; };
 		88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsDetailsView.swift; sourceTree = "<group>"; };
@@ -233,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				88011F19254AFCD50097EA48 /* AR */,
+				886A50CA256E9C01005B360A /* AppManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -249,8 +262,10 @@
 		88011F05254AF6AA0097EA48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				88AB92C1255184E200BA59BE /* Damage */,
+				886A50BA256E9271005B360A /* Flow */,
 				88AB92BB2551644600BA59BE /* Aircraft View */,
+				886CAD96256E59A400AF88AE /* Authentication */,
+				88AB92C1255184E200BA59BE /* Damage */,
 				88011F10254AF6F90097EA48 /* AR View */,
 				88011ED5254AF5F40097EA48 /* ApplicationView.swift */,
 			);
@@ -464,12 +479,31 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		886A50BA256E9271005B360A /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				886A50BB256E9280005B360A /* AuthenticationView.swift */,
+				886A50C0256E9294005B360A /* StartView.swift */,
+				886A50C5256E9460005B360A /* SelectAirplaneView.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		886CAD96256E59A400AF88AE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				886CAD97256E59BE00AF88AE /* LoginView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		88AB92BB2551644600BA59BE /* Aircraft View */ = {
 			isa = PBXGroup;
 			children = (
 				8839A6512551D4BF00DD3EA4 /* AircraftPreview */,
 				88AB92BC2551645300BA59BE /* AircraftsView.swift */,
 				88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */,
+				886CAD9F256E60A300AF88AE /* AircraftSelectionView.swift */,
 			);
 			path = "Aircraft View";
 			sourceTree = "<group>";
@@ -628,6 +662,7 @@
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
 				88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */,
 				88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */,
+				886A50CB256E9C01005B360A /* AppManager.swift in Sources */,
 				881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */,
 				886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */,
 				88F99B2A255154FD00C75CB6 /* NLR.xcdatamodeld in Sources */,
@@ -649,17 +684,22 @@
 				8809B2A42550659F001E6817 /* ARViewController+ViewSetup.swift in Sources */,
 				881B1EF32552BC960005477E /* DamageNode+CoreDataProperties.swift in Sources */,
 				8838825E254B40F9001EF10C /* CGPoint+Extensions.swift in Sources */,
+				886CADA0256E60A300AF88AE /* AircraftSelectionView.swift in Sources */,
 				8838827D254B4411001EF10C /* ARViewController+ARSessionDelegate.swift in Sources */,
 				881B1EE82552BC2B0005477E /* DamageState.swift in Sources */,
 				885B702625503F29008643BD /* VirtualObject.swift in Sources */,
 				88388259254B40E1001EF10C /* Float4x4+Extensions.swift in Sources */,
 				88388247254B3F3C001EF10C /* FocusSquareSegment.swift in Sources */,
 				88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */,
+				886A50C1256E9294005B360A /* StartView.swift in Sources */,
 				886A9DC42552F9540055CC67 /* RoundedCorner.swift in Sources */,
 				88436ED52553FE4E00E50AD3 /* PageViewController.swift in Sources */,
 				88011F25254AFD7F0097EA48 /* ARViewController.swift in Sources */,
+				886A50C6256E9460005B360A /* SelectAirplaneView.swift in Sources */,
 				885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */,
+				886A50BC256E9280005B360A /* AuthenticationView.swift in Sources */,
 				88CA791925515E7700B817DE /* PersistenceController.swift in Sources */,
+				886CAD98256E59BE00AF88AE /* LoginView.swift in Sources */,
 				88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -818,6 +858,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"NLR/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = 8BUR3H37HV;
 				ENABLE_PREVIEWS = YES;
@@ -840,6 +881,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"NLR/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = 8BUR3H37HV;
 				ENABLE_PREVIEWS = YES;

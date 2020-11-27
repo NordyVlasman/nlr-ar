@@ -23,6 +23,8 @@ class ARManager: ObservableObject {
     //MARK: - Modal states
     @Published var showDamageDetails: Bool = false
     @Published var showAddDamage: Bool = false
+    
+    @Published var hasAddedDamage: Bool = false
 
     var shouldShowFocusSquare = false
     
@@ -57,6 +59,7 @@ class ARManager: ObservableObject {
     
     func submitAddingDamageNode(with damageNode: DamageNode) {
         //TODO: Reset state of some data
+        hasAddedDamage = true
         delegate?.arShouldAddDamageNode(with: damageNode)
         shouldShowDamageModal = true
         feedback.notificationOccurred(.success)
@@ -81,6 +84,10 @@ class ARManager: ObservableObject {
     func hideDamageDetails() {
         shouldShowDamageModal = true
         showDamageDetails = false
+    }
+    
+    func addedModel() {
+        shouldShowFocusSquare = false
     }
 }
 
