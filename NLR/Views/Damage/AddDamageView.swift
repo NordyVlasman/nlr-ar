@@ -74,9 +74,3 @@ struct AddDamageView: View {
         manager.submitAddingDamageNode(with: damageNode)
     }
 }
-
-struct AddDamageView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddDamageView()
-    }
-}

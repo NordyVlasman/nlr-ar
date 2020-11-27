@@ -23,9 +23,12 @@ struct CheckDamageView: View {
                 })
             }
             .alert(isPresented: $checkAlert) {
-                Alert(title: Text("Hey"), message: Text("HEY"), primaryButton: .default(Text("JOE"), action: {
-                    manager.finish()
-                }), secondaryButton: .cancel())
+                Alert(title: Text("Weet je het zeker?"),
+                      message: Text("Weet je zeker dat je je sessie wilt afronden?"),
+                      primaryButton: .default(Text("Ja"), action: {
+                        manager.finish()
+                      }),
+                      secondaryButton: .cancel())
             }
             .navigationBarTitle("Check")
         }
