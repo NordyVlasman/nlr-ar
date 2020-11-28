@@ -104,5 +104,8 @@ class ARManager: ObservableObject {
         shouldShowARView = false
         shouldShowARCheckView = false
     }
+    
+    //MARK: - New UI
+
 }
 

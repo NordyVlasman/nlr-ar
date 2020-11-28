@@ -14,8 +14,26 @@ struct AircraftsDetailsView: View {
     
     @State var aircraft: Aircraft
     
+    var showInAR: some View {
+        Button(action: {
+            manager.currentAircraft = aircraft
+            manager.shouldShowARView = true
+        }, label: {
+            HStack {
+                Text("Show in AR")
+                    .foregroundColor(.white)
+                Spacer()
+                Image(systemName: "arkit")
+                    .foregroundColor(.white)
+            }
+        })
+        .padding()
+        .background(Color.blue)
+        .cornerRadius(7)
+        .padding()
+    }
+    
     var body: some View {
-        NavigationView {
             VStack {
                 AircraftPreview()
                 if !aircraft.damageNodeArray.isEmpty {
@@ -37,17 +55,11 @@ struct AircraftsDetailsView: View {
                     }
                     .listStyle(InsetGroupedListStyle())
                 }
-                Button(action: {
-                    manager.currentAircraft = aircraft
-                    manager.shouldShowARView = true
-                }, label: {
-                    Text("Show in AR")
-                })
+                showInAR
                 Spacer()
             }
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
-        .navigationBarTitle(aircraft.name!)
+            .navigationBarTitle(aircraft.name!)
+
     }
     
     private func deleteItems(offsets: IndexSet) {

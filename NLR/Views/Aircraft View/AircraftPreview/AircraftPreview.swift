@@ -16,7 +16,7 @@ struct AircraftPreview: UIViewRepresentable {
         cameraNode.camera = SCNCamera()
         scene.rootNode.addChildNode(cameraNode)
         
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+        cameraNode.position = SCNVector3(x: 0, y: 1.4, z: 13)
         
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
@@ -31,7 +31,7 @@ struct AircraftPreview: UIViewRepresentable {
         ambientLightNode.light!.type = .ambient
         ambientLightNode.light!.color = UIColor.darkGray
         scene.rootNode.addChildNode(ambientLightNode)
-
+        scene.rootNode.scale = SCNVector3(10, 10, 10)
         // retrieve the SCNView
         let scnView = SCNView()
         return scnView
@@ -44,11 +44,3 @@ struct AircraftPreview: UIViewRepresentable {
         uiView.backgroundColor = .clear
     }
 }
-
-#if DEBUG
-struct AircraftPreview_Previews: PreviewProvider {
-    static var previews: some View {
-        AircraftPreview()
-    }
-}
-#endif

@@ -39,6 +39,10 @@
 		88436ED52553FE4E00E50AD3 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436ED42553FE4E00E50AD3 /* PageViewController.swift */; };
 		88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EDF2554012400E50AD3 /* PageIndicator.swift */; };
 		885B4719257104FD00504BB7 /* CheckDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B4718257104FD00504BB7 /* CheckDamageView.swift */; };
+		885B472525710ADA00504BB7 /* QRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B472425710ADA00504BB7 /* QRView.swift */; };
+		885B472E25710AF900504BB7 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B472D25710AF900504BB7 /* QRScannerView.swift */; };
+		885B473325710B3F00504BB7 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B473225710B3F00504BB7 /* QRScannerViewController.swift */; };
+		885B473925710C0100504BB7 /* Scanner+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B473825710C0100504BB7 /* Scanner+Coordinator.swift */; };
 		885B702625503F29008643BD /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702525503F29008643BD /* VirtualObject.swift */; };
 		885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702F2550403F008643BD /* ARViewController+Functions.swift */; };
 		886A50BC256E9280005B360A /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50BB256E9280005B360A /* AuthenticationView.swift */; };
@@ -116,6 +120,10 @@
 		88436ED42553FE4E00E50AD3 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		88436EDF2554012400E50AD3 /* PageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		885B4718257104FD00504BB7 /* CheckDamageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDamageView.swift; sourceTree = "<group>"; };
+		885B472425710ADA00504BB7 /* QRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRView.swift; sourceTree = "<group>"; };
+		885B472D25710AF900504BB7 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		885B473225710B3F00504BB7 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		885B473825710C0100504BB7 /* Scanner+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scanner+Coordinator.swift"; sourceTree = "<group>"; };
 		885B702525503F29008643BD /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		885B702F2550403F008643BD /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
 		886A50BB256E9280005B360A /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -264,6 +272,7 @@
 		88011F05254AF6AA0097EA48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				885B472325710AC000504BB7 /* QR View */,
 				885B4717257104F300504BB7 /* Check */,
 				886A50BA256E9271005B360A /* Flow */,
 				88AB92BB2551644600BA59BE /* Aircraft View */,
@@ -473,6 +482,33 @@
 			path = Check;
 			sourceTree = "<group>";
 		};
+		885B472325710AC000504BB7 /* QR View */ = {
+			isa = PBXGroup;
+			children = (
+				885B472C25710AEC00504BB7 /* Scanner */,
+				885B472425710ADA00504BB7 /* QRView.swift */,
+			);
+			path = "QR View";
+			sourceTree = "<group>";
+		};
+		885B472C25710AEC00504BB7 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				885B473725710BF700504BB7 /* Extensions */,
+				885B472D25710AF900504BB7 /* QRScannerView.swift */,
+				885B473225710B3F00504BB7 /* QRScannerViewController.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		885B473725710BF700504BB7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				885B473825710C0100504BB7 /* Scanner+Coordinator.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		885B702425503F16008643BD /* Virtual Object */ = {
 			isa = PBXGroup;
 			children = (
@@ -673,6 +709,7 @@
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
 				885B4719257104FD00504BB7 /* CheckDamageView.swift in Sources */,
 				88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */,
+				885B473325710B3F00504BB7 /* QRScannerViewController.swift in Sources */,
 				88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */,
 				886A50CB256E9C01005B360A /* AppManager.swift in Sources */,
 				881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */,
@@ -689,7 +726,9 @@
 				88AB92D42551996400BA59BE /* Aircraft+CoreDataProperties.swift in Sources */,
 				88388272254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift in Sources */,
 				88436EB82553F81900E50AD3 /* Onboarding.swift in Sources */,
+				885B472E25710AF900504BB7 /* QRScannerView.swift in Sources */,
 				881B1EF82552BCA00005477E /* DamageNode+CoreDataClass.swift in Sources */,
+				885B473925710C0100504BB7 /* Scanner+Coordinator.swift in Sources */,
 				8838826A254B4218001EF10C /* ARViewController+ARManager.swift in Sources */,
 				88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */,
 				88436EBD2553F8C800E50AD3 /* OnboardingView.swift in Sources */,
@@ -710,6 +749,7 @@
 				886A50C6256E9460005B360A /* SelectAirplaneView.swift in Sources */,
 				885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */,
 				886A50BC256E9280005B360A /* AuthenticationView.swift in Sources */,
+				885B472525710ADA00504BB7 /* QRView.swift in Sources */,
 				88CA791925515E7700B817DE /* PersistenceController.swift in Sources */,
 				886CAD98256E59BE00AF88AE /* LoginView.swift in Sources */,
 				88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */,

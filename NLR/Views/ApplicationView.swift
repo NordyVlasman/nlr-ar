@@ -37,6 +37,12 @@ struct ApplicationView: View {
                             .font(.title)
                             .foregroundColor(.white)
                             .bold()
+                        VStack {
+                            Text("i")
+                                .font(.caption)
+                                .foregroundColor(.white)
+                                .bold()
+                        }
                         Spacer()
                     }
                     Spacer()

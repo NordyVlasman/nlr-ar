@@ -13,6 +13,14 @@ struct SelectAirplaneView: View {
 
     @State var number: String = ""
     
+    @State var showScanModel: Bool = false {
+        didSet {
+            if showScanModel == false {
+                manager.flowFinished.toggle()
+            }
+        }
+    }
+    
     var body: some View {
         List {
             Section {
@@ -39,7 +47,7 @@ struct SelectAirplaneView: View {
             Section {
                 TextField("Tail number", text: $number)
                 Button(action: {
-                    manager.flowFinished.toggle()
+                    submitForm()
                 }, label: {
                     HStack {
                         Text("Lets Work")
@@ -51,7 +59,7 @@ struct SelectAirplaneView: View {
             HStack() {
                 Spacer()
                 Button(action: {
-                    manager.flowFinished.toggle()
+                    showScanModel.toggle()
                 }, label: {
                     Text("Want to scan?")
                 })
@@ -75,6 +83,16 @@ struct SelectAirplaneView: View {
                 colorScheme == .light ? Color(UIColor.secondarySystemBackground) : Color(UIColor.systemBackground)
             )
         }
+        .sheet(isPresented: $showScanModel, content: {
+            QRView(showModal: $showScanModel)
+                .environmentObject(manager)
+        })
         .listStyle(InsetGroupedListStyle())
+    }
+    
+    func submitForm() {
+        if number == "j-144" {
+            manager.flowFinished.toggle()
+        }
     }
 }

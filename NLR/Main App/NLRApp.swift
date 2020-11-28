@@ -44,25 +44,6 @@ struct NLRApp: App {
                         .environmentObject(appManager)
                 }
             }
-//            if isFirstLaunch() && !onboardingDone {
-//                OnboardingItemView(viewControllers: Onboarding.data.map({
-//                    UIHostingController(rootView: OnboardingView(page: $0))
-//                }), onComplete: {
-//                    withAnimation {
-//                        onboardingDone = true
-//                    }
-//                }).transition(.scale)
-//            } else {
-//                if !loggedIn {
-//                    LoginView(loggedIn: $loggedIn)
-//                } else {
-//                    ApplicationView()
-//                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//                        .onAppear {
-//                            persistenceController.fetchAircrafts()
-//                        }
-//                }
-//            }
         }
     }
 }
