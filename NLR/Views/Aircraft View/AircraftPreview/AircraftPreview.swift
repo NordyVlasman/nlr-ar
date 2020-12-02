@@ -91,12 +91,7 @@ class SummaryPreviewView: UIView {
         scene.rootNode.addChildNode(cameraControlNode)
     }
     
-    public func setupContent() {
-        contentNode.childNodes
-            .forEach({
-                $0.removeFromParentNode()
-            })
-        
+    public func setupContent() {        
         guard let sceneView = SCNScene(named: "Art.scnassets/fullsize/fullsize.scn") else { return }
         let nodeToPlace = sceneView.rootNode
         
