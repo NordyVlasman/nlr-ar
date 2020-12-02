@@ -16,6 +16,7 @@ extension ARViewController: ARBaseDelegate {
     }
     
     func arBaseViewDidTap(on virtualObject: ARBaseVirtualObject?, withHitTest hitTest: [SCNHitTestResult]?) {
+        if virtualObject == nil { return }
         if virtualObject!.isEditing {
             return
         }

@@ -35,7 +35,7 @@ struct AircraftsDetailsView: View {
     
     var body: some View {
             VStack {
-                AircraftPreview()
+                AircraftPreview(problems: aircraft.damageNodeArray)
                 if !aircraft.damageNodeArray.isEmpty {
                     List {
                         Section(header: HStack {

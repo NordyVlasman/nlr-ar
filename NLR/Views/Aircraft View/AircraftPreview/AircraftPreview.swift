@@ -10,8 +10,10 @@ import SceneKit
 
 struct AircraftPreview: UIViewRepresentable {
     
+    var problems: [DamageNode]
+    
     func makeUIView(context: Context) -> SummaryPreviewView {
-        let previewView = SummaryPreviewView()
+        let previewView = SummaryPreviewView(problems: problems)
         previewView.backgroundColor = .clear
         previewView.sceneView.backgroundColor = UIColor(white: 0,
                                                         alpha: 0)
@@ -31,18 +33,20 @@ class SummaryPreviewView: UIView {
     var contentNode: SCNNode!
     var scene: SCNScene!
     
+    var problems: [DamageNode]
     
     
-    init() {
+    init(problems: [DamageNode]) {
+        self.problems = problems
         sceneView = SCNView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 3), options: [:])
         super.init(frame: .zero)
         backgroundColor = .clear
-        
         setupView()
         setupGesture()
         setupScene()
         setupCamera()
         setupContent()
+        prepareObject()
     }
     
     required init?(coder: NSCoder) {
@@ -97,7 +101,7 @@ class SummaryPreviewView: UIView {
         let nodeToPlace = sceneView.rootNode
         
         nodeToPlace.scale = SCNVector3(0.3, 0.3, 0.3)
-        nodeToPlace.position = SCNVector3(0, 0, 0)
+        nodeToPlace.position = SCNVector3(0, 0.5, 0)
         nodeToPlace.eulerAngles = SCNVector3(0, -Float.pi / 6, 0)
 
         contentNode.addChildNode(nodeToPlace)
@@ -123,6 +127,7 @@ class SummaryPreviewView: UIView {
                 self?.playInitialAnimation()
             }
         }
+        
     }
     
     private func playInitialAnimation() {
@@ -143,6 +148,29 @@ class SummaryPreviewView: UIView {
                                                                                         contentNode?.eulerAngles = SCNVector3(0, 0, 0)
                                                                                      })
                                              })
+    }
+    
+    func prepareObject() {
+        for damageNode in problems {
+            addDamageNode(damageNode)
+        }
+    }
+    
+    func addDamageNode(_ node: DamageNode) {
+        guard let position = node.coordinates else  {
+            return
+        }
+        
+        let sphere = SCNSphere(radius: 0.1)
+        let sphereNode = SCNNode(geometry: sphere)
+        
+        sphereNode.position = SCNVector3(position.x, position.y, position.z)
+        sphereNode.geometry?.firstMaterial?.diffuse.contents = node.damageStatus.color
+        sphereNode.accessibilityLabel = "damage"
+        sphereNode.name = node.objectID.uriRepresentation().absoluteString
+        
+        contentNode.childNode(withName: node.node!, recursively: true)?.addChildNode(sphereNode)
+
     }
     
     @objc func panGestureDidPan(_ sender: UIPanGestureRecognizer) {
