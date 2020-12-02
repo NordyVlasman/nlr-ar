@@ -11,6 +11,7 @@ struct ApplicationView: View {
     @Environment(\.managedObjectContext) private var context
     
     @StateObject var arManager = ARManager()
+    @EnvironmentObject var appManager: AppManager
     
     @State var isNumberSelection: Bool = true
     
@@ -29,78 +30,19 @@ struct ApplicationView: View {
     var arView: some View {
         ARKitView()
             .environmentObject(arManager)
+            .environmentObject(appManager)
             .edgesIgnoringSafeArea(.all)
             .overlay(
                 VStack {
-                    HStack {
-                        Text("\(arManager.currentAircraft?.name ?? "")")
-                            .font(.title)
-                            .foregroundColor(.white)
-                            .bold()
-                        VStack {
-                            Text("i")
-                                .font(.caption)
-                                .foregroundColor(.white)
-                                .bold()
-                        }
-                        Spacer()
-                    }
                     Spacer()
                     HStack {
-                        VStack {
-                            Spacer()
+                        Spacer()
+                        if appManager.isEditingModel {
                             Button(action: {
-                                if arManager.hasAddedDamage {
-                                    arManager.finishARScreen()
-                                }
+                                appManager.stopEditingModel()
                             }, label: {
                                 VStack {
                                     Image(systemName: "checkmark")
-                                        .font(.headline)
-                                        .foregroundColor(arManager.hasAddedDamage ? Color.white : Color.white.opacity(0.8))
-                                }
-                                .padding()
-                                .background(arManager.hasAddedDamage ? Color.green : Color.gray.opacity(0.8))
-                                .mask(Circle())
-                            })
-                            .padding(.bottom, 5)
-                            
-                            Button(action: {
-                                
-                            }, label: {
-                                VStack {
-                                    Image(systemName: "archivebox")
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                }
-                                .padding()
-                                .background(Color.gray.opacity(0.8))
-                                .mask(Circle())
-                            })
-                            .padding(.bottom, 5)
-                            
-                            Button(action: {
-                                
-                            }, label: {
-                                VStack {
-                                    Image(systemName: "arrow.turn.down.left")
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                }
-                                .padding()
-                                .background(Color.gray.opacity(0.8))
-                                .mask(Circle())
-                            })
-                        }
-                        Spacer()
-                        
-                        VStack {
-                            Spacer()
-                            Button(action: {
-                                arManager.didPressAdd()
-                            }, label: {
-                                VStack {
-                                    Image(systemName: "plus")
                                         .font(.title)
                                         .foregroundColor(.white)
                                 }
@@ -109,7 +51,9 @@ struct ApplicationView: View {
                                 .mask(Circle())
                             })
                         }
+                        Spacer()
                     }
+                    .padding(.bottom, 6)
                 }
                 .padding()
             )

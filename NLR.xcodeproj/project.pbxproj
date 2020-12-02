@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,9 +15,6 @@
 		88011EF1254AF5F60097EA48 /* NLRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88011EF0254AF5F60097EA48 /* NLRUITests.swift */; };
 		88011F15254AFC4F0097EA48 /* ARKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88011F14254AFC4F0097EA48 /* ARKitView.swift */; };
 		88011F1B254AFCE00097EA48 /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88011F1A254AFCE00097EA48 /* ARManager.swift */; };
-		88011F25254AFD7F0097EA48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88011F24254AFD7F0097EA48 /* ARViewController.swift */; };
-		88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88011F2A254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift */; };
-		8809B2A42550659F001E6817 /* ARViewController+ViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8809B2A32550659F001E6817 /* ARViewController+ViewSetup.swift */; };
 		881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B1EE12552AAA90005477E /* DamageDetailView.swift */; };
 		881B1EE82552BC2B0005477E /* DamageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B1EE72552BC2B0005477E /* DamageState.swift */; };
 		881B1EF32552BC960005477E /* DamageNode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B1EF22552BC960005477E /* DamageNode+CoreDataProperties.swift */; };
@@ -28,10 +25,15 @@
 		88388259254B40E1001EF10C /* Float4x4+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388258254B40E1001EF10C /* Float4x4+Extensions.swift */; };
 		8838825E254B40F9001EF10C /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838825D254B40F9001EF10C /* CGPoint+Extensions.swift */; };
 		88388264254B41D4001EF10C /* ARManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388263254B41D4001EF10C /* ARManagerDelegate.swift */; };
-		8838826A254B4218001EF10C /* ARViewController+ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388269254B4218001EF10C /* ARViewController+ARManager.swift */; };
-		88388272254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388271254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift */; };
-		8838827D254B4411001EF10C /* ARViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838827C254B4411001EF10C /* ARViewController+ARSessionDelegate.swift */; };
 		8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839A6522551D4D100DD3EA4 /* AircraftPreview.swift */; };
+		883EDCCC25778EE200C3764B /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCCB25778EE200C3764B /* ARViewController.swift */; };
+		883EDCD225778F0600C3764B /* package-arbase in Frameworks */ = {isa = PBXBuildFile; productRef = 883EDCD125778F0600C3764B /* package-arbase */; };
+		883EDCD82577910400C3764B /* ARViewController+ARBaseViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCD72577910400C3764B /* ARViewController+ARBaseViewDelegate.swift */; };
+		883EDCE12577921400C3764B /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCE02577921400C3764B /* ARViewController+Functions.swift */; };
+		883EDCEC257793A100C3764B /* ARBase.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 883EDCEB257793A100C3764B /* ARBase.scnassets */; };
+		883EDCF2257794C800C3764B /* ARViewController+ARManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCF1257794C800C3764B /* ARViewController+ARManagerDelegate.swift */; };
+		883EDCFA2577951100C3764B /* AppManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCF92577951100C3764B /* AppManagerDelegate.swift */; };
+		883EDD002577955400C3764B /* ARViewController+AppManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCFF2577955400C3764B /* ARViewController+AppManagerDelegate.swift */; };
 		88420187255037FF00A72BAD /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88420186255037FF00A72BAD /* Art.scnassets */; };
 		88436EB82553F81900E50AD3 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EB72553F81900E50AD3 /* Onboarding.swift */; };
 		88436EBD2553F8C800E50AD3 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EBC2553F8C800E50AD3 /* OnboardingView.swift */; };
@@ -44,7 +46,6 @@
 		885B473325710B3F00504BB7 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B473225710B3F00504BB7 /* QRScannerViewController.swift */; };
 		885B473925710C0100504BB7 /* Scanner+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B473825710C0100504BB7 /* Scanner+Coordinator.swift */; };
 		885B702625503F29008643BD /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702525503F29008643BD /* VirtualObject.swift */; };
-		885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702F2550403F008643BD /* ARViewController+Functions.swift */; };
 		886A50BC256E9280005B360A /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50BB256E9280005B360A /* AuthenticationView.swift */; };
 		886A50C1256E9294005B360A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50C0256E9294005B360A /* StartView.swift */; };
 		886A50C6256E9460005B360A /* SelectAirplaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50C5256E9460005B360A /* SelectAirplaneView.swift */; };
@@ -96,9 +97,6 @@
 		88011EF2254AF5F60097EA48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88011F14254AFC4F0097EA48 /* ARKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitView.swift; sourceTree = "<group>"; };
 		88011F1A254AFCE00097EA48 /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
-		88011F24254AFD7F0097EA48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
-		88011F2A254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARCoachingOverlay.swift"; sourceTree = "<group>"; };
-		8809B2A32550659F001E6817 /* ARViewController+ViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ViewSetup.swift"; sourceTree = "<group>"; };
 		881B1EE12552AAA90005477E /* DamageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageDetailView.swift; sourceTree = "<group>"; };
 		881B1EE72552BC2B0005477E /* DamageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageState.swift; sourceTree = "<group>"; };
 		881B1EF22552BC960005477E /* DamageNode+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DamageNode+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -109,10 +107,14 @@
 		88388258254B40E1001EF10C /* Float4x4+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float4x4+Extensions.swift"; sourceTree = "<group>"; };
 		8838825D254B40F9001EF10C /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		88388263254B41D4001EF10C /* ARManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManagerDelegate.swift; sourceTree = "<group>"; };
-		88388269254B4218001EF10C /* ARViewController+ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARManager.swift"; sourceTree = "<group>"; };
-		88388271254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
-		8838827C254B4411001EF10C /* ARViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
 		8839A6522551D4D100DD3EA4 /* AircraftPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftPreview.swift; sourceTree = "<group>"; };
+		883EDCCB25778EE200C3764B /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		883EDCD72577910400C3764B /* ARViewController+ARBaseViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARBaseViewDelegate.swift"; sourceTree = "<group>"; };
+		883EDCE02577921400C3764B /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
+		883EDCEB257793A100C3764B /* ARBase.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = ARBase.scnassets; sourceTree = "<group>"; };
+		883EDCF1257794C800C3764B /* ARViewController+ARManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARManagerDelegate.swift"; sourceTree = "<group>"; };
+		883EDCF92577951100C3764B /* AppManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManagerDelegate.swift; sourceTree = "<group>"; };
+		883EDCFF2577955400C3764B /* ARViewController+AppManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+AppManagerDelegate.swift"; sourceTree = "<group>"; };
 		88420186255037FF00A72BAD /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
 		88436EB72553F81900E50AD3 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		88436EBC2553F8C800E50AD3 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 		885B473225710B3F00504BB7 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		885B473825710C0100504BB7 /* Scanner+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scanner+Coordinator.swift"; sourceTree = "<group>"; };
 		885B702525503F29008643BD /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
-		885B702F2550403F008643BD /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
 		886A50BB256E9280005B360A /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		886A50C0256E9294005B360A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		886A50C5256E9460005B360A /* SelectAirplaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAirplaneView.swift; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883EDCD225778F0600C3764B /* package-arbase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +289,7 @@
 		88011F06254AF6AE0097EA48 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				883EDCEB257793A100C3764B /* ARBase.scnassets */,
 				88011ED7254AF5F60097EA48 /* Assets.xcassets */,
 				88011ED9254AF5F60097EA48 /* Preview Content */,
 				88420186255037FF00A72BAD /* Art.scnassets */,
@@ -354,19 +357,13 @@
 		88011F23254AFD6D0097EA48 /* ARViewController */ = {
 			isa = PBXGroup;
 			children = (
-				885B702E25504034008643BD /* Extensions */,
-				88388270254B43D5001EF10C /* Delegates */,
-				88011F24254AFD7F0097EA48 /* ARViewController.swift */,
+				883EDCFE2577954700C3764B /* ARViewController+AppManagerDelegate */,
+				883EDCF0257794BA00C3764B /* ARViewController+ARManagerDelegate */,
+				883EDCDF257791FF00C3764B /* ARViewController+Functions */,
+				883EDCD6257790EC00C3764B /* ARViewController+ARBaseViewDelegate */,
+				883EDCCB25778EE200C3764B /* ARViewController.swift */,
 			);
 			path = ARViewController;
-			sourceTree = "<group>";
-		};
-		88011F29254AFF520097EA48 /* ARCoachingOverlay */ = {
-			isa = PBXGroup;
-			children = (
-				88011F2A254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift */,
-			);
-			path = ARCoachingOverlay;
 			sourceTree = "<group>";
 		};
 		88011F33254B27340097EA48 /* AR */ = {
@@ -401,41 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				88388263254B41D4001EF10C /* ARManagerDelegate.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
-		88388268254B4209001EF10C /* ARManager */ = {
-			isa = PBXGroup;
-			children = (
-				88388269254B4218001EF10C /* ARViewController+ARManager.swift */,
-			);
-			path = ARManager;
-			sourceTree = "<group>";
-		};
-		8838826E254B43C8001EF10C /* ARSession */ = {
-			isa = PBXGroup;
-			children = (
-				8838827C254B4411001EF10C /* ARViewController+ARSessionDelegate.swift */,
-			);
-			path = ARSession;
-			sourceTree = "<group>";
-		};
-		8838826F254B43D1001EF10C /* ARSCNView */ = {
-			isa = PBXGroup;
-			children = (
-				88388271254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift */,
-			);
-			path = ARSCNView;
-			sourceTree = "<group>";
-		};
-		88388270254B43D5001EF10C /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				8838826F254B43D1001EF10C /* ARSCNView */,
-				8838826E254B43C8001EF10C /* ARSession */,
-				88388268254B4209001EF10C /* ARManager */,
-				88011F29254AFF520097EA48 /* ARCoachingOverlay */,
+				883EDCF92577951100C3764B /* AppManagerDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -446,6 +409,38 @@
 				8839A6522551D4D100DD3EA4 /* AircraftPreview.swift */,
 			);
 			path = AircraftPreview;
+			sourceTree = "<group>";
+		};
+		883EDCD6257790EC00C3764B /* ARViewController+ARBaseViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				883EDCD72577910400C3764B /* ARViewController+ARBaseViewDelegate.swift */,
+			);
+			path = "ARViewController+ARBaseViewDelegate";
+			sourceTree = "<group>";
+		};
+		883EDCDF257791FF00C3764B /* ARViewController+Functions */ = {
+			isa = PBXGroup;
+			children = (
+				883EDCE02577921400C3764B /* ARViewController+Functions.swift */,
+			);
+			path = "ARViewController+Functions";
+			sourceTree = "<group>";
+		};
+		883EDCF0257794BA00C3764B /* ARViewController+ARManagerDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				883EDCF1257794C800C3764B /* ARViewController+ARManagerDelegate.swift */,
+			);
+			path = "ARViewController+ARManagerDelegate";
+			sourceTree = "<group>";
+		};
+		883EDCFE2577954700C3764B /* ARViewController+AppManagerDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				883EDCFF2577955400C3764B /* ARViewController+AppManagerDelegate.swift */,
+			);
+			path = "ARViewController+AppManagerDelegate";
 			sourceTree = "<group>";
 		};
 		88436EB62553F80E00E50AD3 /* Onboarding */ = {
@@ -517,15 +512,6 @@
 			path = "Virtual Object";
 			sourceTree = "<group>";
 		};
-		885B702E25504034008643BD /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				885B702F2550403F008643BD /* ARViewController+Functions.swift */,
-				8809B2A32550659F001E6817 /* ARViewController+ViewSetup.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		886A50BA256E9271005B360A /* Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +575,9 @@
 			dependencies = (
 			);
 			name = NLR;
+			packageProductDependencies = (
+				883EDCD125778F0600C3764B /* package-arbase */,
+			);
 			productName = NLR;
 			productReference = 88011ED0254AF5F40097EA48 /* NLR.app */;
 			productType = "com.apple.product-type.application";
@@ -660,6 +649,9 @@
 				Base,
 			);
 			mainGroup = 88011EC7254AF5F40097EA48;
+			packageReferences = (
+				883EDCD025778F0600C3764B /* XCRemoteSwiftPackageReference "arbase-ios" */,
+			);
 			productRefGroup = 88011ED1254AF5F40097EA48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -679,6 +671,7 @@
 				88011EDB254AF5F60097EA48 /* Preview Assets.xcassets in Resources */,
 				88011ED8254AF5F60097EA48 /* Assets.xcassets in Resources */,
 				88420187255037FF00A72BAD /* Art.scnassets in Resources */,
+				883EDCEC257793A100C3764B /* ARBase.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,16 +700,17 @@
 				88011ED6254AF5F40097EA48 /* ApplicationView.swift in Sources */,
 				8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */,
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
+				883EDCD82577910400C3764B /* ARViewController+ARBaseViewDelegate.swift in Sources */,
 				885B4719257104FD00504BB7 /* CheckDamageView.swift in Sources */,
 				88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */,
 				885B473325710B3F00504BB7 /* QRScannerViewController.swift in Sources */,
-				88011F2B254AFF6C0097EA48 /* ARViewController+ARCoachingOverlay.swift in Sources */,
 				886A50CB256E9C01005B360A /* AppManager.swift in Sources */,
 				881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */,
 				886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */,
 				88F99B2A255154FD00C75CB6 /* NLR.xcdatamodeld in Sources */,
 				88011F15254AFC4F0097EA48 /* ARKitView.swift in Sources */,
 				8838824F254B3F44001EF10C /* FocusSquare.swift in Sources */,
+				883EDCE12577921400C3764B /* ARViewController+Functions.swift in Sources */,
 				88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */,
 				88388264254B41D4001EF10C /* ARManagerDelegate.swift in Sources */,
 				88AB92DF255199E400BA59BE /* Aircraft+CoreDataClass.swift in Sources */,
@@ -724,19 +718,17 @@
 				88436EC32553FA6B00E50AD3 /* OnboardingContainer.swift in Sources */,
 				886A9DCE2552FA820055CC67 /* BottomSheet.swift in Sources */,
 				88AB92D42551996400BA59BE /* Aircraft+CoreDataProperties.swift in Sources */,
-				88388272254B43E8001EF10C /* ARViewController+ARSCNViewDelegate.swift in Sources */,
 				88436EB82553F81900E50AD3 /* Onboarding.swift in Sources */,
 				885B472E25710AF900504BB7 /* QRScannerView.swift in Sources */,
 				881B1EF82552BCA00005477E /* DamageNode+CoreDataClass.swift in Sources */,
 				885B473925710C0100504BB7 /* Scanner+Coordinator.swift in Sources */,
-				8838826A254B4218001EF10C /* ARViewController+ARManager.swift in Sources */,
+				883EDCFA2577951100C3764B /* AppManagerDelegate.swift in Sources */,
 				88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */,
 				88436EBD2553F8C800E50AD3 /* OnboardingView.swift in Sources */,
-				8809B2A42550659F001E6817 /* ARViewController+ViewSetup.swift in Sources */,
 				881B1EF32552BC960005477E /* DamageNode+CoreDataProperties.swift in Sources */,
 				8838825E254B40F9001EF10C /* CGPoint+Extensions.swift in Sources */,
+				883EDCF2257794C800C3764B /* ARViewController+ARManagerDelegate.swift in Sources */,
 				886CADA0256E60A300AF88AE /* AircraftSelectionView.swift in Sources */,
-				8838827D254B4411001EF10C /* ARViewController+ARSessionDelegate.swift in Sources */,
 				881B1EE82552BC2B0005477E /* DamageState.swift in Sources */,
 				885B702625503F29008643BD /* VirtualObject.swift in Sources */,
 				88388259254B40E1001EF10C /* Float4x4+Extensions.swift in Sources */,
@@ -745,14 +737,14 @@
 				886A50C1256E9294005B360A /* StartView.swift in Sources */,
 				886A9DC42552F9540055CC67 /* RoundedCorner.swift in Sources */,
 				88436ED52553FE4E00E50AD3 /* PageViewController.swift in Sources */,
-				88011F25254AFD7F0097EA48 /* ARViewController.swift in Sources */,
 				886A50C6256E9460005B360A /* SelectAirplaneView.swift in Sources */,
-				885B70302550403F008643BD /* ARViewController+Functions.swift in Sources */,
 				886A50BC256E9280005B360A /* AuthenticationView.swift in Sources */,
 				885B472525710ADA00504BB7 /* QRView.swift in Sources */,
+				883EDD002577955400C3764B /* ARViewController+AppManagerDelegate.swift in Sources */,
 				88CA791925515E7700B817DE /* PersistenceController.swift in Sources */,
 				886CAD98256E59BE00AF88AE /* LoginView.swift in Sources */,
 				88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */,
+				883EDCCC25778EE200C3764B /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,6 +1068,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		883EDCD025778F0600C3764B /* XCRemoteSwiftPackageReference "arbase-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:NordyVlasman/arbase-ios.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		883EDCD125778F0600C3764B /* package-arbase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 883EDCD025778F0600C3764B /* XCRemoteSwiftPackageReference "arbase-ios" */;
+			productName = "package-arbase";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		88F99B28255154FD00C75CB6 /* NLR.xcdatamodeld */ = {

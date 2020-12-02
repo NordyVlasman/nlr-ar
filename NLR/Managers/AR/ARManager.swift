@@ -51,15 +51,15 @@ class ARManager: ObservableObject {
     }
     
     func start() {
-        delegate?.arExperienceShouldStart()
+//        delegate?.arExperienceShouldStart()
     }
     
     func pauseAR() {
-        delegate?.arExperienceShouldPause()
+//        delegate?.arExperienceShouldPause()
     }
     
     func didPressAdd() {
-        delegate?.arShouldPlaceObject()
+//        delegate?.arShouldPlaceObject()
     }
     
     func submitAddingDamageNode(with damageNode: DamageNode) {

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "package-arbase",
+        "repositoryURL": "git@github.com:NordyVlasman/arbase-ios.git",
+        "state": {
+          "branch": "main",
+          "revision": "b3442b8641e1d2ec12238b89bbf62f6c6892a98c",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -10,17 +10,19 @@ import SceneKit
 import ARKit
 
 struct ARKitView: UIViewControllerRepresentable {
-    @EnvironmentObject var manager: ARManager
-
+    @EnvironmentObject var arManager: ARManager
+    @EnvironmentObject var appManager: AppManager
+    
     var arViewController: ARViewController?
 
     func makeUIViewController(context: Context) -> ARViewController {
-        let arViewController = ARViewController(arManager: manager)
+        let arViewController = ARViewController(arManager: arManager, appManager: appManager)
         
         return arViewController
     }
     
     func updateUIViewController(_ uiViewController: ARViewController, context: Context) {
-        uiViewController.manager = manager
+        uiViewController.arManager = arManager
+        uiViewController.appManager = appManager
     }
 }

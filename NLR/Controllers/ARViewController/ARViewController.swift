@@ -2,71 +2,102 @@
 //  ARViewController.swift
 //  NLR
 //
-//  Created by Nordy Vlasman on 29/10/2020.
+//  Created by Nordy Vlasman on 12/2/20.
 //
 
-import Foundation
+import package_arbase
 import UIKit
 import SceneKit
-import ARKit
 
 class ARViewController: UIViewController {
-    let sceneView: ARSCNView = ARSCNView()
-    let coachingOverlayView = ARCoachingOverlayView()
+    var arManager: ARManager
+    var appManager: AppManager
     
-    let placeVirtualObjectButton: UIButton = UIButton(type: .custom)
-    let addIssueButton: UIButton = UIButton(type: .custom)
-    let finishARButton: UIButton = UIButton(type: .custom)
+    let sceneView = ARBaseView()
+    let loader = ARBaseVirtualObjectLoader()
+    let debugOptions: ARBaseDebugOptions = []
     
-    let persistenceController = PersistenceController.shared
-    let feedback = UINotificationFeedbackGenerator()
+    let generator = UIImpactFeedbackGenerator(style: .light)
+    let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
     
-    // TODO: - Replace this with the right identifier.
-    let updateQueue = DispatchQueue(label: "io.nlr.nlrar")
-
-    var lastObjectAvailabilityUpdateTimestamp: TimeInterval?
-    var isRestartAvailable = true
-    var isRunning = false
-    var isAddingIssues = false
+    let referenceNode = SCNReferenceNode(named: "Art.scnassets/fullsize/fullsize.scn")!
     
-    var manager: ARManager
-    var focusSquare = FocusSquare()
-    
-    var placedObject: SCNNode?
-    
-    var session: ARSession {
-        sceneView.session
-    }
-    
-    //MARK: - New UI
-    let addVirtualObjectButton: UIButton = UIButton(type: .custom)
-    let saveSessionButton: UIButton = UIButton(type: .custom)
-    let undoButton: UIButton = UIButton(type: .custom)
-    let finishSessionButton: UIButton = UIButton(type: .custom)
-    
-    init(arManager: ARManager) {
-        self.manager = arManager
+    init(arManager: ARManager, appManager: AppManager) {
+        self.arManager = arManager
+        self.appManager = appManager
         super.init(nibName: nil, bundle: nil)
-        
-        manager.delegate = self
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("Missing some essential imports")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        arManager.delegate = self
+        appManager.delegate = self
         
+        sceneView.placingMode = .quickDrop
+        sceneView.arBaseDelegate = self
+        sceneView.isAutoFocusEnabled = false
+        sceneView.isLightingIntensityAutomaticallyUpdated = true
+        sceneView.environmentTexturing = .automatic
+        sceneView.lightingEnvironmentContent = nil
+        sceneView.baseLightingEnvironmentIntensity = 6
+        
+        sceneView.initialPreviewObjectOpacity = 0.667
+        sceneView.initialPreviewObjectMaxSizeRatio = CGSize(width: 0.667, height: 0.667)
+        sceneView.allowedGestureTypes = [.tap, .pan, .rotation, .pinch, .longPress]
+        
+        self.view.addSubview(sceneView)
+        setupViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initializeARBase()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        initializeARModel()
+    }
+    
+    //MARK: - Scene initialization
+    private func initializeARBase() {
+        UIApplication.shared.isIdleTimerDisabled = true
+        sceneView.startAR()
+    }
+    
+    private func initializeARModel() {
+        let virtualObject = ARBaseVirtualObject(refferenceNode: referenceNode, allowedAlignments: [.horizontal])
         
-        sceneView.session.pause()
-        session.pause()
+        loader.loadVirtualObject(virtualObject) { loadedObject in
+            loadedObject.defaultScale = 0.004
+            
+            self.sceneView.currentVirtualObject = loadedObject
+            self.sceneView.currentVirtualObject?.contentNode?.opacity = 0
+            
+            SceneKitAnimator.animateWithDuration(duration: 0.35, animations: {
+                self.sceneView.currentVirtualObject?.contentNode?.opacity = 1
+            })
+        }
+    }
+    
+    //MARK: - View initialization
+    private func setupViews() {
+        setupSceneView()
+    }
+    
+    private func setupSceneView() {
+        sceneView.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            sceneView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            sceneView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            sceneView.topAnchor.constraint(equalTo: view.topAnchor),
+            sceneView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }
