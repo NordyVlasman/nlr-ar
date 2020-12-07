@@ -15,12 +15,14 @@ class AppManager: ObservableObject {
     weak var delegate: AppManagerDelegate?
 
     func startEditingModel() {
+        guard let delegate = delegate else { return }
         isEditingModel = true
-        delegate?.arShouldStartEditing()
+        delegate.arShouldStartEditing()
     }
     
     func stopEditingModel() {
+        guard let delegate = delegate else { return }
         isEditingModel = false
-        delegate?.arShouldFinishEditing()
+        delegate.arShouldFinishEditing()
     }
 }

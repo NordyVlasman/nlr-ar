@@ -22,6 +22,8 @@ class ARViewController: UIViewController {
     
     let referenceNode = SCNReferenceNode(named: "Art.scnassets/fullsize/fullsize.scn")!
     
+    var currentVirtualObjectEditing: ARBaseVirtualObject?
+    
     init(arManager: ARManager, appManager: AppManager) {
         self.arManager = arManager
         self.appManager = appManager

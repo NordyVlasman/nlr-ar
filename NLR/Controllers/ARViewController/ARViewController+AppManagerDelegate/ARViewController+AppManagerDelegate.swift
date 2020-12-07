@@ -10,6 +10,7 @@ import Foundation
 extension ARViewController: AppManagerDelegate {
     func arShouldStartEditing() {
         guard let object = sceneView.currentVirtualObject else { return }
+        currentVirtualObjectEditing = object
         object.setIsEditing(edit: true)
         generator.impactOccurred()
         
@@ -19,11 +20,11 @@ extension ARViewController: AppManagerDelegate {
     }
     
     func arShouldFinishEditing() {
-        guard let object = sceneView.currentVirtualObject else { return }
+        guard let object = currentVirtualObjectEditing else { return }
         object.setIsEditing(edit: false)
         
         SceneKitAnimator.animateWithDuration(duration: 0.35, animations: {
-            self.sceneView.currentVirtualObject?.contentNode?.opacity = 1
+            object.contentNode?.opacity = 1
         })
         
         notificationFeedbackGenerator.notificationOccurred(.success)

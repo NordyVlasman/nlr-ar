@@ -42,4 +42,5 @@ extension ARViewController: ARBaseDelegate {
         prepareObject()
         notificationFeedbackGenerator.notificationOccurred(.success)
     }
+    
 }
