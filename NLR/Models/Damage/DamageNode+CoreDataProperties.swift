@@ -22,6 +22,7 @@ extension DamageNode {
     @NSManaged public var fixNow: Bool
     @NSManaged public var aircraft: NSSet?
     @NSManaged public var coordinates: Coordinates?
+    @NSManaged public var currentURL: URL?
     
     var damageStatus: DamageState {
         get {

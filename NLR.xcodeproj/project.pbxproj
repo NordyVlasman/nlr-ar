@@ -56,6 +56,9 @@
 		886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DD2255303B40055CC67 /* Color+Extensions.swift */; };
 		886CAD98256E59BE00AF88AE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CAD97256E59BE00AF88AE /* LoginView.swift */; };
 		886CADA0256E60A300AF88AE /* AircraftSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CAD9F256E60A300AF88AE /* AircraftSelectionView.swift */; };
+		88A22341257E65D300C3403F /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A22340257E65D300C3403F /* AudioRecorder.swift */; };
+		88A22349257E670200C3403F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A22348257E670200C3403F /* Date+Extensions.swift */; };
+		88A2234E257E6CA900C3403F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A2234D257E6CA900C3403F /* AudioPlayer.swift */; };
 		88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92BC2551645300BA59BE /* AircraftsView.swift */; };
 		88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92C2255184EC00BA59BE /* AddDamageView.swift */; };
 		88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */; };
@@ -137,6 +140,9 @@
 		886A9DD2255303B40055CC67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		886CAD97256E59BE00AF88AE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		886CAD9F256E60A300AF88AE /* AircraftSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftSelectionView.swift; sourceTree = "<group>"; };
+		88A22340257E65D300C3403F /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		88A22348257E670200C3403F /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		88A2234D257E6CA900C3403F /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		88AB92BC2551645300BA59BE /* AircraftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsView.swift; sourceTree = "<group>"; };
 		88AB92C2255184EC00BA59BE /* AddDamageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDamageView.swift; sourceTree = "<group>"; };
 		88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsDetailsView.swift; sourceTree = "<group>"; };
@@ -256,6 +262,7 @@
 		88011F03254AF61F0097EA48 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				88A2233F257E65CA00C3403F /* Damage */,
 				88011F19254AFCD50097EA48 /* AR */,
 				886A50CA256E9C01005B360A /* AppManager.swift */,
 			);
@@ -305,6 +312,7 @@
 				8838825D254B40F9001EF10C /* CGPoint+Extensions.swift */,
 				886A9DC82552F9CE0055CC67 /* View+Extensions.swift */,
 				886A9DD2255303B40055CC67 /* Color+Extensions.swift */,
+				88A22348257E670200C3403F /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -530,6 +538,15 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		88A2233F257E65CA00C3403F /* Damage */ = {
+			isa = PBXGroup;
+			children = (
+				88A22340257E65D300C3403F /* AudioRecorder.swift */,
+				88A2234D257E6CA900C3403F /* AudioPlayer.swift */,
+			);
+			path = Damage;
+			sourceTree = "<group>";
+		};
 		88AB92BB2551644600BA59BE /* Aircraft View */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,11 +717,14 @@
 				88011ED6254AF5F40097EA48 /* ApplicationView.swift in Sources */,
 				8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */,
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
+				88A22341257E65D300C3403F /* AudioRecorder.swift in Sources */,
 				883EDCD82577910400C3764B /* ARViewController+ARBaseViewDelegate.swift in Sources */,
 				885B4719257104FD00504BB7 /* CheckDamageView.swift in Sources */,
 				88436EE02554012400E50AD3 /* PageIndicator.swift in Sources */,
+				88A22349257E670200C3403F /* Date+Extensions.swift in Sources */,
 				885B473325710B3F00504BB7 /* QRScannerViewController.swift in Sources */,
 				886A50CB256E9C01005B360A /* AppManager.swift in Sources */,
+				88A2234E257E6CA900C3403F /* AudioPlayer.swift in Sources */,
 				881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */,
 				886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */,
 				88F99B2A255154FD00C75CB6 /* NLR.xcdatamodeld in Sources */,

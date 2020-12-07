@@ -13,6 +13,9 @@ struct AddDamageView: View {
     
     @State var name: String = ""
     @State var selectedItem: DamageState = .Damage
+    @State var currentURL: URL?
+    
+    @ObservedObject var audioRecorder: AudioRecorder = AudioRecorder()
     
     var body: some View {
         NavigationView {
@@ -27,6 +30,23 @@ struct AddDamageView: View {
                     })
                     
                 }
+                Section(header: Text("Voice Memo"), content: {
+                    if audioRecorder.recording {
+                        Button(action: {
+                            audioRecorder.stopRecording() { result in
+                                currentURL = result
+                            }
+                        }, label: {
+                            Text("Stop recording")
+                        })
+                    } else {
+                        Button(action: {
+                            audioRecorder.startRecording()
+                        }, label: {
+                            Text("Record")
+                        })
+                    }
+                })
                 Section(header: Text("Verstuur"), content: {
                     Button(action: {
                         submitDamageNode()
@@ -39,6 +59,7 @@ struct AddDamageView: View {
             .navigationBarTitle("Issue toevoegen")
         }
     }
+    
     
     func submitDamageNode() {
         let damageNode = DamageNode.init(context: context)
@@ -63,6 +84,7 @@ struct AddDamageView: View {
         damageNode.title = name
         damageNode.damageStatus = selectedItem
         damageNode.node = manager.currentNodeName
+        damageNode.currentURL = currentURL
         damageNode.addToAircraft(aircraft)
         
         do {
