@@ -10,7 +10,7 @@ import SceneKit
 
 struct AircraftPreview: UIViewRepresentable {
     
-    var problems: [DamageNode]
+    var problems: [DamageNode]?
     
     func makeUIView(context: Context) -> SummaryPreviewView {
         let previewView = SummaryPreviewView(problems: problems)
@@ -33,10 +33,10 @@ class SummaryPreviewView: UIView {
     var contentNode: SCNNode!
     var scene: SCNScene!
     
-    var problems: [DamageNode]
+    var problems: [DamageNode]?
     
     
-    init(problems: [DamageNode]) {
+    init(problems: [DamageNode]?) {
         self.problems = problems
         sceneView = SCNView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 3), options: [:])
         super.init(frame: .zero)
@@ -146,8 +146,10 @@ class SummaryPreviewView: UIView {
     }
     
     func prepareObject() {
-        for damageNode in problems {
-            addDamageNode(damageNode)
+        if problems != nil {
+            for damageNode in problems! {
+                addDamageNode(damageNode)
+            }
         }
     }
     

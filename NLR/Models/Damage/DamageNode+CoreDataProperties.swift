@@ -1,12 +1,14 @@
 //
-//  Damage+CoreDataProperties.swift
+//  DamageNode+CoreDataProperties.swift
 //  NLR
 //
-//  Created by Nordy Vlasman on 04/11/2020.
+//  Created by Nordy Vlasman on 12/8/20.
+//
 //
 
 import Foundation
 import CoreData
+
 
 extension DamageNode {
 
@@ -15,14 +17,17 @@ extension DamageNode {
     }
 
     @NSManaged public var createdAt: Date?
-    @NSManaged public var id: UUID?
-    @NSManaged public var title: String?
-    @NSManaged public var node: String?
+    @NSManaged public var recordingURL: URL?
     @NSManaged public var damageState: Int32
     @NSManaged public var fixNow: Bool
-    @NSManaged public var aircraft: NSSet?
+    @NSManaged public var id: UUID?
+    @NSManaged public var node: String?
+    @NSManaged public var title: String?
+    @NSManaged public var createdBy: String?
     @NSManaged public var coordinates: Coordinates?
-    @NSManaged public var currentURL: URL?
+    @NSManaged public var notes: NSSet?
+    @NSManaged public var session: Session?
+    
     
     var damageStatus: DamageState {
         get {
@@ -35,19 +40,23 @@ extension DamageNode {
 
 }
 
-// MARK: Generated accessors for aircraft
+// MARK: Generated accessors for notes
 extension DamageNode {
 
-    @objc(addAircraftObject:)
-    @NSManaged public func addToAircraft(_ value: Aircraft)
+    @objc(addNotesObject:)
+    @NSManaged public func addToNotes(_ value: Notes)
 
-    @objc(removeAircraftObject:)
-    @NSManaged public func removeFromAircraft(_ value: Aircraft)
+    @objc(removeNotesObject:)
+    @NSManaged public func removeFromNotes(_ value: Notes)
 
-    @objc(addAircraft:)
-    @NSManaged public func addToAircraft(_ values: NSSet)
+    @objc(addNotes:)
+    @NSManaged public func addToNotes(_ values: NSSet)
 
-    @objc(removeAircraft:)
-    @NSManaged public func removeFromAircraft(_ values: NSSet)
+    @objc(removeNotes:)
+    @NSManaged public func removeFromNotes(_ values: NSSet)
+
+}
+
+extension DamageNode : Identifiable {
 
 }

@@ -2,9 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17707" systemVersion="20C5048k" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Aircraft" representedClassName="Aircraft" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="damageNodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DamageNode" inverseName="aircraft" inverseEntity="DamageNode"/>
+        <relationship name="session" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="aircraft" inverseEntity="Session"/>
     </entity>
-    <entity name="Coordinates" representedClassName="Coordinates" syncable="YES" codeGenerationType="class">
+    <entity name="Coordinates" representedClassName="Coordinates" syncable="YES">
         <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="z" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -12,18 +12,37 @@
     </entity>
     <entity name="DamageNode" representedClassName="DamageNode" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="currentURL" optional="YES" attributeType="URI"/>
+        <attribute name="createdBy" optional="YES" attributeType="String"/>
         <attribute name="damageState" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="fixNow" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="node" optional="YES" attributeType="String"/>
+        <attribute name="recordingURL" optional="YES" attributeType="URI"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="aircraft" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Aircraft" inverseName="damageNodes" inverseEntity="Aircraft"/>
         <relationship name="coordinates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coordinates" inverseName="node" inverseEntity="Coordinates"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notes" inverseName="damageNode" inverseEntity="Notes"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="damageNodes" inverseEntity="Session"/>
+    </entity>
+    <entity name="Notes" representedClassName="Notes" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="createdBy" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="damageNode" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DamageNode" inverseName="notes" inverseEntity="DamageNode"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="notes" inverseEntity="Session"/>
+    </entity>
+    <entity name="Session" representedClassName="Session" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="createdBy" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="aircraft" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Aircraft" inverseName="session" inverseEntity="Aircraft"/>
+        <relationship name="damageNodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DamageNode" inverseName="session" inverseEntity="DamageNode"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notes" inverseName="session" inverseEntity="Notes"/>
     </entity>
     <elements>
         <element name="Aircraft" positionX="-63" positionY="-18" width="128" height="59"/>
         <element name="Coordinates" positionX="-54" positionY="-9" width="128" height="89"/>
-        <element name="DamageNode" positionX="-36" positionY="9" width="128" height="164"/>
+        <element name="DamageNode" positionX="-36" positionY="9" width="128" height="194"/>
+        <element name="Notes" positionX="27" positionY="135" width="128" height="104"/>
+        <element name="Session" positionX="0" positionY="117" width="128" height="119"/>
     </elements>
 </model>

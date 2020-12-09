@@ -13,10 +13,12 @@ struct AircraftsDetailsView: View {
     @EnvironmentObject var manager: ARManager
     
     @State var aircraft: Aircraft
+    @State var session: Session
     
     var showInAR: some View {
         Button(action: {
             manager.currentAircraft = aircraft
+            manager.currentSession = session
             manager.shouldShowARView = true
         }, label: {
             HStack {
@@ -35,43 +37,21 @@ struct AircraftsDetailsView: View {
     
     var body: some View {
             VStack {
-                AircraftPreview(problems: aircraft.damageNodeArray)
-                if !aircraft.damageNodeArray.isEmpty {
-                    List {
-                        Section(header: HStack {
-                            Text("Issues")
+                AircraftPreview(problems: session.damageNodeArray)
+                                
+                if !session.damageNodeArray.isEmpty {
+                    List(session.damageNodeArray, rowContent: { row in
+                        HStack {
+                            Text(row.title!)
                             Spacer()
-                            EditButton()
-                        }, content: {
-                            ForEach(aircraft.damageNodeArray, id: \.self) { damageNode in
-                                HStack {
-                                    Text(damageNode.title!)
-                                    Spacer()
-                                    Text(damageNode.damageStatus.description)
-                                }
-                            }
-                            .onDelete(perform: deleteItems)
-                        })
-                    }
+                            Text(row.damageStatus.description)
+                        }
+                    })
                     .listStyle(InsetGroupedListStyle())
                 }
                 showInAR
                 Spacer()
             }
-            .navigationBarTitle(aircraft.name!)
 
-    }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { aircraft.damageNodeArray[$0] }.forEach(context.delete)
-            
-            do {
-                try context.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
     }
 }

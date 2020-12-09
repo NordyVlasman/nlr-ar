@@ -12,13 +12,13 @@ import SceneKit
 
 extension ARViewController {
     func prepareObject() {
-        guard let damageNodeArray = arManager.currentAircraft?.damageNodeArray else {
-            return
-        }
-        
-        for damageNode in damageNodeArray {
-            addDamageNode(damageNode)
-        }
+////        guard let damageNodeArray = arManager.currentAircraft?.damageNodeArray else {
+//            return
+//        }
+//        let damageNodeArray = []
+//        for damageNode in damageNodeArray {
+//            addDamageNode(damageNode)
+//        }
     }
     
     func addDamageNode(_ node: DamageNode) {

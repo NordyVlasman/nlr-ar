@@ -20,6 +20,7 @@ class ARManager: ObservableObject {
     @Published var currentAircraft: Aircraft?
     @Published var currentNodeName: String?
     @Published var currentDamageNode: DamageNode?
+    @Published var currentSession: Session?
     
     //MARK: - Modal states
     @Published var showDamageDetails: Bool = false

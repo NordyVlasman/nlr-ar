@@ -15,6 +15,16 @@ struct CheckDamageView: View {
     var body: some View {
         NavigationView {
             VStack {
+                if manager.currentSession?.damageNodeArray != nil {
+                    List(manager.currentSession!.damageNodeArray, id: \.self, rowContent: { damage in
+                        HStack {
+                            Text(damage.title!)
+                            Spacer()
+                            Text(damage.damageStatus.description)
+                        }
+                    })
+                    .listStyle(InsetGroupedListStyle())
+                }
                 Text("Alles oke?")
                 Button(action: {
                     checkAlert.toggle()

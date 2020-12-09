@@ -14,13 +14,19 @@ struct AddDamageView: View {
     @State var name: String = ""
     @State var selectedItem: DamageState = .Damage
     @State var currentURL: URL?
+    @State var location: String = ""
     
     @ObservedObject var audioRecorder: AudioRecorder = AudioRecorder()
     
     var body: some View {
         NavigationView {
             Form {
-                Section {
+                Section(header: Text("Locatie van schade")) {
+                    TextField("Locatie", text: $location)
+                        .disabled(true)
+                        .opacity(0.25)
+                }
+                Section(header: Text("Data van schade")) {
                     TextField("Issue", text: $name)
                     Picker(selection: $selectedItem, label: Text("Status"), content: {
                         ForEach(DamageState.allCases, id: \.self) { value in
@@ -57,6 +63,9 @@ struct AddDamageView: View {
             }
             .background(Color.white)
             .navigationBarTitle("Issue toevoegen")
+            .onAppear {
+                location = manager.currentNodeName ?? ""
+            }
         }
     }
     
@@ -69,7 +78,7 @@ struct AddDamageView: View {
             return
         }
         
-        guard let aircraft = manager.currentAircraft else {
+        guard let currentSession = manager.currentSession else {
             manager.shouldShowDamageModal = true
             return
         }
@@ -84,8 +93,10 @@ struct AddDamageView: View {
         damageNode.title = name
         damageNode.damageStatus = selectedItem
         damageNode.node = manager.currentNodeName
-        damageNode.currentURL = currentURL
-        damageNode.addToAircraft(aircraft)
+        damageNode.recordingURL = currentURL
+//        damageNode.addToAircraft(aircraft)
+        
+        currentSession.addToDamageNodes(damageNode)
         
         do {
             try context.save()

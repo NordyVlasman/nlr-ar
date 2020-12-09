@@ -2,41 +2,46 @@
 //  Aircraft+CoreDataProperties.swift
 //  NLR
 //
-//  Created by Nordy Vlasman on 03/11/2020.
+//  Created by Nordy Vlasman on 12/8/20.
+//
 //
 
 import Foundation
 import CoreData
 
+
 extension Aircraft {
-    
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Aircraft> {
         return NSFetchRequest<Aircraft>(entityName: "Aircraft")
     }
-    
-    @NSManaged public var name: String?
-    @NSManaged public var damageNodes: Set<DamageNode>?
-    
-    public var damageNodeArray: [DamageNode] {
-        let set = damageNodes ?? []
-        return set.sorted(by: { $0.createdAt!.compare($1.createdAt!) == .orderedDescending})
 
+    @NSManaged public var name: String?
+    @NSManaged public var session: Set<Session>?
+    
+    public var sessionArray: [Session] {
+        let set = session ?? []
+        return set.sorted(by: { $0.createdAt!.compare($1.createdAt!) == .orderedDescending})
     }
 }
 
-// MARK: Generated accessors for damageNode
+// MARK: Generated accessors for session
 extension Aircraft {
 
-    @objc(addDamageNodeObject:)
-    @NSManaged public func addToDamageNode(_ value: DamageNode)
+    @objc(addSessionObject:)
+    @NSManaged public func addToSession(_ value: Session)
 
-    @objc(removeDamageNodeObject:)
-    @NSManaged public func removeFromDamageNode(_ value: DamageNode)
+    @objc(removeSessionObject:)
+    @NSManaged public func removeFromSession(_ value: Session)
 
-    @objc(addDamageNode:)
-    @NSManaged public func addToDamageNode(_ values: NSSet)
+    @objc(addSession:)
+    @NSManaged public func addToSession(_ values: NSSet)
 
-    @objc(removeDamageNode:)
-    @NSManaged public func removeFromDamageNode(_ values: NSSet)
+    @objc(removeSession:)
+    @NSManaged public func removeFromSession(_ values: NSSet)
+
+}
+
+extension Aircraft : Identifiable {
 
 }

@@ -27,35 +27,51 @@ struct ApplicationView: View {
         }
     }
     
+    var arkitOverlay: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button(action: {
+                    arManager.finishARScreen()
+                }, label: {
+                    VStack {
+                        Image(systemName: "xmark.square.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                    }
+                })
+            }
+            Spacer()
+            HStack {
+                Spacer()
+                if appManager.isEditingModel {
+                    Button(action: {
+                        appManager.stopEditingModel()
+                    }, label: {
+                        VStack {
+                            Image(systemName: "checkmark")
+                                .font(.title)
+                                .foregroundColor(.white)
+                        }
+                        .padding()
+                        .background(Color.blue)
+                        .mask(Circle())
+                    })
+                }
+                Spacer()
+            }
+            .padding(.bottom, 6)
+        }
+        .padding()
+    }
+    
     var arView: some View {
         ARKitView()
             .environmentObject(arManager)
             .environmentObject(appManager)
             .edgesIgnoringSafeArea(.all)
             .overlay(
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        if appManager.isEditingModel {
-                            Button(action: {
-                                appManager.stopEditingModel()
-                            }, label: {
-                                VStack {
-                                    Image(systemName: "checkmark")
-                                        .font(.title)
-                                        .foregroundColor(.white)
-                                }
-                                .padding()
-                                .background(Color.blue)
-                                .mask(Circle())
-                            })
-                        }
-                        Spacer()
-                    }
-                    .padding(.bottom, 6)
-                }
-                .padding()
+                arkitOverlay
             )
             .sheet(
                 isPresented: Binding {

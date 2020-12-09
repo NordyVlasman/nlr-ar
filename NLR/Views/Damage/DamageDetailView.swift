@@ -19,18 +19,18 @@ struct DamageDetailView: View {
                 Text(manager.currentDamageNode?.title ?? "")
                     .font(.title)
                 
-                if manager.currentDamageNode?.currentURL != nil {
+                if manager.currentDamageNode?.recordingURL != nil {
                     if audioPlayer.isPlaying {
                         
                     } else {
                         Button(action: {
-                            self.audioPlayer.startPlayback(audio: manager.currentDamageNode!.currentURL!)
+                            self.audioPlayer.startPlayback(audio: manager.currentDamageNode!.recordingURL!)
                         }, label: {
                             Text("Afspelen")
                         })
                     }
                 }
-                Text(manager.currentDamageNode?.currentURL?.absoluteString ?? "")
+                Text(manager.currentDamageNode?.recordingURL?.absoluteString ?? "")
             }
             .navigationBarTitle("Damage Details")
         }
