@@ -95,7 +95,7 @@ class SummaryPreviewView: UIView {
         guard let sceneView = SCNScene(named: "Art.scnassets/fullsize/fullsize.scn") else { return }
         let nodeToPlace = sceneView.rootNode
         
-        nodeToPlace.scale = SCNVector3(0.3, 0.3, 0.3)
+        nodeToPlace.scale = SCNVector3(6, 6, 6)
         nodeToPlace.position = SCNVector3(0, 0.5, 0)
         nodeToPlace.eulerAngles = SCNVector3(0, -Float.pi / 6, 0)
 

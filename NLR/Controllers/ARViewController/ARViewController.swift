@@ -8,6 +8,7 @@
 import package_arbase
 import UIKit
 import SceneKit
+import MediaPlayer
 
 class ARViewController: UIViewController {
     var arManager: ARManager
@@ -23,6 +24,11 @@ class ARViewController: UIViewController {
     let referenceNode = SCNReferenceNode(named: "Art.scnassets/fullsize/fullsize.scn")!
     
     var currentVirtualObjectEditing: ARBaseVirtualObject?
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     
     init(arManager: ARManager, appManager: AppManager) {
         self.arManager = arManager
@@ -54,7 +60,29 @@ class ARViewController: UIViewController {
         
         self.view.addSubview(sceneView)
         setupViews()
+        
+        let volumeChangedSystemName = NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification")
+        NotificationCenter.default.addObserver(self, selector: #selector(volumeChanged), name: volumeChangedSystemName, object: nil)
+
+        
     }
+    
+    @objc private func volumeChanged(notification: NSNotification) {
+        guard
+            let info = notification.userInfo,
+            let reason = info["AVSystemController_AudioVolumeChangeReasonNotificationParameter"] as? String,
+            reason == "ExplicitVolumeChange" else { return }
+
+        guard let virtualObject = currentVirtualObjectEditing else { return }
+        
+        let test = sceneView.hitTest(sceneView.center).first
+        virtualObject.enumerateChildNodes { (node, _) in
+            if test?.node == node {
+                arManager.addDamageNode(location: test!.localCoordinates, node: test!.node.name!)
+            }
+        }
+    }
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -90,6 +118,9 @@ class ARViewController: UIViewController {
     //MARK: - View initialization
     private func setupViews() {
         setupSceneView()
+        
+        let volumeView = MPVolumeView(frame: CGRect(x: -CGFloat.greatestFiniteMagnitude, y: 0, width: 0, height: 0))
+        view.addSubview(volumeView)
     }
     
     private func setupSceneView() {
@@ -102,4 +133,5 @@ class ARViewController: UIViewController {
             sceneView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
 }

@@ -12,13 +12,12 @@ import SceneKit
 
 extension ARViewController {
     func prepareObject() {
-////        guard let damageNodeArray = arManager.currentAircraft?.damageNodeArray else {
-//            return
-//        }
-//        let damageNodeArray = []
-//        for damageNode in damageNodeArray {
-//            addDamageNode(damageNode)
-//        }
+        guard let damageNodeArray = arManager.currentSession?.damageNodeArray else {
+            return
+        }
+        for damageNode in damageNodeArray {
+            addDamageNode(damageNode)
+        }
     }
     
     func addDamageNode(_ node: DamageNode) {
@@ -34,6 +33,6 @@ extension ARViewController {
         sphereNode.accessibilityLabel = "damage"
         sphereNode.name = node.objectID.uriRepresentation().absoluteString
         
-        sceneView.currentVirtualObject?.childNode(withName: node.node!, recursively: true)?.addChildNode(sphereNode)
+        currentVirtualObjectEditing?.childNode(withName: node.node!, recursively: true)?.addChildNode(sphereNode)
     }
 }

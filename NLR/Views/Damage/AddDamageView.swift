@@ -51,6 +51,7 @@ struct AddDamageView: View {
                         }, label: {
                             Text("Record")
                         })
+                        .foregroundColor(.red)
                     }
                 })
                 Section(header: Text("Verstuur"), content: {

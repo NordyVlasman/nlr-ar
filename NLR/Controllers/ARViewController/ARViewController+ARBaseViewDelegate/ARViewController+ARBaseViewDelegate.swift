@@ -39,6 +39,7 @@ extension ARViewController: ARBaseDelegate {
     
     func arBaseViewWillPlace(_ virtualObject: ARBaseVirtualObject, at transform: SCNMatrix4) {
         sceneView.currentVirtualObject = virtualObject
+        currentVirtualObjectEditing = virtualObject
         prepareObject()
         notificationFeedbackGenerator.notificationOccurred(.success)
     }
