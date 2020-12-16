@@ -95,7 +95,6 @@ struct AddDamageView: View {
         damageNode.damageStatus = selectedItem
         damageNode.node = manager.currentNodeName
         damageNode.recordingURL = currentURL
-//        damageNode.addToAircraft(aircraft)
         
         currentSession.addToDamageNodes(damageNode)
         

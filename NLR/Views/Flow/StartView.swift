@@ -29,7 +29,7 @@ struct StartView: View {
 //                        Text("Get started")
 //                            .font(.headline)
 //                    })
-//            }
+//           E }
 //            .padding()
 //        }
 //        .navigationViewStyle(StackNavigationViewStyle())
