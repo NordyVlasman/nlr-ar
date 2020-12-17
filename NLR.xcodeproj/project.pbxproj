@@ -53,6 +53,7 @@
 		88855D1C258B577800EF123E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88855D1B258B577800EF123E /* AppState.swift */; };
 		88855D25258B58F400EF123E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88855D24258B58F400EF123E /* LoginView.swift */; };
 		88855D2A258B58FF00EF123E /* UserTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88855D29258B58FF00EF123E /* UserTypeView.swift */; };
+		88855D30258B5E2F00EF123E /* AircraftManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88855D2F258B5E2F00EF123E /* AircraftManager.swift */; };
 		88A22341257E65D300C3403F /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A22340257E65D300C3403F /* AudioRecorder.swift */; };
 		88A22349257E670200C3403F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A22348257E670200C3403F /* Date+Extensions.swift */; };
 		88A2234E257E6CA900C3403F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A2234D257E6CA900C3403F /* AudioPlayer.swift */; };
@@ -143,6 +144,7 @@
 		88855D1B258B577800EF123E /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		88855D24258B58F400EF123E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		88855D29258B58FF00EF123E /* UserTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeView.swift; sourceTree = "<group>"; };
+		88855D2F258B5E2F00EF123E /* AircraftManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftManager.swift; sourceTree = "<group>"; };
 		88A22340257E65D300C3403F /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		88A22348257E670200C3403F /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		88A2234D257E6CA900C3403F /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		88011F03254AF61F0097EA48 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				88855D2E258B5E2300EF123E /* Aircraft */,
 				88A2233F257E65CA00C3403F /* Damage */,
 				88011F19254AFCD50097EA48 /* AR */,
 				886A50CA256E9C01005B360A /* AppManager.swift */,
@@ -552,6 +555,14 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		88855D2E258B5E2300EF123E /* Aircraft */ = {
+			isa = PBXGroup;
+			children = (
+				88855D2F258B5E2F00EF123E /* AircraftManager.swift */,
+			);
+			path = Aircraft;
+			sourceTree = "<group>";
+		};
 		88A2233F257E65CA00C3403F /* Damage */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +779,7 @@
 				88A249B1257FAB5000375E8C /* Notes+CoreDataProperties.swift in Sources */,
 				885B473325710B3F00504BB7 /* QRScannerViewController.swift in Sources */,
 				886A50CB256E9C01005B360A /* AppManager.swift in Sources */,
+				88855D30258B5E2F00EF123E /* AircraftManager.swift in Sources */,
 				88A2234E257E6CA900C3403F /* AudioPlayer.swift in Sources */,
 				881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */,
 				886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */,

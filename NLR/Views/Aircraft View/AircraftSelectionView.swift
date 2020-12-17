@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct AircraftSelectionView: View {
+    @Environment(\.managedObjectContext) private var context
     @EnvironmentObject private var appState: AppState
+    @EnvironmentObject private var aircraftManager: AircraftManager
 
-    @State private var tailNumber = ""
+    @State private var tailNumber = "F-35 - F001"
     @State private var show = false
+    
+    @State private var showErrorDialog = false
     
     var header: some View {
         VStack() {
@@ -87,7 +91,7 @@ struct AircraftSelectionView: View {
         HStack {
             Spacer()
             Button(action: {
-                appState.route = .userTypeView
+                submit()
             }, label: {
                 Text("Continue >")
                     .bold()
@@ -114,8 +118,24 @@ struct AircraftSelectionView: View {
             continueButton
         }
         .edgesIgnoringSafeArea(.top)
+        .alert(isPresented: $showErrorDialog, content: {
+            Alert(
+                title: Text("Model niet gevonden"),
+                message: Text("We kunnen het model niet vinden, sorry!"),
+                dismissButton: .cancel(Text("Test"))
+            )
+        })
         .onAppear {
             show = true
+        }
+    }
+    
+    func submit() {
+        let aircraft = aircraftManager.setCurrentSelectedAirplane(airplane: tailNumber)
+        if aircraft == nil {
+            showErrorDialog.toggle()
+        } else {
+            appState.route = .airplaneDetailView
         }
     }
 }

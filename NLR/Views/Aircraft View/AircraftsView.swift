@@ -22,7 +22,8 @@ struct AircraftsView: View {
             List {
                 ForEach(aircrafts, id: \.self) { aircraft in
                     NavigationLink(
-                        destination: AircraftSessionsView(aircraft: aircraft).environmentObject(manager),
+                        destination: Text(aircraft.name ?? ""),
+//                        destination: AircraftSessionsView(aircraft: aircraft).environmentObject(manager),
                         label: {
                             Text(aircraft.name!)
                         })

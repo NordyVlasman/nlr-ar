@@ -33,6 +33,10 @@ struct NLRApp: App {
         WindowGroup {
             appState.route.makeView()
                 .environmentObject(appState)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .onAppear {
+                    persistenceController.fetchAircrafts()
+                }
 //            if appManager.flowFinished {
 //                withAnimation {
 //                    ApplicationView()

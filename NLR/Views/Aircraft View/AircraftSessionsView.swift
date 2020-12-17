@@ -10,9 +10,10 @@ import CoreData
 
 struct AircraftSessionsView: View {
     @Environment(\.managedObjectContext) private var context
-    @EnvironmentObject var manager: ARManager
-    
-    @State var aircraft: Aircraft
+    @StateObject var manager: ARManager = ARManager()
+    @EnvironmentObject var aircraftManager: AircraftManager
+
+//    @State var aircraft: Aircraft
     
     var showInAR: some View {
         Button(action: {
@@ -20,10 +21,10 @@ struct AircraftSessionsView: View {
             session.createdBy = "NLR"
             session.createdAt = Date()
             
-            aircraft.addToSession(session)
+            aircraftManager.currentAircraft!.addToSession(session)
             
             manager.currentSession = session
-            manager.currentAircraft = aircraft
+            manager.currentAircraft = aircraftManager.currentAircraft
             manager.shouldShowARView = true
         }, label: {
             HStack {
@@ -38,12 +39,13 @@ struct AircraftSessionsView: View {
     }
     
     var body: some View {
-            VStack {
+        NavigationView {
+            VStack  {
                 AircraftPreview(problems: nil)
-                if !aircraft.sessionArray.isEmpty {
-                    List(aircraft.sessionArray, rowContent: { row in
+                if !aircraftManager.currentAircraft!.sessionArray.isEmpty {
+                    List(aircraftManager.currentAircraft!.sessionArray, rowContent: { row in
                         NavigationLink(
-                            destination: AircraftsDetailsView(aircraft: aircraft, session: row).environmentObject(manager),
+                            destination: AircraftsDetailsView(aircraft: aircraftManager.currentAircraft!, session: row).environmentObject(manager),
                             label: {
                                 Text(row.createdAt?.toString(dateFormat: "dd-MM-YYYY") ?? "")
                                 Spacer()
@@ -55,7 +57,8 @@ struct AircraftSessionsView: View {
                 showInAR
                 Spacer()
             }
-            .navigationBarTitle(aircraft.name!)
-
+            .navigationBarTitle(aircraftManager.currentAircraft!.name ?? "")
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

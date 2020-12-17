@@ -17,12 +17,14 @@ class AppState: ObservableObject {
         case loginView
         case userTypeView
         case airplaneSelectionView
+        case airplaneDetailView
         
         var id: String {
             switch self {
             case .loginView: return "loginView"
             case .userTypeView: return "userTypeView"
             case .airplaneSelectionView: return "airplaneSelectionView"
+            case .airplaneDetailView: return "airplaneDetailView"
             }
         }
         
@@ -35,6 +37,10 @@ class AppState: ObservableObject {
                 UserTypeView()
             case .airplaneSelectionView:
                 AircraftSelectionView()
+                    .environmentObject(AircraftManager.shared)
+            case .airplaneDetailView:
+                AircraftSessionsView()
+                    .environmentObject(AircraftManager.shared)
             }
         }
     }
