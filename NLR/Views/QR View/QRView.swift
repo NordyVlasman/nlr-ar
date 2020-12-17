@@ -9,8 +9,7 @@ import SwiftUI
 
 struct QRView: View {
     
-    @Binding var showModal: Bool
-    @EnvironmentObject var manager: AppManager
+//    @EnvironmentObject var manager: AppManager
 
     private let window = UIApplication.shared.windows.filter{$0.isKeyWindow}.first
     
@@ -21,8 +20,16 @@ struct QRView: View {
     private var scannerView: some View {
         QRScannerView()
             .onFound { code in
-                showModal.toggle()
-                manager.flowFinished.toggle()
+                print("\(code)")
+                let aircraft = AircraftManager.shared.setCurrentSelectedAirplane(airplane: code)
+                if aircraft != nil {
+                    AppState.shared.sheetRoute = nil
+                    AppState.shared.route = .airplaneDetailView
+                } else {
+                    AppState.shared.sheetRoute = nil
+                    AppState.shared.currentError = .wrongQR
+                }
+                
             }
             .edgesIgnoringSafeArea(.top)
     }

@@ -61,7 +61,7 @@ struct AircraftSelectionView: View {
                 Text("Or scane the plane \nusing your camera")
                     .bold()
                 Button(action: {
-                    
+                    appState.sheetRoute = .showQR
                 }, label: {
                     HStack {
                         Image(systemName: "camera")

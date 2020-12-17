@@ -25,7 +25,7 @@ struct AircraftSessionsView: View {
             
             manager.currentSession = session
             manager.currentAircraft = aircraftManager.currentAircraft
-            manager.shouldShowARView = true
+            AppState.shared.route = .arView
         }, label: {
             HStack {
                 Text("Start a new Session")

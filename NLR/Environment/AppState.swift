@@ -18,6 +18,7 @@ class AppState: ObservableObject {
         case userTypeView
         case airplaneSelectionView
         case airplaneDetailView
+        case arView
         
         var id: String {
             switch self {
@@ -25,6 +26,7 @@ class AppState: ObservableObject {
             case .userTypeView: return "userTypeView"
             case .airplaneSelectionView: return "airplaneSelectionView"
             case .airplaneDetailView: return "airplaneDetailView"
+            case .arView: return "arView"
             }
         }
         
@@ -41,6 +43,60 @@ class AppState: ObservableObject {
             case .airplaneDetailView:
                 AircraftSessionsView()
                     .environmentObject(AircraftManager.shared)
+            case .arView:
+                ARKitView()
+                    .environmentObject(AppManager.shared)
+                    .environmentObject(ARManager.shared)
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
+    }
+    
+    //MARK: - Sheet routes
+    @Published var sheetRoute: SheetRoute?
+    
+    enum SheetRoute: Identifiable {
+        case showQR
+        case showAddDamage
+        case showDamageDetail
+        
+        var id: String {
+            switch self {
+            case .showQR: return "showQR"
+            case .showAddDamage: return "showAddDamage"
+            case .showDamageDetail: return "showDamageDetail"
+            }
+        }
+        
+        @ViewBuilder
+        func makeSheet() -> some View {
+            switch self {
+            case .showQR:
+                QRView()
+            case .showAddDamage:
+                Text("Add damage")
+            case .showDamageDetail:
+                Text("Damage Detail")
+            }
+        }
+    }
+    
+    //MARK: - Errors
+    @Published var currentError: AppErrors?
+    
+    enum AppErrors: Identifiable {
+        case wrongQR
+        
+        var id: String {
+            switch self {
+            case .wrongQR: return "wrongQR"
+            }
+        }
+        
+        func makeError() -> Alert {
+            switch self {
+            case .wrongQR:
+                return Alert(title: Text("Wrong QR"), message: Text("Wrong QR"), dismissButton: .cancel())
             }
         }
     }

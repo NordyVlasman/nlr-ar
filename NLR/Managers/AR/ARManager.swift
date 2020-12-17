@@ -11,6 +11,8 @@ import Foundation
 import Combine
 
 class ARManager: ObservableObject {
+    public static let shared = ARManager()
+
     @Published var objectToPlace: VirtualObject?
     @Published var shouldShowARView = false
     @Published var shouldShowARCheckView = false

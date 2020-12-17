@@ -17,7 +17,7 @@ struct ARKitView: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> ARViewController {
         let arViewController = ARViewController(arManager: arManager, appManager: appManager)
-        
+     
         return arViewController
     }
     
