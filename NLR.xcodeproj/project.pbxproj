@@ -44,15 +44,15 @@
 		885B473325710B3F00504BB7 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B473225710B3F00504BB7 /* QRScannerViewController.swift */; };
 		885B473925710C0100504BB7 /* Scanner+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B473825710C0100504BB7 /* Scanner+Coordinator.swift */; };
 		885B702625503F29008643BD /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B702525503F29008643BD /* VirtualObject.swift */; };
-		886A50BC256E9280005B360A /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50BB256E9280005B360A /* AuthenticationView.swift */; };
-		886A50C1256E9294005B360A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50C0256E9294005B360A /* StartView.swift */; };
-		886A50C6256E9460005B360A /* SelectAirplaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50C5256E9460005B360A /* SelectAirplaneView.swift */; };
 		886A50CB256E9C01005B360A /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A50CA256E9C01005B360A /* AppManager.swift */; };
 		886A9DC42552F9540055CC67 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DC32552F9540055CC67 /* RoundedCorner.swift */; };
 		886A9DC92552F9CE0055CC67 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DC82552F9CE0055CC67 /* View+Extensions.swift */; };
 		886A9DCE2552FA820055CC67 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DCD2552FA820055CC67 /* BottomSheet.swift */; };
 		886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A9DD2255303B40055CC67 /* Color+Extensions.swift */; };
 		886CADA0256E60A300AF88AE /* AircraftSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CAD9F256E60A300AF88AE /* AircraftSelectionView.swift */; };
+		88855D1C258B577800EF123E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88855D1B258B577800EF123E /* AppState.swift */; };
+		88855D25258B58F400EF123E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88855D24258B58F400EF123E /* LoginView.swift */; };
+		88855D2A258B58FF00EF123E /* UserTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88855D29258B58FF00EF123E /* UserTypeView.swift */; };
 		88A22341257E65D300C3403F /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A22340257E65D300C3403F /* AudioRecorder.swift */; };
 		88A22349257E670200C3403F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A22348257E670200C3403F /* Date+Extensions.swift */; };
 		88A2234E257E6CA900C3403F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A2234D257E6CA900C3403F /* AudioPlayer.swift */; };
@@ -134,15 +134,15 @@
 		885B473225710B3F00504BB7 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		885B473825710C0100504BB7 /* Scanner+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scanner+Coordinator.swift"; sourceTree = "<group>"; };
 		885B702525503F29008643BD /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
-		886A50BB256E9280005B360A /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
-		886A50C0256E9294005B360A /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
-		886A50C5256E9460005B360A /* SelectAirplaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAirplaneView.swift; sourceTree = "<group>"; };
 		886A50CA256E9C01005B360A /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		886A9DC32552F9540055CC67 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		886A9DC82552F9CE0055CC67 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		886A9DCD2552FA820055CC67 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		886A9DD2255303B40055CC67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		886CAD9F256E60A300AF88AE /* AircraftSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftSelectionView.swift; sourceTree = "<group>"; };
+		88855D1B258B577800EF123E /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		88855D24258B58F400EF123E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		88855D29258B58FF00EF123E /* UserTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeView.swift; sourceTree = "<group>"; };
 		88A22340257E65D300C3403F /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		88A22348257E670200C3403F /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		88A2234D257E6CA900C3403F /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -213,6 +213,7 @@
 		88011ED2254AF5F40097EA48 /* NLR */ = {
 			isa = PBXGroup;
 			children = (
+				88855D1A258B576B00EF123E /* Environment */,
 				88388262254B41C9001EF10C /* Delegates */,
 				88011F22254AFD640097EA48 /* Controllers */,
 				88011F09254AF6BF0097EA48 /* Main App */,
@@ -293,9 +294,9 @@
 		88011F05254AF6AA0097EA48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88855D23258B58E600EF123E /* Authentication */,
 				885B472325710AC000504BB7 /* QR View */,
 				885B4717257104F300504BB7 /* Check */,
-				886A50BA256E9271005B360A /* Flow */,
 				88AB92BB2551644600BA59BE /* Aircraft View */,
 				88AB92C1255184E200BA59BE /* Damage */,
 				88011F10254AF6F90097EA48 /* AR View */,
@@ -534,14 +535,21 @@
 			path = "Virtual Object";
 			sourceTree = "<group>";
 		};
-		886A50BA256E9271005B360A /* Flow */ = {
+		88855D1A258B576B00EF123E /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				886A50BB256E9280005B360A /* AuthenticationView.swift */,
-				886A50C0256E9294005B360A /* StartView.swift */,
-				886A50C5256E9460005B360A /* SelectAirplaneView.swift */,
+				88855D1B258B577800EF123E /* AppState.swift */,
 			);
-			path = Flow;
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		88855D23258B58E600EF123E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				88855D24258B58F400EF123E /* LoginView.swift */,
+				88855D29258B58FF00EF123E /* UserTypeView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		88A2233F257E65CA00C3403F /* Damage */ = {
@@ -748,6 +756,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88011F1B254AFCE00097EA48 /* ARManager.swift in Sources */,
+				88855D2A258B58FF00EF123E /* UserTypeView.swift in Sources */,
 				88011ED6254AF5F40097EA48 /* ApplicationView.swift in Sources */,
 				8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */,
 				88011ED4254AF5F40097EA48 /* NLRApp.swift in Sources */,
@@ -767,6 +776,7 @@
 				8838824F254B3F44001EF10C /* FocusSquare.swift in Sources */,
 				88A249B6257FAB5000375E8C /* DamageNode+CoreDataClass.swift in Sources */,
 				883EDCE12577921400C3764B /* ARViewController+Functions.swift in Sources */,
+				88855D1C258B577800EF123E /* AppState.swift in Sources */,
 				88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */,
 				88388264254B41D4001EF10C /* ARManagerDelegate.swift in Sources */,
 				886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */,
@@ -794,15 +804,13 @@
 				88388247254B3F3C001EF10C /* FocusSquareSegment.swift in Sources */,
 				88AB92C3255184EC00BA59BE /* AddDamageView.swift in Sources */,
 				88A249B5257FAB5000375E8C /* Session+CoreDataProperties.swift in Sources */,
-				886A50C1256E9294005B360A /* StartView.swift in Sources */,
 				886A9DC42552F9540055CC67 /* RoundedCorner.swift in Sources */,
 				88436ED52553FE4E00E50AD3 /* PageViewController.swift in Sources */,
-				886A50C6256E9460005B360A /* SelectAirplaneView.swift in Sources */,
 				88A249B0257FAB5000375E8C /* Notes+CoreDataClass.swift in Sources */,
-				886A50BC256E9280005B360A /* AuthenticationView.swift in Sources */,
 				885B472525710ADA00504BB7 /* QRView.swift in Sources */,
 				883EDD002577955400C3764B /* ARViewController+AppManagerDelegate.swift in Sources */,
 				88CA791925515E7700B817DE /* PersistenceController.swift in Sources */,
+				88855D25258B58F400EF123E /* LoginView.swift in Sources */,
 				88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */,
 				883EDCCC25778EE200C3764B /* ARViewController.swift in Sources */,
 			);

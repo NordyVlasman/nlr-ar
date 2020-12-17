@@ -1,23 +1,25 @@
 //
-//  AircraftSelectionView.swift
+//  LoginView.swift
 //  NLR
 //
-//  Created by Nordy Vlasman on 11/25/20.
+//  Created by Nordy Vlasman on 12/17/20.
 //
 
 import SwiftUI
 
-struct AircraftSelectionView: View {
+struct LoginView: View {
     @EnvironmentObject private var appState: AppState
 
-    @State private var tailNumber = ""
-    @State private var show = false
+    @State private var username = ""
+    @State private var password = ""
+    
+    @State var show: Bool = false
     
     var header: some View {
         VStack() {
             Spacer()
             HStack(alignment: .center) {
-                Text("Select,")
+                Text("Sign in,")
                     .foregroundColor(.white)
                     .font(.system(size: 70))
                     .bold()
@@ -25,13 +27,13 @@ struct AircraftSelectionView: View {
                     .offset(y: show ? 0 : 20)
                     .animation(Animation.easeOut(duration: 0.6).delay(0.1))
                 Spacer()
-                Text("Select which airplane you'd like to work on. Use one of the serveral methods.")
+                Text("Please sign in to your account using the account information \nprovided to you by your employer.")
                     .foregroundColor(.white)
                     .font(.system(size: 20))
                     .padding(.leading)
                     .opacity(show ? 1 : 0)
                     .offset(y: show ? 0 : 20)
-                    .animation(Animation.easeOut(duration: 0.6).delay(0.2))
+                    .animation(Animation.easeOut(duration: 0.6).delay(0.4))
             }
             .frame(maxWidth: 874)
             .padding(.bottom, 60)
@@ -44,35 +46,22 @@ struct AircraftSelectionView: View {
     var loginForm: some View {
         HStack(alignment: .firstTextBaseline) {
             VStack(alignment: .leading) {
-                Text("Enter the tail number \nhere:")
+                Text("Username")
                     .bold()
-                TextField("Type something...", text: $tailNumber)
+                TextField("Type something...", text: $username)
                     .padding(10)
                     .background(Color.gray.brightness(0.4))
                     .cornerRadius(100)
                     .padding(.top, 10)
             }
-            Spacer()
             VStack(alignment: .leading) {
-                Text("Or scane the plane \nusing your camera")
+                Text("Password")
                     .bold()
-                Button(action: {
-                    
-                }, label: {
-                    HStack {
-                        Image(systemName: "camera")
-                            .foregroundColor(.white)
-                        Text("Open camera")
-                            .bold()
-                            .foregroundColor(.white)
-                        Spacer()
-                    }
-                })
-                .padding(10)
-                .frame(minWidth: 415)
-                .background(Color.CompanyBlue)
-                .cornerRadius(100)
-                .padding(.top, 10)
+                SecureField("Type something...", text: $password)
+                    .padding(10)
+                    .background(Color.gray.brightness(0.4))
+                    .cornerRadius(100)
+                    .padding(.top, 10)
             }
             .padding(.leading, 20)
         }
@@ -80,30 +69,29 @@ struct AircraftSelectionView: View {
         .padding(.top, 50)
         .opacity(show ? 1 : 0)
         .offset(y: show ? 0 : 20)
-        .animation(Animation.easeOut(duration: 0.3).delay(0.4))
+        .animation(Animation.easeOut(duration: 0.6).delay(0.6))
     }
     
-    var continueButton: some View {
+    var loginButton: some View {
         HStack {
             Spacer()
             Button(action: {
                 appState.route = .userTypeView
             }, label: {
-                Text("Continue >")
+                Text("Sign in >")
                     .bold()
                     .foregroundColor(.white)
             })
             .padding(.horizontal, 40)
             .padding(.vertical)
-            .background(tailNumber.isEmpty ? Color.gray : Color.blue)
+            .background(Color.blue)
             .cornerRadius(100)
-            .disabled(tailNumber.isEmpty)
         }
         .frame(maxWidth: 874)
         .padding(.bottom, 60)
         .opacity(show ? 1 : 0)
-        .offset(y: show ? 0 : 20)
-        .animation(Animation.easeOut(duration: 0.3).delay(0.4))
+        .offset(x: show ? 0 : 20)
+        .animation(Animation.easeOut(duration: 0.6).delay(0.6))
     }
     
     var body: some View {
@@ -111,11 +99,13 @@ struct AircraftSelectionView: View {
             header
             loginForm
             Spacer()
-            continueButton
+            loginButton
         }
         .edgesIgnoringSafeArea(.top)
         .onAppear {
-            show = true
+            withAnimation {
+                show = true
+            }
         }
     }
 }

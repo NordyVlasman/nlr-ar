@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct NLRApp: App {
+    @StateObject private var appState = AppState.shared
+    
     let persistenceController = PersistenceController.shared
     let onboardingData = Onboarding.data
     
@@ -29,21 +31,23 @@ struct NLRApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if appManager.flowFinished {
-                withAnimation {
-                    ApplicationView()
-                        .environmentObject(appManager)
-                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                        .onAppear {
-                            persistenceController.fetchAircrafts()
-                        }
-                }
-            } else {
-                withAnimation {
-                    StartView()
-                        .environmentObject(appManager)
-                }
-            }
+            appState.route.makeView()
+                .environmentObject(appState)
+//            if appManager.flowFinished {
+//                withAnimation {
+//                    ApplicationView()
+//                        .environmentObject(appManager)
+//                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                        .onAppear {
+//                            persistenceController.fetchAircrafts()
+//                        }
+//                }
+//            } else {
+//                withAnimation {
+//                    StartView()
+//                        .environmentObject(appManager)
+//                }
+//            }
         }
     }
 }
