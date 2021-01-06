@@ -23,8 +23,8 @@ struct AircraftSessionsView: View {
             
             aircraftManager.currentAircraft!.addToSession(session)
             
-            manager.currentSession = session
-            manager.currentAircraft = aircraftManager.currentAircraft
+//            manager.currentSession = session
+//            manager.currentAircraft = aircraftManager.currentAircraft
             AppState.shared.route = .arView
         }, label: {
             HStack {

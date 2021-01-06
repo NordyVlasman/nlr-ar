@@ -13,29 +13,28 @@ struct DamageDetailView: View {
     
     @ObservedObject var audioPlayer = AudioPlayer()
     
+    var currentDamageNode: DamageNode
+    
     var body: some View {
         NavigationView {
             VStack {
-                Text(manager.currentDamageNode?.title ?? "")
+                Text(currentDamageNode.title ?? "")
                     .font(.title)
                 
-                if manager.currentDamageNode?.recordingURL != nil {
+                if currentDamageNode.recordingURL != nil {
                     if audioPlayer.isPlaying {
                         
                     } else {
                         Button(action: {
-                            self.audioPlayer.startPlayback(audio: manager.currentDamageNode!.recordingURL!)
+                            self.audioPlayer.startPlayback(audio: currentDamageNode.recordingURL!)
                         }, label: {
                             Text("Afspelen")
                         })
                     }
                 }
-                Text(manager.currentDamageNode?.recordingURL?.absoluteString ?? "")
+                Text(currentDamageNode.recordingURL!.absoluteString)
             }
             .navigationBarTitle("Damage Details")
-        }
-        .onDisappear {
-           manager.showDamageDetails = false
         }
     }
 }

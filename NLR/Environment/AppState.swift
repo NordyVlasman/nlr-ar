@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SceneKit
 
 class AppState: ObservableObject {
     public static let shared = AppState()
@@ -67,14 +68,14 @@ class AppState: ObservableObject {
     
     enum SheetRoute: Identifiable {
         case showQR
-        case showAddDamage
-        case showDamageDetail
+        case showAddDamage(location: SCNVector3, nodeName: String)
+        case showDamageDetail(id: String)
         
         var id: String {
             switch self {
             case .showQR: return "showQR"
-            case .showAddDamage: return "showAddDamage"
-            case .showDamageDetail: return "showDamageDetail"
+            case .showAddDamage(_, _): return "showAddDamage"
+            case .showDamageDetail(_): return "showDamageDetail"
             }
         }
         
@@ -83,10 +84,10 @@ class AppState: ObservableObject {
             switch self {
             case .showQR:
                 QRView()
-            case .showAddDamage:
-                Text("Add damage")
-            case .showDamageDetail:
-                Text("Damage Detail")
+            case let .showAddDamage(location, nodeName):
+                Text("Add damage \(nodeName)")
+            case let .showDamageDetail(id):
+                Text("Damage Detail \(id)")
             }
         }
     }

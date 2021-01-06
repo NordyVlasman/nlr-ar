@@ -28,13 +28,13 @@ extension ARViewController: ARBaseDelegate {
 
         if tappedNode?.accessibilityLabel == "damage" {
             notificationFeedbackGenerator.notificationOccurred(.warning)
-            arManager.showDamageDetails(id: tappedNode!.name!)
+            AppState.shared.sheetRoute = .showDamageDetail(id: tappedNode!.name!)
             return
         }
 
         virtualObject?.enumerateChildNodes { (node, _) in
             if tappedNode == node {
-                arManager.addDamageNode(location: result!.localCoordinates, node: tappedNode!.name!)
+                AppState.shared.sheetRoute = .showAddDamage(location: result!.localCoordinates, nodeName: tappedNode!.name!)
             }
         }
     }

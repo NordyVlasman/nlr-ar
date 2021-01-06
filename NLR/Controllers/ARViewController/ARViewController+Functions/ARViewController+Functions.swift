@@ -12,13 +12,14 @@ import SceneKit
 
 extension ARViewController {
     // Adds the already submited damages to the AR Model.
+    //FIXME: fix code with new manager
     func prepareObject() {
-        guard let damageNodeArray = arManager.currentSession?.damageNodeArray else {
-            return
-        }
-        for damageNode in damageNodeArray {
-            addDamageNode(damageNode)
-        }
+//        guard let damageNodeArray = arManager.currentSession?.damageNodeArray else {
+//            return
+//        }
+//        for damageNode in damageNodeArray {
+//            addDamageNode(damageNode)
+//        }
     }
 
     // Create the DameNode and place it on the placed model.

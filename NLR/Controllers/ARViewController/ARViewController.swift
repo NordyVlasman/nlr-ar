@@ -40,7 +40,7 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        arManager.delegate = self
+//        arManager.delegate = self
         appManager.delegate = self
 
         sceneView.placingMode = .quickDrop
@@ -84,7 +84,7 @@ class ARViewController: UIViewController {
         let hitNode = sceneView.hitTest(sceneView.center).first
         virtualObject.enumerateChildNodes { (node, _) in
             if hitNode?.node == node {
-                arManager.addDamageNode(location: hitNode!.localCoordinates, node: hitNode!.node.name!)
+//                arManager.addDamageNode(location: hitNode!.localCoordinates, node: hitNode!.node.name!)
             }
         }
     }

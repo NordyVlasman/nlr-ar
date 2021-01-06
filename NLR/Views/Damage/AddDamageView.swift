@@ -65,45 +65,45 @@ struct AddDamageView: View {
             .background(Color.white)
             .navigationBarTitle("Issue toevoegen")
             .onAppear {
-                location = manager.currentNodeName ?? ""
+//                location = manager.currentNodeName ?? ""
             }
         }
     }
     
     
     func submitDamageNode() {
-        let damageNode = DamageNode.init(context: context)
-        let coordinates = Coordinates.init(context: context)
-        
-        guard let current = manager.currentCoordinates else { manager.shouldShowDamageModal = true
-            return
-        }
-        
-        guard let currentSession = manager.currentSession else {
-            manager.shouldShowDamageModal = true
-            return
-        }
-        
-        coordinates.x = current.x
-        coordinates.y = current.y
-        coordinates.z = current.z
-
-        damageNode.coordinates = coordinates
-        damageNode.createdAt = Date()
-        damageNode.id = UUID()
-        damageNode.title = name
-        damageNode.damageStatus = selectedItem
-        damageNode.node = manager.currentNodeName
-        damageNode.recordingURL = currentURL
-        
-        currentSession.addToDamageNodes(damageNode)
-        
-        do {
-            try context.save()
-        } catch {
-            debugPrint(error)
-        }
-    
-        manager.submitAddingDamageNode(with: damageNode)
+//        let damageNode = DamageNode.init(context: context)
+//        let coordinates = Coordinates.init(context: context)
+//
+//        guard let current = manager.currentCoordinates else { manager.shouldShowDamageModal = true
+//            return
+//        }
+//
+//        guard let currentSession = manager.currentSession else {
+//            manager.shouldShowDamageModal = true
+//            return
+//        }
+//
+//        coordinates.x = current.x
+//        coordinates.y = current.y
+//        coordinates.z = current.z
+//
+//        damageNode.coordinates = coordinates
+//        damageNode.createdAt = Date()
+//        damageNode.id = UUID()
+//        damageNode.title = name
+//        damageNode.damageStatus = selectedItem
+//        damageNode.node = manager.currentNodeName
+//        damageNode.recordingURL = currentURL
+//
+//        currentSession.addToDamageNodes(damageNode)
+//
+//        do {
+//            try context.save()
+//        } catch {
+//            debugPrint(error)
+//        }
+//
+//        manager.submitAddingDamageNode(with: damageNode)
     }
 }

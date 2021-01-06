@@ -12,11 +12,13 @@ struct CheckDamageView: View {
 
     @State var checkAlert: Bool = false
     
+    var currentSession: Session
+    
     var body: some View {
         NavigationView {
             VStack {
-                if manager.currentSession?.damageNodeArray != nil {
-                    List(manager.currentSession!.damageNodeArray, id: \.self, rowContent: { damage in
+                if !currentSession.damageNodeArray.isEmpty {
+                    List(currentSession.damageNodeArray, id: \.self, rowContent: { damage in
                         HStack {
                             Text(damage.title!)
                             Spacer()
@@ -36,7 +38,7 @@ struct CheckDamageView: View {
                 Alert(title: Text("Weet je het zeker?"),
                       message: Text("Weet je zeker dat je je sessie wilt afronden?"),
                       primaryButton: .default(Text("Ja"), action: {
-                        manager.finish()
+                        print("Finish")
                       }),
                       secondaryButton: .cancel())
             }

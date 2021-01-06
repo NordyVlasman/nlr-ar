@@ -17,10 +17,10 @@ struct AircraftsDetailsView: View {
     
     var showInAR: some View {
         Button(action: {
-            manager.currentAircraft = aircraft
-            manager.currentSession = session
-            manager.shouldShowARView = true
-            
+//            manager.currentAircraft = aircraft
+//            manager.currentSession = session
+//            manager.shouldShowARView = true
+//            
             AppState.shared.route = .arView
         }, label: {
             HStack {
