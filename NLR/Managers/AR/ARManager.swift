@@ -77,7 +77,8 @@ class ARManager: ObservableObject {
         currentCoordinates = location
         currentNodeName = node
         showAddDamage = true
-        shouldShowDamageModal = false
+        AppState.shared.sheetRoute = .showAddDamage
+//        shouldShowDamageModal = false
     }
     
     func showDamageDetails(id: String) {

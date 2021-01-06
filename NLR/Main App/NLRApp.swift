@@ -13,7 +13,14 @@ struct NLRApp: App {
     @State private var loggedIn = false
     
     let persistenceController = PersistenceController.shared
-        
+    
+    /**
+     # Starting point of application
+     
+     - Fetches the aircrafts.
+     - Creates the app router.
+     - Add's the modals and errors.
+     */
     var body: some Scene {
         WindowGroup {
             appState.route.makeView()

@@ -8,15 +8,5 @@
 import Foundation
 
 protocol ARManagerDelegate: class {
-//    func arExperienceShouldStart()
-//    func setupCoachingOverlay()
-//    func arExperienceShouldPause()
-//    func arShouldAddDamageNode(with node: DamageNode)
-//
-//    func arShouldPlaceObject()
-//    func undoDamageNode()
-//    func arShouldStartEdit()
-//    func arShouldFinishEdit()
-    
     func arShouldAddDamageNode(with node: DamageNode)
 }

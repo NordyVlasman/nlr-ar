@@ -20,6 +20,8 @@ struct AircraftsDetailsView: View {
             manager.currentAircraft = aircraft
             manager.currentSession = session
             manager.shouldShowARView = true
+            
+            AppState.shared.route = .arView
         }, label: {
             HStack {
                 Text("Show in AR")

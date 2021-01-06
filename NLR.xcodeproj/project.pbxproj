@@ -226,7 +226,6 @@
 				88011F04254AF6A30097EA48 /* Components */,
 				88011F03254AF61F0097EA48 /* Managers */,
 				88011F02254AF6190097EA48 /* Helpers */,
-				88011F01254AF6140097EA48 /* API */,
 				88011EDC254AF5F60097EA48 /* Info.plist */,
 				88F99B28255154FD00C75CB6 /* NLR.xcdatamodeld */,
 			);
@@ -257,13 +256,6 @@
 				88011EF2254AF5F60097EA48 /* Info.plist */,
 			);
 			path = NLRUITests;
-			sourceTree = "<group>";
-		};
-		88011F01254AF6140097EA48 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		88011F02254AF6190097EA48 /* Helpers */ = {
