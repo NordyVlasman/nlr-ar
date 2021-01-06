@@ -10,25 +10,10 @@ import SwiftUI
 @main
 struct NLRApp: App {
     @StateObject private var appState = AppState.shared
-    
-    let persistenceController = PersistenceController.shared
-    let onboardingData = Onboarding.data
-    
-    @State private var onboardingDone = false
     @State private var loggedIn = false
     
-    @StateObject var appManager = AppManager()
-    
-    func isFirstLaunch() -> Bool {
-        if !UserDefaults.standard.bool(forKey: "hasBeenLaunchedBefore") {
-            UserDefaults.standard.setValue(true, forKey: "hasBeenLaunchedBefore")
-            return true
-        } else {
-            //TODO: Reset this to false in the base app!
-            return true
-        }
-    }
-    
+    let persistenceController = PersistenceController.shared
+        
     var body: some Scene {
         WindowGroup {
             appState.route.makeView()
@@ -48,21 +33,6 @@ struct NLRApp: App {
                 .onAppear {
                     persistenceController.fetchAircrafts()
                 }
-//            if appManager.flowFinished {
-//                withAnimation {
-//                    ApplicationView()
-//                        .environmentObject(appManager)
-//                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//                        .onAppear {
-//                            persistenceController.fetchAircrafts()
-//                        }
-//                }
-//            } else {
-//                withAnimation {
-//                    StartView()
-//                        .environmentObject(appManager)
-//                }
-//            }
         }
     }
 }

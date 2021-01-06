@@ -52,6 +52,16 @@ class AppState: ObservableObject {
         }
     }
     
+    func isFirstLaunch() -> Bool {
+        if !UserDefaults.standard.bool(forKey: "hasBeenLaunchedBefore") {
+            UserDefaults.standard.setValue(true, forKey: "hasBeenLaunchedBefore")
+            return true
+        } else {
+            //TODO: Reset this to false in the base app!
+            return true
+        }
+    }
+    
     //MARK: - Sheet routes
     @Published var sheetRoute: SheetRoute?
     
