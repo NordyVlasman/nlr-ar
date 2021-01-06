@@ -45,10 +45,8 @@ class AppState: ObservableObject {
                 AircraftSessionsView()
                     .environmentObject(AircraftManager.shared)
             case .arView:
-                ARKitView()
-                    .environmentObject(AppManager.shared)
+                ARView()
                     .environmentObject(ARManager.shared)
-                    .edgesIgnoringSafeArea(.all)
             }
         }
     }

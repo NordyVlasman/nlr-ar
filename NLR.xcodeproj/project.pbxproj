@@ -30,8 +30,6 @@
 		883EDCE12577921400C3764B /* ARViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCE02577921400C3764B /* ARViewController+Functions.swift */; };
 		883EDCEC257793A100C3764B /* ARBase.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 883EDCEB257793A100C3764B /* ARBase.scnassets */; };
 		883EDCF2257794C800C3764B /* ARViewController+ARManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCF1257794C800C3764B /* ARViewController+ARManagerDelegate.swift */; };
-		883EDCFA2577951100C3764B /* AppManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCF92577951100C3764B /* AppManagerDelegate.swift */; };
-		883EDD002577955400C3764B /* ARViewController+AppManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCFF2577955400C3764B /* ARViewController+AppManagerDelegate.swift */; };
 		88420187255037FF00A72BAD /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 88420186255037FF00A72BAD /* Art.scnassets */; };
 		88436EB82553F81900E50AD3 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EB72553F81900E50AD3 /* Onboarding.swift */; };
 		88436EBD2553F8C800E50AD3 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88436EBC2553F8C800E50AD3 /* OnboardingView.swift */; };
@@ -72,6 +70,8 @@
 		88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */; };
 		88C3500C257FB6F40068460F /* AircraftSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3500B257FB6F40068460F /* AircraftSessionsView.swift */; };
 		88CA791925515E7700B817DE /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CA791825515E7700B817DE /* PersistenceController.swift */; };
+		88DC3F6425A5E85900C337E5 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC3F6325A5E85900C337E5 /* FeedbackGenerator.swift */; };
+		88DC3F7125A5E99800C337E5 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DC3F7025A5E99800C337E5 /* ARView.swift */; };
 		88F99B2A255154FD00C75CB6 /* NLR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88F99B28255154FD00C75CB6 /* NLR.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -121,8 +121,6 @@
 		883EDCE02577921400C3764B /* ARViewController+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+Functions.swift"; sourceTree = "<group>"; };
 		883EDCEB257793A100C3764B /* ARBase.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = ARBase.scnassets; sourceTree = "<group>"; };
 		883EDCF1257794C800C3764B /* ARViewController+ARManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARManagerDelegate.swift"; sourceTree = "<group>"; };
-		883EDCF92577951100C3764B /* AppManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManagerDelegate.swift; sourceTree = "<group>"; };
-		883EDCFF2577955400C3764B /* ARViewController+AppManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+AppManagerDelegate.swift"; sourceTree = "<group>"; };
 		88420186255037FF00A72BAD /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
 		88436EB72553F81900E50AD3 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		88436EBC2553F8C800E50AD3 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -163,6 +161,8 @@
 		88AB92CA2551965200BA59BE /* AircraftsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftsDetailsView.swift; sourceTree = "<group>"; };
 		88C3500B257FB6F40068460F /* AircraftSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftSessionsView.swift; sourceTree = "<group>"; };
 		88CA791825515E7700B817DE /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		88DC3F6325A5E85900C337E5 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
+		88DC3F7025A5E99800C337E5 /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		88F99B29255154FD00C75CB6 /* NLR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NLR.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				886A9DC32552F9540055CC67 /* RoundedCorner.swift */,
+				88DC3F6325A5E85900C337E5 /* FeedbackGenerator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -350,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				88011F14254AFC4F0097EA48 /* ARKitView.swift */,
+				88DC3F7025A5E99800C337E5 /* ARView.swift */,
 			);
 			path = "AR View";
 			sourceTree = "<group>";
@@ -375,7 +377,6 @@
 		88011F23254AFD6D0097EA48 /* ARViewController */ = {
 			isa = PBXGroup;
 			children = (
-				883EDCFE2577954700C3764B /* ARViewController+AppManagerDelegate */,
 				883EDCF0257794BA00C3764B /* ARViewController+ARManagerDelegate */,
 				883EDCDF257791FF00C3764B /* ARViewController+Functions */,
 				883EDCD6257790EC00C3764B /* ARViewController+ARBaseViewDelegate */,
@@ -416,7 +417,6 @@
 			isa = PBXGroup;
 			children = (
 				88388263254B41D4001EF10C /* ARManagerDelegate.swift */,
-				883EDCF92577951100C3764B /* AppManagerDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -451,14 +451,6 @@
 				883EDCF1257794C800C3764B /* ARViewController+ARManagerDelegate.swift */,
 			);
 			path = "ARViewController+ARManagerDelegate";
-			sourceTree = "<group>";
-		};
-		883EDCFE2577954700C3764B /* ARViewController+AppManagerDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				883EDCFF2577955400C3764B /* ARViewController+AppManagerDelegate.swift */,
-			);
-			path = "ARViewController+AppManagerDelegate";
 			sourceTree = "<group>";
 		};
 		88436EB62553F80E00E50AD3 /* Onboarding */ = {
@@ -792,6 +784,7 @@
 				88A249B1257FAB5000375E8C /* Notes+CoreDataProperties.swift in Sources */,
 				885B473325710B3F00504BB7 /* QRScannerViewController.swift in Sources */,
 				886A50CB256E9C01005B360A /* AppManager.swift in Sources */,
+				88DC3F7125A5E99800C337E5 /* ARView.swift in Sources */,
 				88855D30258B5E2F00EF123E /* AircraftManager.swift in Sources */,
 				88A2234E257E6CA900C3403F /* AudioPlayer.swift in Sources */,
 				881B1EE22552AAA90005477E /* DamageDetailView.swift in Sources */,
@@ -812,7 +805,6 @@
 				885B472E25710AF900504BB7 /* QRScannerView.swift in Sources */,
 				88A249B3257FAB5000375E8C /* Coordinates+CoreDataProperties.swift in Sources */,
 				885B473925710C0100504BB7 /* Scanner+Coordinator.swift in Sources */,
-				883EDCFA2577951100C3764B /* AppManagerDelegate.swift in Sources */,
 				88AB92CB2551965200BA59BE /* AircraftsDetailsView.swift in Sources */,
 				88A249B7257FAB5000375E8C /* DamageNode+CoreDataProperties.swift in Sources */,
 				88436EBD2553F8C800E50AD3 /* OnboardingView.swift in Sources */,
@@ -821,6 +813,7 @@
 				883EDCF2257794C800C3764B /* ARViewController+ARManagerDelegate.swift in Sources */,
 				88C3500C257FB6F40068460F /* AircraftSessionsView.swift in Sources */,
 				886CADA0256E60A300AF88AE /* AircraftSelectionView.swift in Sources */,
+				88DC3F6425A5E85900C337E5 /* FeedbackGenerator.swift in Sources */,
 				881B1EE82552BC2B0005477E /* DamageState.swift in Sources */,
 				885B702625503F29008643BD /* VirtualObject.swift in Sources */,
 				88A249B4257FAB5000375E8C /* Session+CoreDataClass.swift in Sources */,
@@ -833,7 +826,6 @@
 				88436ED52553FE4E00E50AD3 /* PageViewController.swift in Sources */,
 				88A249B0257FAB5000375E8C /* Notes+CoreDataClass.swift in Sources */,
 				885B472525710ADA00504BB7 /* QRView.swift in Sources */,
-				883EDD002577955400C3764B /* ARViewController+AppManagerDelegate.swift in Sources */,
 				88CA791925515E7700B817DE /* PersistenceController.swift in Sources */,
 				88855D25258B58F400EF123E /* LoginView.swift in Sources */,
 				88AB92BD2551645300BA59BE /* AircraftsView.swift in Sources */,

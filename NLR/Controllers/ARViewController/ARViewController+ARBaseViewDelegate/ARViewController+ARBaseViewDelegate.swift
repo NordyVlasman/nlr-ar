@@ -13,7 +13,7 @@ extension ARViewController: ARBaseDelegate {
     // Enable editing of the AR Model.
     func arBaseViewDidLongPress(on virtualObject: ARBaseVirtualObject?) {
         sceneView.currentVirtualObject = virtualObject
-        appManager.startEditingModel()
+        arManager.startEditingModel()
     }
 
     // Handle object tap, add or show damagenode
@@ -27,7 +27,7 @@ extension ARViewController: ARBaseDelegate {
         let tappedNode = result?.node
 
         if tappedNode?.accessibilityLabel == "damage" {
-            notificationFeedbackGenerator.notificationOccurred(.warning)
+            FeedbackGenerator.shared.triggerNotification(type: .error)
             AppState.shared.sheetRoute = .showDamageDetail(id: tappedNode!.name!)
             return
         }
@@ -44,6 +44,6 @@ extension ARViewController: ARBaseDelegate {
         sceneView.currentVirtualObject = virtualObject
         currentVirtualObjectEditing = virtualObject
         prepareObject()
-        notificationFeedbackGenerator.notificationOccurred(.success)
+        FeedbackGenerator.shared.triggerNotification(type: .success)
     }
 }

@@ -17,8 +17,6 @@ class ARViewController: UIViewController {
     let sceneView = ARBaseView()
     let loader = ARBaseVirtualObjectLoader()
     let debugOptions: ARBaseDebugOptions = []
-    let generator = UIImpactFeedbackGenerator(style: .light)
-    let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
     let referenceNode = SCNReferenceNode(named: "Art.scnassets/fullsize/fullsize.scn")!
 
     var currentVirtualObjectEditing: ARBaseVirtualObject?
@@ -40,8 +38,7 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        arManager.delegate = self
-        appManager.delegate = self
+        arManager.delegate = self
 
         sceneView.placingMode = .quickDrop
         sceneView.arBaseDelegate = self
@@ -72,6 +69,11 @@ class ARViewController: UIViewController {
         initializeARModel()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        sceneView.pause(self)
+        super.viewWillDisappear(animated)
+    }
+    
     // Small hacky feature to use the volume up for adding a damageNode
     @objc private func volumeChanged(notification: NSNotification) {
         guard
@@ -84,6 +86,7 @@ class ARViewController: UIViewController {
         let hitNode = sceneView.hitTest(sceneView.center).first
         virtualObject.enumerateChildNodes { (node, _) in
             if hitNode?.node == node {
+                
 //                arManager.addDamageNode(location: hitNode!.localCoordinates, node: hitNode!.node.name!)
             }
         }
@@ -94,7 +97,7 @@ class ARViewController: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = true
         sceneView.startAR()
     }
-
+    
     private func initializeARModel() {
         let virtualObject = ARBaseVirtualObject(refferenceNode: referenceNode, allowedAlignments: [.horizontal])
 

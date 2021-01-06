@@ -13,9 +13,35 @@ import Combine
 class ARManager: ObservableObject {
     public static let shared = ARManager()
     
+    weak var delegate: ARManagerDelegate?
+    
     @Published var objectToPlace: VirtualObject?
+    @Published var currentSession: Session?
+    
+    //MARK: - AR UI State
+    @Published var isObjectEditing: Bool = false
     
     func addDamageNodeModal() {
+        //TODO: Add code to make this functional
+    }
+    
+    //TODO: Find a beter solution for this code.
+    func startEditingModel() {
+        isObjectEditing = true
+        delegate?.arShouldStartEditingModel()
+    }
+    
+    func stopEditingModel() {
+        isObjectEditing = false
+        delegate?.arShouldStopEditingModel()
+    }
+    
+    func quitARView() {
+        delegate?.arShouldClearView() { finished in
+            if finished {
+                AppState.shared.route = .airplaneDetailView
+            }
+        }
         
     }
 //

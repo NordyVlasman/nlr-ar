@@ -8,5 +8,8 @@
 import Foundation
 
 protocol ARManagerDelegate: class {
+    func arShouldStopEditingModel()
+    func arShouldStartEditingModel()
     func arShouldAddDamageNode(with node: DamageNode)
+    func arShouldClearView(_ onFinish: (_ finished: Bool) -> ())
 }
