@@ -23,7 +23,6 @@
 		88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388253254B3FAB001EF10C /* ARSCNView+Extensions.swift */; };
 		88388259254B40E1001EF10C /* Float4x4+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388258254B40E1001EF10C /* Float4x4+Extensions.swift */; };
 		8838825E254B40F9001EF10C /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838825D254B40F9001EF10C /* CGPoint+Extensions.swift */; };
-		88388264254B41D4001EF10C /* ARManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88388263254B41D4001EF10C /* ARManagerDelegate.swift */; };
 		8839A6532551D4D100DD3EA4 /* AircraftPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839A6522551D4D100DD3EA4 /* AircraftPreview.swift */; };
 		883EDCCC25778EE200C3764B /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883EDCCB25778EE200C3764B /* ARViewController.swift */; };
 		883EDCD225778F0600C3764B /* package-arbase in Frameworks */ = {isa = PBXBuildFile; productRef = 883EDCD125778F0600C3764B /* package-arbase */; };
@@ -113,7 +112,6 @@
 		88388253254B3FAB001EF10C /* ARSCNView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Extensions.swift"; sourceTree = "<group>"; };
 		88388258254B40E1001EF10C /* Float4x4+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float4x4+Extensions.swift"; sourceTree = "<group>"; };
 		8838825D254B40F9001EF10C /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		88388263254B41D4001EF10C /* ARManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManagerDelegate.swift; sourceTree = "<group>"; };
 		8839A6522551D4D100DD3EA4 /* AircraftPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftPreview.swift; sourceTree = "<group>"; };
 		883EDCCB25778EE200C3764B /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		883EDCD72577910400C3764B /* ARViewController+ARBaseViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARBaseViewDelegate.swift"; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 			children = (
 				8831EF7225B0F3C500EB3F08 /* Configurations */,
 				88855D1A258B576B00EF123E /* Environment */,
-				88388262254B41C9001EF10C /* Delegates */,
 				88011F22254AFD640097EA48 /* Controllers */,
 				88011F09254AF6BF0097EA48 /* Main App */,
 				88011F08254AF6BA0097EA48 /* Models */,
@@ -276,7 +273,7 @@
 		88011F04254AF6A30097EA48 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				88436EC12553FA5E00E50AD3 /* Onboarding */,
+				88436EDF2554012400E50AD3 /* PageIndicator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -284,6 +281,7 @@
 		88011F05254AF6AA0097EA48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8831EFA525B104C300EB3F08 /* Onboarding */,
 				88855D23258B58E600EF123E /* Authentication */,
 				885B472325710AC000504BB7 /* QR View */,
 				885B4717257104F300504BB7 /* Check */,
@@ -406,6 +404,15 @@
 			path = Configurations;
 			sourceTree = "<group>";
 		};
+		8831EFA525B104C300EB3F08 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				88436EBC2553F8C800E50AD3 /* OnboardingView.swift */,
+				88436EC22553FA6B00E50AD3 /* OnboardingContainer.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		88388245254B2772001EF10C /* Focus Square */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,14 +420,6 @@
 				8838824E254B3F44001EF10C /* FocusSquare.swift */,
 			);
 			path = "Focus Square";
-			sourceTree = "<group>";
-		};
-		88388262254B41C9001EF10C /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				88388263254B41D4001EF10C /* ARManagerDelegate.swift */,
-			);
-			path = Delegates;
 			sourceTree = "<group>";
 		};
 		8839A6512551D4BF00DD3EA4 /* AircraftPreview */ = {
@@ -459,16 +458,6 @@
 			isa = PBXGroup;
 			children = (
 				88436EB72553F81900E50AD3 /* Onboarding.swift */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		88436EC12553FA5E00E50AD3 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				88436EDF2554012400E50AD3 /* PageIndicator.swift */,
-				88436EBC2553F8C800E50AD3 /* OnboardingView.swift */,
-				88436EC22553FA6B00E50AD3 /* OnboardingContainer.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -797,7 +786,6 @@
 				88855D1C258B577800EF123E /* AppState.swift in Sources */,
 				88388254254B3FAB001EF10C /* ARSCNView+Extensions.swift in Sources */,
 				8831EF5E25B0F14D00EB3F08 /* Scenekit+Extensions.swift in Sources */,
-				88388264254B41D4001EF10C /* ARManagerDelegate.swift in Sources */,
 				886A9DD3255303B40055CC67 /* Color+Extensions.swift in Sources */,
 				88436EC32553FA6B00E50AD3 /* OnboardingContainer.swift in Sources */,
 				88A249AE257FAB5000375E8C /* Aircraft+CoreDataClass.swift in Sources */,

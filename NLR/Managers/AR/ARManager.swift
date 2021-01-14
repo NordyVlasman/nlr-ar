@@ -10,6 +10,13 @@ import SceneKit
 import Foundation
 import Combine
 
+protocol ARManagerDelegate: class {
+    func arShouldStopEditingModel()
+    func arShouldStartEditingModel()
+    func arShouldAddDamageNode(with node: DamageNode)
+    func arShouldClearView(_ onFinish: (_ finished: Bool) -> ())
+}
+
 class ARManager: ObservableObject {
     public static let shared = ARManager()
     
@@ -23,7 +30,6 @@ class ARManager: ObservableObject {
     
     func addDamageNodeModal() {
         //TODO: Add code to make this functional
-        
     }
     
     

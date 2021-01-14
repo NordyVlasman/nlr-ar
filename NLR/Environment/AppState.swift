@@ -108,7 +108,7 @@ class AppState: ObservableObject {
             case .showQR:
                 QRView()
             case let .showAddDamage(location, nodeName):
-                Text("Add damage \(nodeName) at \(location.x)")
+                AddDamageView(location: location, nodeName: nodeName)
             case let .showDamageDetail(id):
                 Text("Damage Detail \(id)")
             }

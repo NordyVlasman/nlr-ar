@@ -6,15 +6,19 @@
 //
 
 import SwiftUI
+import SceneKit
 
 struct AddDamageView: View {
     @Environment(\.managedObjectContext) private var context
     @EnvironmentObject var manager: ARManager
     
+    var location: SCNVector3
+
+    @State var nodeName: String
     @State var name: String = ""
     @State var selectedItem: DamageState = .Damage
     @State var currentURL: URL?
-    @State var location: String = ""
+//    @State var location: String = ""
     
     @ObservedObject var audioRecorder: AudioRecorder = AudioRecorder()
     
@@ -22,7 +26,7 @@ struct AddDamageView: View {
         NavigationView {
             Form {
                 Section(header: Text("Locatie van schade")) {
-                    TextField("Locatie", text: $location)
+                    TextField("Locatie", text: $nodeName)
                         .disabled(true)
                         .opacity(0.25)
                 }

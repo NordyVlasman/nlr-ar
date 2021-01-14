@@ -91,7 +91,6 @@ public class SceneKitAnimator {
 }
 
 //MARK: - tilt mode
-
 class TiltNodeMotionEffect: UIMotionEffect {
     
     private var basedEulerAngles = SCNVector3Zero
