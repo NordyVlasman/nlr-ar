@@ -47,14 +47,20 @@ struct PersistenceController {
     
     func fetchAircrafts() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Aircraft")
+        let removeItems = Bundle.main.infoDictionary?["CLEAR_ITEMS_ON_START"] as? String
+
+        if removeItems == "YES" {
+            deleteAllData("Aircraft")
+        }
         
         do {
             let aircrafts = try container.viewContext.fetch(fetchRequest) as! [Aircraft]
+
             if aircrafts.isEmpty {
                 for aircraftName in aircraftsList {
                     let aircraft = Aircraft(context: container.viewContext)
                     aircraft.name = aircraftName
-                    
+
                     saveContext()
                 }
             }
@@ -64,6 +70,21 @@ struct PersistenceController {
         }
     }
     
+    func deleteAllData(_ entity: String) {
+        let fetchRequests = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        do {
+            let results = try container.viewContext.fetch(fetchRequests)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                container.viewContext.delete(objectData)
+            }
+            saveContext()
+
+        } catch let error {
+            print("Detele all data in \(entity) error :", error)
+        }
+    }
+
     // MARK: - Saving Core Data
     func saveContext() {
         let context = container.viewContext
