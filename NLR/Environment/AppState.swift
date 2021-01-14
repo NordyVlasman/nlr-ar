@@ -11,10 +11,17 @@ import SceneKit
 class AppState: ObservableObject {
     public static let shared = AppState()
     
+    init() {
+        if isFirstLaunch() {
+            route = .onboarding
+        }
+    }
+    
     //MARK: - Application Routes.
     @Published var route: Route = .loginView
     
     enum Route: Identifiable {
+        case onboarding
         case loginView
         case userTypeView
         case airplaneSelectionView
@@ -24,6 +31,7 @@ class AppState: ObservableObject {
         
         var id: String {
             switch self {
+            case .onboarding: return "onboarding"
             case .loginView: return "loginView"
             case .userTypeView: return "userTypeView"
             case .airplaneSelectionView: return "airplaneSelectionView"
@@ -36,6 +44,14 @@ class AppState: ObservableObject {
         @ViewBuilder
         func makeView() -> some View {
             switch self {
+            case .onboarding:
+                OnboardingItemView(viewControllers: Onboarding.data.map({
+                                    UIHostingController(rootView: OnboardingView(page: $0))
+                                }), onComplete: {
+                                    withAnimation {
+                                        AppState.shared.route = .loginView
+                                    }
+                                }).transition(.scale)
             case .loginView:
                 LoginView()
             case .userTypeView:
@@ -57,12 +73,16 @@ class AppState: ObservableObject {
     }
     
     func isFirstLaunch() -> Bool {
+        let showOnboarding = Bundle.main.infoDictionary?["LAUNCH_WITH_INTRODUCTION"] as? String
+        if showOnboarding == "NO" {
+            return false
+        }
+        
         if !UserDefaults.standard.bool(forKey: "hasBeenLaunchedBefore") {
             UserDefaults.standard.setValue(true, forKey: "hasBeenLaunchedBefore")
             return true
         } else {
-            //TODO: Reset this to false in the base app!
-            return true
+            return false
         }
     }
     
