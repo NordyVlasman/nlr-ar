@@ -22,7 +22,7 @@ struct AircraftSessionsView: View {
             session.createdAt = Date()
             
             aircraftManager.currentAircraft!.addToSession(session)
-            
+            manager.currentSession = session
 //            manager.currentSession = session
 //            manager.currentAircraft = aircraftManager.currentAircraft
             AppState.shared.route = .arView

@@ -20,6 +20,7 @@ class AppState: ObservableObject {
         case airplaneSelectionView
         case airplaneDetailView
         case arView
+        case checklistView
         
         var id: String {
             switch self {
@@ -28,6 +29,7 @@ class AppState: ObservableObject {
             case .airplaneSelectionView: return "airplaneSelectionView"
             case .airplaneDetailView: return "airplaneDetailView"
             case .arView: return "arView"
+            case .checklistView: return "checklistView"
             }
         }
         
@@ -46,6 +48,9 @@ class AppState: ObservableObject {
                     .environmentObject(AircraftManager.shared)
             case .arView:
                 ARView()
+                    .environmentObject(ARManager.shared)
+            case .checklistView:
+                CheckDamageView()
                     .environmentObject(ARManager.shared)
             }
         }
@@ -95,10 +100,12 @@ class AppState: ObservableObject {
     
     enum AppErrors: Identifiable {
         case wrongQR
+        case finishARSession
         
         var id: String {
             switch self {
             case .wrongQR: return "wrongQR"
+            case .finishARSession: return "finishARSession"
             }
         }
         
@@ -106,6 +113,14 @@ class AppState: ObservableObject {
             switch self {
             case .wrongQR:
                 return Alert(title: Text("Wrong QR"), message: Text("Wrong QR"), dismissButton: .cancel())
+            case .finishARSession:
+                return Alert(title: Text("Weet je het zeker?"),
+                             message: Text("Weet je zeker dat je je sessie wilt afronden?"),
+                             primaryButton: .default(Text("Ja"), action: {
+                                AppState.shared.route = .airplaneSelectionView
+                                AppState.shared.currentError = .none
+                             }),
+                             secondaryButton: .cancel())
             }
         }
     }

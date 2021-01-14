@@ -40,7 +40,7 @@ class ARManager: ObservableObject {
     func quitARView() {
         delegate?.arShouldClearView() { finished in
             if finished {
-                AppState.shared.route = .airplaneDetailView
+                AppState.shared.route = .checklistView
             }
         }
         
