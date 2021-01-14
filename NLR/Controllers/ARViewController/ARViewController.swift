@@ -86,8 +86,8 @@ class ARViewController: UIViewController {
         let hitNode = sceneView.hitTest(sceneView.center).first
         virtualObject.enumerateChildNodes { (node, _) in
             if hitNode?.node == node {
-                
-//                arManager.addDamageNode(location: hitNode!.localCoordinates, node: hitNode!.node.name!)
+            
+//               TODO: arManager.addDamageNode(location: hitNode!.localCoordinates, node: hitNode!.node.name!)
             }
         }
     }

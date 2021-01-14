@@ -23,9 +23,10 @@ class ARManager: ObservableObject {
     
     func addDamageNodeModal() {
         //TODO: Add code to make this functional
+        
     }
     
-    //TODO: Find a beter solution for this code.
+    
     func startEditingModel() {
         isObjectEditing = true
         delegate?.arShouldStartEditingModel()
