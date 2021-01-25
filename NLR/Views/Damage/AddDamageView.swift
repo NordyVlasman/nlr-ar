@@ -76,38 +76,39 @@ struct AddDamageView: View {
     
     
     func submitDamageNode() {
-//        let damageNode = DamageNode.init(context: context)
-//        let coordinates = Coordinates.init(context: context)
-//
+        let damageNode = DamageNode.init(context: context)
+        let coordinates = Coordinates.init(context: context)
+
 //        guard let current = manager.currentCoordinates else { manager.shouldShowDamageModal = true
 //            return
 //        }
-//
-//        guard let currentSession = manager.currentSession else {
-//            manager.shouldShowDamageModal = true
-//            return
-//        }
-//
-//        coordinates.x = current.x
-//        coordinates.y = current.y
-//        coordinates.z = current.z
-//
-//        damageNode.coordinates = coordinates
-//        damageNode.createdAt = Date()
-//        damageNode.id = UUID()
-//        damageNode.title = name
-//        damageNode.damageStatus = selectedItem
-//        damageNode.node = manager.currentNodeName
-//        damageNode.recordingURL = currentURL
-//
-//        currentSession.addToDamageNodes(damageNode)
-//
-//        do {
-//            try context.save()
-//        } catch {
-//            debugPrint(error)
-//        }
-//
-//        manager.submitAddingDamageNode(with: damageNode)
+        
+        guard let currentSession = manager.currentSession else {
+            AppState.shared.sheetRoute = .none
+            return
+        }
+
+        coordinates.x = location.x
+        coordinates.y = location.y
+        coordinates.z = location.z
+
+        damageNode.coordinates = coordinates
+        damageNode.createdAt = Date()
+        damageNode.id = UUID()
+        damageNode.title = name
+        damageNode.damageStatus = selectedItem
+        damageNode.node = nodeName
+        damageNode.recordingURL = currentURL
+
+        currentSession.addToDamageNodes(damageNode)
+
+        do {
+            try context.save()
+        } catch {
+            debugPrint(error)
+        }
+
+        manager.addDamageNodeToPlane(with: damageNode)
+        AppState.shared.sheetRoute = .none
     }
 }

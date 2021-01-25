@@ -13,7 +13,6 @@ class AppManager: ObservableObject {
     @Published var flowFinished: Bool = false
     @Published var isEditingModel: Bool = false
 
-
     func startEditingModel() {
         isEditingModel = true
     }

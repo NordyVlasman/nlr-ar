@@ -109,6 +109,7 @@ class AppState: ObservableObject {
                 QRView()
             case let .showAddDamage(location, nodeName):
                 AddDamageView(location: location, nodeName: nodeName)
+                    .environmentObject(ARManager.shared)
             case let .showDamageDetail(id):
                 Text("Damage Detail \(id)")
             }

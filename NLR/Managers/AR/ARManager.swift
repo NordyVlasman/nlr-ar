@@ -32,6 +32,9 @@ class ARManager: ObservableObject {
         //TODO: Add code to make this functional
     }
     
+    func addDamageNodeToPlane(with damageNode: DamageNode) {
+        delegate?.arShouldAddDamageNode(with: damageNode)
+    }
     
     func startEditingModel() {
         isObjectEditing = true
