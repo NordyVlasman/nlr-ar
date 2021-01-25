@@ -1,8 +1,10 @@
 ![](Assets/feature-set.png)
 <p align="center">
 <img src="https://img.shields.io/badge/language-swift5.0-f48041.svg?style=flat" />
-<img src="https://img.shields.io/badge/branch-feature%2Fiteration--3-brightgreen" />
+<img src="https://img.shields.io/badge/branch-feature%2Fcode-cleanup-brightgreen" />
 </p>
+
+> ### Note that the most recent branch is `feature/code-cleanup` check this out for the right code.
 
 # NLR AR App
 NLR AR App is an iOS app made for the organization [nlr](https://www.nlr.nl/). The app includes features like Augmented Reality, CoreData databases and SceneKit file previewing. It is made for constructors who maintain airplanes, so they can precisely add issues on the airplane.
